@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="../assets/css/productdetail.css">
     <link rel="stylesheet" href="../assets/css/reponsive1.css">
     <link rel="icon" href="../assets/img/logo/main.png" type="image/x-icon" />
-    
+
 </head>
 
 <body>
@@ -38,6 +38,7 @@
         include("./admin/config/connect.php");
         include("./pages/header.php");
         include("./pages/main.php");
+        include("./pages/show_products.php");
         include("./pages/footer.php");
         ?>
     </div>
