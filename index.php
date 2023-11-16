@@ -22,12 +22,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <!-- link css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="../assets/css/base.css">
-    <link rel="stylesheet" href="../assets/css/main.css">
-    <link rel="stylesheet" href="../../assets/css/login.css">
-    <link rel="stylesheet" href="../assets/css/productdetail.css">
-    <link rel="stylesheet" href="../assets/css/reponsive1.css">
-    <link rel="icon" href="../assets/img/logo/main.png" type="image/x-icon" />
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/login.css">
+    <link rel="stylesheet" href="assets/css/productdetail.css">
+    <link rel="stylesheet" href="assets/css/reponsive1.css">
+    <link rel="icon" href="assets/img/logo/main.png" type="image/x-icon" />
 
 </head>
 
@@ -38,7 +38,6 @@
         include("./admin/config/connect.php");
         include("./pages/header.php");
         include("./pages/main.php");
-        include("./pages/show_products.php");
         include("./pages/footer.php");
         ?>
     </div>
