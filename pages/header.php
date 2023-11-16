@@ -58,10 +58,16 @@
     }
 </style>
 <?php
+$search = '';
 
 $sql_nhomsp = "SELECT DISTINCT byCompany FROM products";
 $query_nhomsp = mysqli_query($connect, $sql_nhomsp);
+
+if (isset($_POST['search-btn'])) {
+    $search = $_POST['search'];
+}
 ?>
+
 <header class="header">
     <div class="container">
         <div class="top-link clearfix hidden-sm hidden-xs">
@@ -106,9 +112,9 @@ $query_nhomsp = mysqli_query($connect, $sql_nhomsp);
                     </div>
                 </div>
                 <div class="col-lg-6 m-auto pdt15">
-                    <form class="example" action="./Product.html">
-                        <input type="text" class="input-search" placeholder="Tìm kiếm.." name="search">
-                        <button type="submit" class="search-btn"><i class="fa fa-search"></i></button>
+                    <form class="example" method="post" action="index.php?quanly=showAllProduct&search=<?php echo $search ?>&page=1">
+                        <input type="text" class="input-search" placeholder="Tìm kiếm.." value="<?php echo $search ?>" name="search">
+                        <button type="submit" value="btn" name="search-btn" class="search-btn"><i class="fa fa-search"></i></button>
                     </form>
                 </div>
                 <div class="col-3 m-auto hidden-sm hidden-xs">
@@ -134,17 +140,18 @@ $query_nhomsp = mysqli_query($connect, $sql_nhomsp);
                 <li class="header_nav-list-item "><a href="index.php" class="active">Trang chủ</a></li>
                 <li class="header_nav-list-item"><a href="index.php?quanly=contact">Giới thiệu</a></li>
                 <li class="header_nav-list-item has-mega">
-                    <a href="./Product.html">Sản phẩm<i class="fas fa-angle-right" style="margin-left: 5px;"></i></a>
+                    <a href="index.php?quanly=showAllProduct&page=1">Sản phẩm<i class="fas fa-angle-right" style="margin-left: 5px;"></i></a>
                     <div class="mega-content" style="overflow-x: hidden; width: 70%; top: 32px ">
                         <div class="row">
                             <ul class="col-8 no-padding level0">
+
                                 <ul class="level1">
                                     <p class="hmega" href="./Product.html">Chọn theo hãng</p>
                                     <?php
                                     while ($row_nhomsp = mysqli_fetch_array($query_nhomsp)) {
                                     ?>
                                         <li class="level2">
-                                            <a href="index.php?quanly=nhomsp&id=<?php echo $row_nhomsp['byCompany'] ?>">
+                                            <a href="index.php?quanly=nhomsp&name=<?php echo $row_nhomsp['byCompany'] ?>&page=1">
                                                 <?php echo $row_nhomsp['byCompany'] ?>
                                             </a>
                                         </li>
@@ -152,6 +159,7 @@ $query_nhomsp = mysqli_query($connect, $sql_nhomsp);
                                     }
                                     ?>
                                 </ul>
+
                                 <ul class="level1">
                                     <p class="hmega" href="./Product.html">Chọn theo mức giá</p>
                                     <li class="level2">
