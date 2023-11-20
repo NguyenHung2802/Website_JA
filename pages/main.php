@@ -11,5 +11,9 @@
     }
     if ($bientam == 'contact') {
         include("main/contact.php");
+    }else if($bientam == 'news'){
+        include("main/news.php");
+    }else if($bientam == 'news_detail'){
+        include("main/news_detail.php");
     }
     ?>
