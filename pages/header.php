@@ -137,10 +137,13 @@ if (isset($_POST['search-btn'])) {
     <nav class="header_nav hidden-sm hidden-xs">
         <div class="container">
             <ul class="header_nav-list nav">
-                <li class="header_nav-list-item "><a href="index.php" class="active">Trang chủ</a></li>
-                <li class="header_nav-list-item"><a href="index.php?quanly=contact">Giới thiệu</a></li>
+                <li class="header_nav-list-item">
+                    <a href="index.php" class="<?php echo isset($_GET['quanly'])  == null ? 'active' : '' ?>">Trang chủ</a>
+                </li>
+
+                <li class="header_nav-list-item"><a href="index.php?quanly=contact" class="<?php echo isset($_GET['quanly']) && $_GET['quanly'] == '' ? 'active' : '' ?>">Giới thiệu</a></li>
                 <li class="header_nav-list-item has-mega">
-                    <a href="index.php?quanly=showAllProduct&page=1">Sản phẩm<i class="fas fa-angle-right" style="margin-left: 5px;"></i></a>
+                    <a href="index.php?quanly=showAllProduct&page=1" class="<?php echo  isset($_GET['quanly']) && $_GET['quanly'] == 'showAllProduct' ? 'active' : '' ?>">Sản phẩm<i class="fas fa-angle-right" style="margin-left: 5px;"></i></a>
                     <div class="mega-content" style="overflow-x: hidden; width: 70%; top: 32px ">
                         <div class="row">
                             <ul class="col-8 no-padding level0">
@@ -187,8 +190,8 @@ if (isset($_POST['search-btn'])) {
         </div>
         </div>
         </li>
-        <li class="header_nav-list-item"><a href="index.php?quanly=news">Tin tức</a></li>
-        <li class="header_nav-list-item"><a href="index.php?quanly=contact">Liên hệ</a></li>
+        <li class="header_nav-list-item"><a href="index.php?quanly=news" class="<?php echo isset($_GET['quanly']) && $_GET['quanly'] == 'news' ? 'active' : '' ?>">Tin tức</a></li>
+        <li class="header_nav-list-item"><a href="index.php?quanly=contact" class="<?php echo isset($_GET['quanly']) && $_GET['quanly'] == 'contact' ? 'active' : '' ?>">Liên hệ</a></li>
         </ul>
         </div>
     </nav>

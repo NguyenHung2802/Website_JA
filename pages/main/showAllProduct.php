@@ -16,20 +16,28 @@
         text-decoration: none;
         background-color: aquamarine;
     }
+
+    .active_pagination {
+        background-color: aquamarine !important;
+    }
 </style>
 <?php
 $page = $_GET['page'];
+
+// Trang hiện tại
 $currentPage = $page;
 
 $offset = ($page - 1) * 2;
+$limit = 4;
 
 if (isset($_GET['quanly']) && isset($_GET['page']) && isset($_GET['search'])) {
     $search = $_POST['search'];
     $titlePage = 'Tìm kiếm sản phẩm: ' . $search;
-    $sql_dssp = "SELECT DISTINCT * FROM products WHERE name LIKE '%$search%' LIMIT 2 OFFSET $offset";
+    $sql_dssp = "SELECT DISTINCT * FROM products WHERE name LIKE '%$search%' LIMIT $limit OFFSET $offset";
 } else if (isset($_GET['quanly']) && isset($_GET['page'])) {
     $titlePage = 'Tất cả sản phẩm';
-    $sql_dssp = "SELECT DISTINCT * FROM products LIMIT 2 OFFSET $offset";
+    $sql_dssp = "SELECT DISTINCT * FROM products LIMIT $limit
+     OFFSET $offset";
 }
 
 $query_dssp = mysqli_query($connect, $sql_dssp);
@@ -126,18 +134,23 @@ $numberPage = round($count['record_count'] / 2);
 <div class="shoesnews__all">
     <div class="wrap_btn_pagination">
         <?php
-        $count = 0;
-        $i = (($currentPage - 1) == 0 ? 1 : ($currentPage - 1));
-        while ($count < 5 && $i <= $numberPage) {
-        ?>
-            <a class="link_pagination item_btn_pagination" href="index.php?quanly=showAllProduct&page=<?php echo $i ?>">
-                <?php echo $i ?>
-            </a>
-        <?php
-            $i++;
-            $count++;
+        $currentPage = max(1, $currentPage);
+        $startPage = max(1, $currentPage - 1);
+        $endPage = min($startPage + 2, $numberPage);
+
+        if ($currentPage > 1) {
+            echo '<a class="link_pagination item_btn_pagination" href="index.php?quanly=showAllProduct&page=1">&lt;&lt;</a>';
+        }
+
+        if ($startPage + 1 == $numberPage) $startPage -= 1;
+        for ($i = $startPage; $i <= $endPage; $i++) {
+            $activeClass = ($i == $currentPage) ? 'active_pagination' : '';
+            echo '<a class="link_pagination item_btn_pagination ' . $activeClass . '" href="index.php?quanly=showAllProduct&page=' . $i . '">' . $i . '</a>';
+        }
+
+        if ($currentPage < $numberPage) {
+            echo '<a class="link_pagination item_btn_pagination" href="index.php?quanly=showAllProduct&page=' . $numberPage . '">&gt;&gt;</a>';
         }
         ?>
-
     </div>
 </div>
