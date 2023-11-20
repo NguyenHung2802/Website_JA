@@ -772,7 +772,7 @@
         </div>
       </div>
       <div class="shoesnews__all">
-        <a href="./Product.html" class="shoesnews__all-tittle">Xem tất cả</a> <i class="fi-rs-angle-right"></i>
+        <a href="index.php?quanly=news" class="shoesnews__all-tittle">Xem tất cả</a> <i class="fi-rs-angle-right"></i>
       </div>
     </div>
   </div>

@@ -26,7 +26,8 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/login.css">
     <link rel="stylesheet" href="assets/css/productdetail.css">
-    <link rel="stylesheet" href="assets/css/reponsive1.css">
+    <link rel="stylesheet" href="assets/css/productdetail.css">
+    <link rel="stylesheet" href="assets/css/news.css">
     <link rel="icon" href="assets/img/logo/main.png" type="image/x-icon" />
 
 </head>

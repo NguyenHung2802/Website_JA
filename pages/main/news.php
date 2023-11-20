@@ -29,7 +29,9 @@ $query_show = mysqli_query($connect, $sql_news_list);
     var page = 1;
     var apiNews = [
         <?php
-            $cnt = 0;
+            $sizeOfPage = 6;
+            $currentPage = 1;
+            $cnt = 1;
             while ($row = mysqli_fetch_array($query_show)) {
         ?>
         {
@@ -38,7 +40,18 @@ $query_show = mysqli_query($connect, $sql_news_list);
             description: ' <?php echo $row['short_description'] ?>',
             img: 'admin/news_management/uploads/<?php echo $row['image'] ?>',
             
-            page: 1
+            page: <?php 
+                if($cnt <= $sizeOfPage) {
+                    echo $currentPage;
+                    $cnt++;
+                }
+                else{
+                    $cnt = 2;
+                    $currentPage++;
+                    echo $currentPage;
+                }
+                
+            ?>
         },
         <?php
             }
@@ -72,7 +85,7 @@ $query_show = mysqli_query($connect, $sql_news_list);
     function render() {
         var listNews = apiNews.map(function (apiNew) {
             if (apiNew.page == page) {
-                return `<div class="col-lg-3 col-md-6 col-sm-12 mb-20" style="margin-bottom: 20px">
+                return `<div class="col-lg-4 col-md-6 col-sm-12 mb-20" style="margin-bottom: 20px">
                     <a href="index.php?quanly=news_detail&id=${apiNew.id}">
                       <div class="card" style="width: 100%">
                         <img class="card-img-top" src="${apiNew.img}" alt="Card image cap">
