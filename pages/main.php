@@ -20,6 +20,12 @@
         if ($bientam == 'nhomsp') {
             include('main/groupProduct.php');
         }
+        if ($bientam == 'news') {
+            include("main/news.php");
+        }
+        if ($bientam == 'news_detail') {
+            include("main/news_detail.php");
+        }
         ?>
     </div>
 </div>

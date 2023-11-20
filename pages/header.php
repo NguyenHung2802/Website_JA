@@ -187,7 +187,7 @@ if (isset($_POST['search-btn'])) {
         </div>
         </div>
         </li>
-        <li class="header_nav-list-item"><a href="./news.html">Tin tức</a></li>
+        <li class="header_nav-list-item"><a href="index.php?quanly=news">Tin tức</a></li>
         <li class="header_nav-list-item"><a href="index.php?quanly=contact">Liên hệ</a></li>
         </ul>
         </div>
