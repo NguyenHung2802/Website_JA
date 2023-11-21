@@ -938,7 +938,7 @@ ul .level1 li a:hover {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: -6px;
+    bottom: -5px !important;
     border-width: 0 20px 6px;
     border-style: solid;
     border-color: transparent rgba(255, 216, 64, 0.94) transparent rgba(255, 216, 64, 0.94);

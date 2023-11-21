@@ -6,6 +6,7 @@
     .col-lg-3 {
         padding-left: 30px !important;
         padding-right: 30px !important;
+        margin: 8px 0;
     }
 </style>
 
