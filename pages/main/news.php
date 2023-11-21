@@ -40,17 +40,15 @@ $query_show = mysqli_query($connect, $sql_news_list);
             description: ' <?php echo $row['short_description'] ?>',
             img: 'admin/news_management/uploads/<?php echo $row['image'] ?>',
             
-            page: <?php 
-                if($cnt <= $sizeOfPage) {
-                    echo $currentPage;
-                    $cnt++;
-                }
-                else{
-                    $cnt = 2;
-                    $currentPage++;
-                    echo $currentPage;
-                }
-                
+            page: <?php
+             if($cnt <= $sizeOfPage){
+                echo $currentPage;
+                $cnt++;
+             }else{
+                $cnt = 2;
+                $currentPage++;
+                echo $currentPage;
+             }
             ?>
         },
         <?php
