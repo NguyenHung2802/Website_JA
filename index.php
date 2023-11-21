@@ -39,7 +39,9 @@
         include("./pages/header.php");
         include("./pages/main.php");
         include("./pages/footer.php");
-        include("./pages/main/ProductDetail.php");
+        include("./pages/main/cart.php");
+        include("./pages/main/pay.php");
+        include("./pages/main/infor.php");
         ?>
     </div>
 </body>
