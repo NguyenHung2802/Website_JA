@@ -139,31 +139,6 @@
 } 
 
   </style>
-
-
-  <?php
-$sql_anh = "SELECT DISTINCT byCompany FROM products";
-$query_anh = mysqli_query($connect, $sql_anh);
-?>
-
-<?php 
-$sql_color = "SELECT DISTINCT byCompany FROM products";
-$query_color = mysqli_query($connect, $sql_color);
-?>
-
-<?php
-$sql_swatchelement = "SELECT DISTINCT byCompany FROM products";
-$query_swatchelement = mysqli_fetch_array($connect, $sql_swatchelement);
-?>
-
-<?php
-$sql_relate = "SELECT DISTINCT byCompany FROM products";
-$query_relate  = mysqli_fetch_array($connect, $sql_relate );
-?>
-<?php
-$sql_comment = "SELECT DISTINCT byCompany FROM products";
-$query_comment = mysqli_fetch_array($connect, $sql_comment);
-?>
       <!-- product detail -->
       <div class="container">
       <div class="product__detail">
@@ -171,6 +146,10 @@ $query_comment = mysqli_fetch_array($connect, $sql_comment);
             <div class="col-lg-6 col-12 daonguoc">
               <div class="img-product">
                 <ul class="all-img">
+                <?php
+              $sql_anh = "SELECT DISTINCT image FROM products";
+              $query_anh = mysqli_query($connect, $sql_anh);
+                ?>
                 <?php 
                         while ($row_anh = mysqli_fetch_array($query_anh)) {
                             ?>
@@ -227,6 +206,10 @@ $query_comment = mysqli_fetch_array($connect, $sql_comment);
                 </div>
                 <div class="select-swap d-flex">
                 
+                <?php
+                  $sql_color = "SELECT DISTINCT tag FROM products";
+                  $query_color = mysqli_fetch_array($connect, $sql_color);
+                ?>
                 <?php 
                         while ($row_color = mysqli_fetch_array($query_color)) {
                             ?>
@@ -247,6 +230,10 @@ $query_comment = mysqli_fetch_array($connect, $sql_comment);
                   Dung lượng: 
                 </div>
                 <div class="select-swap">
+                <?php
+                  $sql_swatchelement = "SELECT DISTINCT ROM FROM products";
+                  $query_swatchelement = mysqli_fetch_array($connect, $sql_swatchelement);
+                  ?>
                   <?php 
                     while ($row_swatchelement = mysqli_fetch_array($query_swatchelement)) {
                       ?>
@@ -327,6 +314,10 @@ $query_comment = mysqli_fetch_array($connect, $sql_comment);
             </div>
             <div class="col-lg-8 col-12">
               <div class="body__comment"> 
+              <?php
+              $sql_comment = "SELECT DISTINCT tag FROM products";
+              $query_comment = mysqli_fetch_array($connect, $sql_comment);
+              ?>
                     <?php 
                         while ($row_comment = mysqli_fetch_array($query_comment)) {
                             ?>
@@ -363,6 +354,10 @@ $query_comment = mysqli_fetch_array($connect, $sql_comment);
         <div class="container">
           <h3 class="product__relateto-heading">Sản phẩm liên quan</h3>
           <div class="row">
+          <?php
+          $sql_relate = "SELECT DISTINCT tag FROM products";
+          $query_relate  = mysqli_fetch_array($connect, $sql_relate );
+          ?>
           <?php 
             while ($row_relate= mysqli_fetch_array($query_relate)) {
             ?>
