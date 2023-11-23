@@ -76,7 +76,7 @@ $numberPage = round($count1 / $quantityOfAPage) < ($count1 / $quantityOfAPage) ?
             while ($row_dssp = mysqli_fetch_array($query_dssp)) {
             ?>
                 <div class="col-lg-3 col-md-6 col-sm-12 mb-20">
-                    <a href="./ProductDetail.html" class="product__new-item">
+                    <a href="index.php?quanly=productDetail&id=<?php echo $row_dssp['idProduct'] ?>" class="product__new-item">
                         <div class="card" style="width: 100%">
                             <div>
                                 <img class="card-img-top" src="<?php echo $row_dssp['image'] ?>" alt="Card image cap">
@@ -85,7 +85,7 @@ $numberPage = round($count1 / $quantityOfAPage) < ($count1 / $quantityOfAPage) ?
                                     <a href="./pay.html" class="btn-add-to-cart" title="Mua ngay">
                                         <i class="fas fa-cart-plus"></i>
                                     </a>
-                                    <a data-toggle="modal" data-target="#myModal" class="quickview" title="Xem nhanh">
+                                    <a href="index.php?quanly=productDetail&id=<?php echo $row_dssp['idProduct'] ?>" class="quickview" title="Xem nhanh">
                                         <i class="fas fa-search"></i>
                                     </a>
                                 </form>

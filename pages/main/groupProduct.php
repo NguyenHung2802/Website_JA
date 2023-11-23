@@ -18,28 +18,30 @@
     }
 </style>
 <?php
-$page = $_GET['page'];
-$currentPage = $page;
+$currentPage = $_GET['page'];
 
-echo $page;
+// Số lượng sản phẩm của 1 trang
+$quantityOfAPage = 4;
 
-$offset = ($page - 1) * 2;
+$offset = ($currentPage - 1) * $quantityOfAPage;
 
 if (isset($_GET['name'])) {
     $groupName = $_GET['name'];
     $titlePage = 'Danh mục sản phẩm: ' . $groupName;
-    $sql_dssp = "SELECT DISTINCT * FROM products WHERE byCompany = '$groupName' LIMIT 2 OFFSET $offset";
+    $sql_dssp = "SELECT DISTINCT * FROM products WHERE byCompany = '$groupName' LIMIT $quantityOfAPage OFFSET $offset";
+    $url = 'nhomsp&name=' . $groupName . "&page=";
 }
 
 $query_dssp = mysqli_query($connect, $sql_dssp);
-$sql_get_count = "SELECT COUNT(*) AS record_count FROM products";
+$sql_get_count = "SELECT COUNT(*) AS record_count FROM products where byCompany =  '$groupName'";
 $query_get_count = mysqli_query($connect, $sql_get_count);
 
 // Số lượng bản ghi product -> phục vụ phân trang
 $count = mysqli_fetch_assoc($query_get_count);
 
 // Số lượng trang cần có
-$numberPage = round($count['record_count'] / 2);
+$count1 = $count['record_count'];
+$numberPage = round($count1 / $quantityOfAPage) < ($count1 / $quantityOfAPage) ? (round($count1 / $quantityOfAPage) + 1) : round($count1 / $quantityOfAPage);
 
 ?>
 
@@ -52,7 +54,7 @@ $numberPage = round($count['record_count'] / 2);
             while ($row_dssp = mysqli_fetch_array($query_dssp)) {
             ?>
                 <div class="col-lg-3 col-md-6 col-sm-12 mb-20">
-                    <a href="./ProductDetail.html" class="product__new-item">
+                    <a href="index.php?quanly=productDetail&id=<?php echo $row_dssp['idProduct'] ?>" class="product__new-item">
                         <div class="card" style="width: 100%">
                             <div>
                                 <img class="card-img-top" src="<?php echo $row_dssp['image'] ?>" alt="Card image cap">
@@ -61,7 +63,7 @@ $numberPage = round($count['record_count'] / 2);
                                     <a href="./pay.html" class="btn-add-to-cart" title="Mua ngay">
                                         <i class="fas fa-cart-plus"></i>
                                     </a>
-                                    <a data-toggle="modal" data-target="#myModal" class="quickview" title="Xem nhanh">
+                                    <a href="index.php?quanly=productDetail&id=<?php echo $row_dssp['idProduct'] ?>" class="quickview" title="Xem nhanh">
                                         <i class="fas fa-search"></i>
                                     </a>
                                 </form>
@@ -127,18 +129,22 @@ $numberPage = round($count['record_count'] / 2);
 <div class="shoesnews__all">
     <div class="wrap_btn_pagination">
         <?php
-        $count = 0;
-        $i = (($currentPage - 1) == 0 ? 1 : ($currentPage - 1));
-        while ($count < 5 && $i <= $numberPage) {
-        ?>
-            <a class="link_pagination item_btn_pagination" href="index.php?quanly=nhomsp&name=<?php echo $groupName ?>&page=<?php echo $i ?>">
-                <?php echo $i ?>
-            </a>
-        <?php
-            $i++;
-            $count++;
+        $currentPage = max(1, $currentPage);
+        $startPage = max(1, $currentPage - 1);
+        $endPage = min($startPage + 2, $numberPage);
+
+        if ($currentPage > 1) {
+            echo '<a class="link_pagination item_btn_pagination" href="index.php?quanly=' . $url . '1">&lt;&lt;</a>';
+        }
+
+        for ($i = $startPage; $i <= $endPage; $i++) {
+            $activeClass = ($i == $currentPage) ? 'active_pagination' : '';
+            echo '<a class="link_pagination item_btn_pagination ' . $activeClass . '" href="index.php?quanly=' . $url . $i . '">' . $i . '</a>';
+        }
+
+        if ($currentPage < $numberPage) {
+            echo '<a class="link_pagination item_btn_pagination" href="index.php?quanly=' . $url  . $numberPage . '">&gt;&gt;</a>';
         }
         ?>
-
     </div>
 </div>

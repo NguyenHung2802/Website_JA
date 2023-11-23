@@ -88,13 +88,13 @@ $query_dssphot = mysqli_query($connect, $sql_dssphot);
           while ($row_dsspnew = mysqli_fetch_array($query_dsspnew)) {
           ?>
             <div class="col-lg-3 col-md-6 col-sm-12 mb-20">
-              <a href="./ProductDetail.html" class="product__new-item">
+              <a href="index.php?quanly=productDetail&id=<?php echo $row_dsspnew['idProduct'] ?>" class="product__new-item">
                 <div class="card" style="width: 100%">
                   <div>
                     <img class="card-img-top" src="<?php echo $row_dsspnew['image'] ?>" alt="Card image cap">
                     <form action="" class="hover-icon hidden-sm hidden-xs">
                       <input type="hidden">
-                      <a href="./pay.html" class="btn-add-to-cart" title="Mua ngay">
+                      <a href="index.php?quanly=productDetail&id=<?php echo $row_dsspnew['idProduct'] ?>" class="btn-add-to-cart" title="Mua ngay">
                         <i class="fas fa-cart-plus"></i>
                       </a>
                       <a data-toggle="modal" data-target="#myModal" class="quickview" title="Xem nhanh">
@@ -166,7 +166,7 @@ $query_dssphot = mysqli_query($connect, $sql_dssphot);
           while ($row_dssphot = mysqli_fetch_array($query_dssphot)) {
           ?>
             <div class="col-lg-3 col-md-6 col-sm-12 mb-20">
-              <a href="./ProductDetail.html" class="product__new-item">
+              <a href="index.php?quanly=productDetail&id=<?php echo $row_dssphot['idProduct'] ?>" class="product__new-item">
                 <div class="card" style="width: 100%">
                   <div>
                     <img class="card-img-top" src="<?php echo $row_dssphot['image'] ?>" alt="Card image cap">
@@ -175,7 +175,7 @@ $query_dssphot = mysqli_query($connect, $sql_dssphot);
                       <a href="./pay.html" class="btn-add-to-cart" title="Mua ngay">
                         <i class="fas fa-cart-plus"></i>
                       </a>
-                      <a data-toggle="modal" data-target="#myModal" class="quickview" title="Xem nhanh">
+                      <a href="index.php?quanly=productDetail&id=<?php echo $row_dssphot['idProduct'] ?>" class="quickview" title="Xem nhanh">
                         <i class="fas fa-search"></i>
                       </a>
                     </form>
@@ -301,13 +301,13 @@ $query_dssphot = mysqli_query($connect, $sql_dssphot);
             while ($row_dssp = mysqli_fetch_array($query_dssp)) {
             ?>
               <div class="col-lg-3 col-md-6 col-sm-12 mb-20">
-                <a href="./ProductDetail.html" class="product__new-item">
+                <a href="index.php?quanly=productDetail&id=<?php echo $row_dssp['idProduct'] ?>" class="product__new-item">
                   <div class="card" style="width: 100%">
                     <div>
                       <img class="card-img-top" src="<?php echo $row_dssp['image'] ?>" alt="Card image cap">
                       <form action="" class="hover-icon hidden-sm hidden-xs">
                         <input type="hidden">
-                        <a href="./pay.html" class="btn-add-to-cart" title="Mua ngay">
+                        <a href="index.php?quanly=productDetail&id=<?php echo $row_dssp['idProduct'] ?>" class="btn-add-to-cart" title="Mua ngay">
                           <i class="fas fa-cart-plus"></i>
                         </a>
                         <a data-toggle="modal" data-target="#myModal" class="quickview" title="Xem nhanh">

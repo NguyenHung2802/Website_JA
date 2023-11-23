@@ -44,6 +44,9 @@
         if ($bientam == 'pay') {
             include("main/pay.php");
         }
+        if ($bientam == 'productDetail') {
+            include("main/ProductDetail.php");
+        }
         ?>
     </div>
 </div>
