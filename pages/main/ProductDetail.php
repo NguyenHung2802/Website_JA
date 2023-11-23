@@ -230,34 +230,35 @@ $query_dssp = mysqli_query($connect, $sql_dssp);
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-12">
+                <div class="col-lg-6 col-12" style="padding: 10px">
 
-                    <div class="product__name">
-                        <h2><?php echo $product['name'] ?></h2>
+                    <div class="product__name" style="padding: 10px; font-size: 40px">
+                        <b><?php echo $product['name'] ?></b>
                     </div>
 
 
-                    <div class="product__price">
+                    <div class="product__price" style="padding: 10px">
 
-                        <h2><?php  echo $product['sellingPrice']?>đ</h2>
+                        <h2 style="font-size: 30px"><?php  echo $product['sellingPrice']?>đ</h2>
                     </div>
 
 
-                    <div class="price-old">
+                    <div class="price-old" style="padding: 10px">
                         Giá gốc:
                         <del><?php echo $product['costPrice']?></del>
                         <span
                             class="discount"><?php echo round(100 - ($product['sellingPrice'] / $product['costPrice']) * 100) ?>%</span>
                     </div>
-                    <div class="product__ROM">
-                        <h2>Dung lượng: <?php  echo $product['ROM']?></h2>
+
+                    <div class="product__RAM" style="padding: 10px">
+                        <h2>RAM: <?php  echo $product['RAM']?></h2>
                     </div>
-                    <div class="product__camera">
-                        <h2>Màn hình: <?php  echo $product['screen']?></h2>
+                    <div class="product__ROM" style="padding: 10px">
+                        <h2>Dung lượng lưu trữ: <?php  echo $product['ROM']?></h2>
                     </div>
-                    <div class="product__color">
-                        <h2>Màu sắc: <?php  echo $product['battery']?></h2>
-                    </div>
+
+
+
                     <div class="product__wrap">
                         <div class="product__amount">
                             <label for="">Số lượng: </label>
@@ -282,41 +283,51 @@ $query_dssp = mysqli_query($connect, $sql_dssp);
         </div>
     </div>
     <div class="product__describe">
+
         <div class="container">
             <h2 class="product__describe-heading">Mô tả</h2>
-            <div class="row">
-                <div class="col-1"></div>
-                <div class="col-11">
-                    <h3 class="name__product">Bảo hành chính hãng</h3>
-                    <h3>Chính sách đổi trả: </h3>
-                    <p>Bảo hành có cam kết trong 12 tháng (chỉ áp dụng cho sản phẩm chính, KHÔNG áp dụng cho phụ kiện
-                        kèm theo)</p>
 
-                    <p>Bảo hành trong vòng 15 ngày (từ lúc Khách hàng mang sản phẩm đến bảo hành đến lúc nhận lại sản
-                        phẩm tối đa 15 ngày).</p>
-                    <p>Sản phẩm không bảo hành lại lần 2 trong 30 ngày kể từ ngày máy được bảo hành xong.</p>
-                    <p>Nếu TGDD/ĐMX vi phạm cam kết (bảo hành quá 15 ngày hoặc phải bảo hành lại sản phẩm lần nữa trong
-                        30 ngày kể từ lần bảo hành trước), Khách hàng được áp dụng phương thức Hư gì đổi nấy ngay và
-                        luôn hoặc Hoàn tiền với mức phí giảm 50%.</p>
-                    <p>Từ tháng thứ 13 trở đi, không áp dụng bảo hành có cam kết, chỉ áp dụng bảo hành hãng nếu có.</p>
-                    <p>Hư gì đổi nấy ngay & luôn</p>
 
-                    <p>Hư sản phẩm chính: Đổi sản phẩm mới (cùng model, cùng dung lượng, cùng màu sắc) miễn phí tháng
-                        đầu tiên, tháng thứ 2 đến tháng 12 chịu phí 10% hoá đơn/tháng. Nếu sản phẩm chính hết hàng thì
-                        áp dụng Bảo hành có cam kết hoặc Hoàn tiền với mức phí giảm 50%.</p>
-                    <p>Hư phụ kiện đi kèm: Đổi miễn phí trong vòng 12 tháng kể từ ngày mua sản phẩm chính bằng hàng phụ
-                        kiện TGDĐ/ĐMX đang kinh doanh mới với công năng tương đương. Nếu không có phụ kiện tương đương
-                        hoặc Khách hàng không thích thì áp dụng bảo hành hãng</p>
-                    <p>Lỗi phần mềm không áp dụng, mà chỉ khắc phục lỗi phần mềm.</p>
-                    <p>Trường hợp Khách hàng muốn đổi full box (nguyên thùng, nguyên hộp): ngoài việc áp dụng mức phí
-                        đổi trả thì Khách hàng sẽ trả thêm phí lấy full box tương đương 20% giá trị hóa đơn.</p>
-                    <p>Hoàn tiền</p>
+            <div class="col-1"></div>
+            <div class="col-11">
+                <div class="product_specifications" style="font-size: 16px">
+                    <h3 class="name__product">Thông số kĩ thuật</h3>
+                    <div class="product__screen">
+                        <p>Màn hình: <?php  echo $product['screen']?></p>
+                    </div>
+                    <div class="product__camera">
+                        <p>Camera: <?php  echo $product['camera']?></p>
+                    </div>
+                    <div class="product__CPU">
+                        <p>CPU: <?php  echo $product['CPU']?></p>
+                    </div>
+                    <div class="product__RAM">
+                        <p>RAM: <?php  echo $product['RAM']?></p>
+                    </div>
+                    <div class="product__ROM">
+                        <p>Dung lượng lưu trữ: <?php  echo $product['ROM']?></p>
+                    </div>
+                    <div class="product__battery">
+                        <p>Dung lượng pin: <?php  echo $product['battery']?></p>
+                    </div>
 
-                    <p>Tháng đầu tiên kể từ ngày mua: phí 20% giá trị hóa đơn.</p>
-                    <p>Tháng thứ 2 đến tháng thứ 12: phí 10% giá trị hóa đơn/tháng.</p>
                 </div>
+                <h3 class="name__product">Bảo hành chính hãng</h3>
+                <h3>Chính sách đổi trả: </h3>
+                <p>Bảo hành có cam kết trong 12 tháng (chỉ áp dụng cho sản phẩm chính, KHÔNG áp dụng cho phụ kiện
+                    kèm theo)</p>
+
+                <p>Bảo hành trong vòng 15 ngày (từ lúc Khách hàng mang sản phẩm đến bảo hành đến lúc nhận lại sản
+                    phẩm tối đa 15 ngày).</p>
+                <p>Sản phẩm không bảo hành lại lần 2 trong 30 ngày kể từ ngày máy được bảo hành xong.</p>
+                <p>Nếu TGDD/ĐMX vi phạm cam kết (bảo hành quá 15 ngày hoặc phải bảo hành lại sản phẩm lần nữa trong
+                    30 ngày kể từ lần bảo hành trước), Khách hàng được áp dụng phương thức Hư gì đổi nấy ngay và
+                    luôn hoặc Hoàn tiền với mức phí giảm 50%.</p>
+                <p>Từ tháng thứ 13 trở đi, không áp dụng bảo hành có cam kết, chỉ áp dụng bảo hành hãng nếu có.</p>
+
             </div>
         </div>
+    </div>
     </div>
     <div class="product__comment">
         <div class="container">
