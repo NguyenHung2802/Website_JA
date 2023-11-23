@@ -28,13 +28,6 @@ $query_dssphot = mysqli_query($connect, $sql_dssphot);
       <div class="mt-4 top-sliders col-md-12">
         <div class="slideshow">
           <div id="demo" class="carousel slide" data-ride="carousel">
-            <!-- <ul class="carousel-indicators">
-              <li data-target="#demo" data-slide-to="0" class="active"></li>
-              <li data-target="#demo" data-slide-to="1"></li>
-              <li data-target="#demo" data-slide-to="2"></li>
-              <li data-target="#demo" data-slide-to="3"></li>
-              <li data-target="#demo" data-slide-to="4"></li>
-            </ul> -->
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <div style="display: flex">
@@ -124,6 +117,7 @@ $query_dssphot = mysqli_query($connect, $sql_dssphot);
                       </span>
 
                       <?php
+                      // Xử lý việc tính sao trung bình của mỗi sp và hiển thị ra màn hình
                       $idProduct = $row_dsspnew['idProduct'];
                       $sql_rate = "SELECT AVG(feedbacks.Rate) AS average_rate
                       FROM feedbacks 
@@ -146,7 +140,7 @@ $query_dssphot = mysqli_query($connect, $sql_dssphot);
                         <?php
                         }
                         ?>
-
+                        <!-- Kết thúc mã xử lý -->
                       </div>
                       <span class="home-product-item__sold"><?php echo $row_dsspnew['sellNumber'] ?> đã bán</span>
                     </div>
@@ -358,7 +352,7 @@ $query_dssphot = mysqli_query($connect, $sql_dssphot);
                           <?php
                           }
                           ?>
-                          
+
                         </div>
                         <span class="home-product-item__sold"><?php echo $row_dssp['sellNumber'] ?> đã bán</span>
                       </div>
@@ -383,29 +377,29 @@ $query_dssphot = mysqli_query($connect, $sql_dssphot);
   <div class="shoesnews">
     <div class="container">
       <h3 class="shoesnews__title">Tin tức</h3>
-      <?php 
-          $sql_show_news = "SELECT * FROM news LIMIT 3";
-          $query_show_news = mysqli_query($connect,$sql_show_news);
-        ?>
+      <?php
+      $sql_show_news = "SELECT * FROM news LIMIT 3";
+      $query_show_news = mysqli_query($connect, $sql_show_news);
+      ?>
       <div class="row">
         <?php
-          while($row=mysqli_fetch_array($query_show_news)){
-          ?>
-        <div class="col-lg-4 col-md-4 col-sm-12 mb-20">
-          <a href="index.php?quanly=news_detail&id=<?php echo $row['id']?>" class="product__new-item">
-            <div class="card" style="width: 100%">
-              <img class="card-img-top" src="admin/news_management/uploads/<?php echo $row['image'] ?>" alt="Card image cap" height="230px">
-              <div class="card-body">
-                <h5 class="card-title custom__name-product title-news">
-                  <?php echo $row['title']?>
-                </h5>
-                <p class="card-text custom__name-product" style="font-weight: 400;"><?php echo $row['short_description']?></p>
+        while ($row = mysqli_fetch_array($query_show_news)) {
+        ?>
+          <div class="col-lg-4 col-md-4 col-sm-12 mb-20">
+            <a href="index.php?quanly=news_detail&id=<?php echo $row['id'] ?>" class="product__new-item">
+              <div class="card" style="width: 100%">
+                <img class="card-img-top" src="admin/news_management/uploads/<?php echo $row['image'] ?>" alt="Card image cap" height="230px">
+                <div class="card-body">
+                  <h5 class="card-title custom__name-product title-news">
+                    <?php echo $row['title'] ?>
+                  </h5>
+                  <p class="card-text custom__name-product" style="font-weight: 400;"><?php echo $row['short_description'] ?></p>
+                </div>
               </div>
-            </div>
-          </a>
-        </div>
+            </a>
+          </div>
         <?php
-          }
+        }
         ?>
       </div>
       <div class="shoesnews__all">

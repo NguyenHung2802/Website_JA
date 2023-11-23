@@ -26,6 +26,24 @@
         if ($bientam == 'news_detail') {
             include("main/news_detail.php");
         }
+        if ($bientam == 'dangKy') {
+            include("main/Dangky.php");
+        }
+        if ($bientam == 'dangNhap') {
+            include("main/Dangnhap.php");
+        }
+        if ($bientam == 'cart') {
+            include("main/cart.php");
+        }
+        if ($bientam == 'listlike') {
+            include("main/listlike.php");
+        }
+        if ($bientam == 'gioithieu') {
+            include("main/Gioithieu.php");
+        }
+        if ($bientam == 'pay') {
+            include("main/pay.php");
+        }
         ?>
     </div>
 </div>

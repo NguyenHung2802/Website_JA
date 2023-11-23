@@ -1,130 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>P&T Shop</title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-    <!-- Popper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- link font chữ -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
-    <!-- link icon -->
-    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css">
-    <link rel='stylesheet'
-        href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <!-- link css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="./assets/css/base.css">
-    <link rel="stylesheet" href="./assets/css/main.css">
-    <link rel="stylesheet" href="./assets/css/productdetail.css">
-    <link rel="stylesheet" href="./assets/css/reponsive1.css">
-    <link rel="icon" href="./assets/img/logo/main.png" type="image/x-icon" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-        crossorigin="anonymous"></script>
-</head>
 <style>
-form.example input[type=text] {
-    padding: 10px;
-    font-size: 17px;
-    border: 1px solid grey;
-    float: left;
-    width: 80%;
-    background: #f1f1f1;
-}
-
-form.example button {
-    float: left;
-    width: 20%;
-    padding: 10px;
-    background: #2196F3;
-    color: white;
-    font-size: 17px;
-    border: 1px solid grey;
-    border-left: none;
-    cursor: pointer;
-}
-
-form.example button:hover {
-    background: #0b7dda;
-}
-
-form.example::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-/* Mobile & tablet  */
-@media (max-width: 1023px) {}
-
-/* tablet */
-@media (min-width: 740px) and (max-width: 1023px) {
-    .owl-item {
-        width: 396px;
-        padding: 16px 0;
+    .wrap_btn_pagination {
+        display: flex;
     }
 
-    .card:hover .hover-icon {
-        display: none;
-    }
-}
-
-/* mobile */
-@media (max-width: 739px) {
-    .owl-item {
-        float: unset;
-        padding: 16px 0;
+    .item_btn_pagination {
+        text-align: center;
+        height: 40px;
+        width: 40px;
+        line-height: 40px;
+        background-color: #ccc;
+        margin: 0 4px;
     }
 
-    .card:hover .hover-icon {
-        display: none;
+    .link_pagination:hover {
+        text-decoration: none;
+        background-color: aquamarine;
     }
-}
+
+    .active_pagination {
+        background-color: aquamarine !important;
+    }
 </style>
 <?php
-    // $sql_get_like = "SELECT * FROM favorite_products WHERE idUser = 1";
-    // $query_get_like = mysqli_query($connect, $sql_get_like);
-    // $favorite = mysqli_fetch_array($query_get_like);
-    $sql_get_img = "SELECT * FROM favorite_products inner join products on favorite_products.idProduct = products.idProduct WHERE idUser = 1 ";
-    $query_get_img = mysqli_query($connect, $sql_get_img);
+// Trang muốn lấy
+$currentPage = $_GET['page'];
+
+// Số lượng sản phẩm của 1 trang
+$quantityOfAPage = 4;
+
+// Limit và offset dùng phân trang
+$offset = ($currentPage - 1) * $quantityOfAPage;
+$limit = 4;
+
+if (isset($_GET['quanly']) && isset($_GET['page'])) {
+    $titlePage = 'Tất cả sản phẩm';
+    $sql_dssp = "SELECT DISTINCT * FROM favorite_products inner join products on favorite_products.idProduct = products.idProduct LIMIT $limit OFFSET $offset";
+}
+
+// Lấy  ra số trang tối đa cần dùng khi search hoặc xem tất cả sp
+$query_dssp = mysqli_query($connect, $sql_dssp);
+$sql_get_count = "SELECT COUNT(*) AS record_count FROM favorite_products";
+$query_get_count = mysqli_query($connect, $sql_get_count);
+
+// Số lượng bản ghi -> phục vụ phân trang
+$count = mysqli_fetch_assoc($query_get_count);
+
+// Số lượng trang cần có
+$count1 = $count['record_count'];
+$numberPage = round($count1 / $quantityOfAPage) < ($count1 / $quantityOfAPage) ? (round($count1 / $quantityOfAPage) + 1) : round($count1 / $quantityOfAPage);
+
 ?>
 
+<div class="container">
 
-<body>
-
-    <!-- content -->
-    <div class="listlike">
-        <div class="container">
-
-            <div class="row">
-
+    <div class="product__yml">
+        <h3 class="product__yml title-product"><?php echo $titlePage ?></h3>
+        <div class="row">
+            <?php
+            while ($row_dssp = mysqli_fetch_array($query_dssp)) {
+            ?>
                 <div class="col-lg-3 col-md-6 col-sm-12 mb-20">
-                    <?php
-              while($product = mysqli_fetch_array($query_get_img)) {
-                ?>
                     <a href="./ProductDetail.html" class="product__new-item">
-
                         <div class="card" style="width: 100%">
-
                             <div>
-
-                                <img class="card-img-top" src="<?php echo $product['image'] ?>" alt="Card image cap">
-
+                                <img class="card-img-top" src="<?php echo $row_dssp['image'] ?>" alt="Card image cap">
                                 <form action="" class="hover-icon hidden-sm hidden-xs">
-
                                     <input type="hidden">
                                     <a href="./pay.html" class="btn-add-to-cart" title="Mua ngay">
                                         <i class="fas fa-cart-plus"></i>
@@ -132,67 +72,83 @@ form.example::after {
                                     <a data-toggle="modal" data-target="#myModal" class="quickview" title="Xem nhanh">
                                         <i class="fas fa-search"></i>
                                     </a>
-
                                 </form>
-
                             </div>
-
                             <div class="card-body">
                                 <h5 class="card-title custom__name-product">
-                                    <?php echo $product['name']?></p>
+                                    <?php echo $row_dssp['name'] ?>
                                 </h5>
                                 <div class="product__price">
-                                    <p class="card-text price-color product__price-old">
-                                        <?php echo $product['costPrice']?>đ</p>
-                                    <p class="card-text price-color product__price-new">
-                                        <?php  echo $product['sellingPrice']?>đ</p>
+                                    <p class="card-text price-color product__price-old"><?php echo $row_dssp['costPrice'] ?> đ</p>
+                                    <p class="card-text price-color product__price-new"><?php echo $row_dssp['sellingPrice'] ?> đ</p>
                                 </div>
                                 <div class="home-product-item__action">
-                                    <?php 
-                                    
-                                    $sql_rate = "SELECT * FROM feedbacks inner join users on users.idUser = feedbacks.idUser WHERE idProduct = 1";
-                                    $query_rate = mysqli_query($connect, $sql_rate);
-                                    ?>
                                     <span class="home-product-item__like home-product-item__like--liked">
                                         <i class="home-product-item__like-icon-empty far fa-heart"></i>
                                         <i class="home-product-item__like-icon-fill fas fa-heart"></i>
                                     </span>
-
                                     <?php
-                                     while ($row_listrate = mysqli_fetch_array($query_rate)){
-                                     $rate = $row_listrate['Rate'];?>
+                                    $idProduct = $row_dssp['idProduct'];
+                                    $sql_rate = "SELECT AVG(feedbacks.Rate) AS average_rate
+                                    FROM feedbacks 
+                                    INNER JOIN products ON feedbacks.idFeedBack = products.idProduct
+                                    WHERE feedbacks.idProduct = $idProduct
+                                    GROUP BY feedbacks.idProduct";
+                                    $query_rate = mysqli_query($connect, $sql_rate);
+                                    $row_average_rate = mysqli_fetch_array($query_rate);
+                                    if ($row_average_rate)
+                                        $rate_avg = round($row_average_rate['average_rate']);
+                                    else $rate_avg = 0;
+                                    ?>
                                     <div class="home-product-item__rating">
+
                                         <?php
                                         for ($i = 0; $i < 5; $i++) {
-                                        $starClass = ($i < $rate ? "home-product-item__star--gold" : "");
+                                            $starClass = ($i < $rate_avg) ? "home-product-item__star--gold" : "";
                                         ?>
-                                        <i class="fas fa-star <?= $starClass ?>"></i>
+                                            <i class="fas fa-star <?= $starClass ?>"></i>
                                         <?php
                                         }
                                         ?>
-                                        <?php 
-                                    }
-                                    ?>
                                     </div>
-                                    <!-- <span class="home-product-item__sold">79 đã bán</span> -->
+                                    <span class="home-product-item__sold"><?php echo $row_dssp['sellNumber'] ?> đã bán</span>
                                 </div>
                                 <div class="sale-off">
-                                    <span class="sale-off-percent">12%</span>
+                                    <span class="sale-off-percent"><?php echo round(100 - ($row_dssp['sellingPrice'] / $row_dssp['costPrice']) * 100) ?> %</span>
                                     <span class="sale-off-label">GIẢM</span>
                                 </div>
                             </div>
                         </div>
                     </a>
-
                 </div>
-                <?php
-                }
-                ?>
-            </div>
+
+            <?php
+            }
+            ?>
+
         </div>
     </div>
-    <!-- end content -->
-</body>
-<script src="./assets/js/main.js"></script>
+</div>
+</div>
+<div class="shoesnews__all">
+    <div class="wrap_btn_pagination">
+        <?php
+        $currentPage = max(1, $currentPage);
+        $startPage = max(1, $currentPage - 1);
+        $endPage = min($startPage + 2, $numberPage);
 
-</html>
+        if ($currentPage > 1) {
+            echo '<a class="link_pagination item_btn_pagination" href="index.php?quanly=listlike&page=1">&lt;&lt;</a>';
+        }
+
+        for ($i = $startPage; $i <= $endPage; $i++) {
+            $activeClass = ($i == $currentPage) ? 'active_pagination' : '';
+            echo '<a class="link_pagination item_btn_pagination ' . $activeClass . '" href="index.php?quanly=listlike&page=' . $i . '">' . $i . '</a>';
+        }
+
+        if ($currentPage < $numberPage) {
+            echo '<a class="link_pagination item_btn_pagination" href="index.php?quanly=listlike&page=' . $numberPage . '">&gt;&gt;</a>';
+        }
+        ?>
+    </div>
+</div>

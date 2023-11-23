@@ -31,9 +31,7 @@
   <link rel="stylesheet" href="./assets/css/account.css">
   <link rel="stylesheet" href="./assets/css/reponsive1.css">
   <link rel="icon" href="./assets/img/logo/main.png" type="image/x-icon" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
 </head>
 <style>
   form.example input[type=text] {
@@ -66,10 +64,12 @@
     clear: both;
     display: table;
   }
+
   .wrapper {
-    margin-top:30px;
+    margin-top: 30px;
   }
 </style>
+
 <body>
   <div class="overlay hidden"></div>
   <!-- mobile menu -->
@@ -94,23 +94,6 @@
         <a href="" class="abc">Đăng kí</a>
       </li>
     </ul>
-    <!-- <ul class="ul-first-menu">
-      <li>
-        <a href="">Tài khoản của tôi</a>
-      </li>
-      <li>
-        <a href="">Địạ chỉ của tôi</a>
-      </li>
-      <li>
-        <a href="">Đơn mua</a>
-      </li>
-      <li>
-        <a href="" class="list-like-noicte">Danh sách yêu thích</a>
-        <span id="header__second__like--notice" class="header__second__like--notice">3</span>
-      </li>
-      <li>
-        <a href="">Đăng xuất</a>
-      </li> -->
     </ul>
     <div class="la-scroll-fix-infor-user">
       <div class="la-nav-menu-items">
@@ -128,8 +111,7 @@
             <a href="./Product.html">Sản phẩm <i class="fas fa-plus cong"></i> <i class="fas fa-minus tru hidden"></i></a>
             <ul class="ul-has-child1">
               <li class="ng-scope ng-has-child2">
-                <a href="./Product.html">Tất cả sản phẩm <i class="fas fa-plus cong1" onclick="hienthi(1,`abc`)"></i> <i
-                    class="fas fa-minus tru1 hidden" onclick="hienthi(1,`abc`)"></i></a>
+                <a href="./Product.html">Tất cả sản phẩm <i class="fas fa-plus cong1" onclick="hienthi(1,`abc`)"></i> <i class="fas fa-minus tru1 hidden" onclick="hienthi(1,`abc`)"></i></a>
                 <ul class="ul-has-child2 hidden" id="abc">
                   <li class="ng-scope">
                     <a href="./Product.html">Bóng đá</a>
@@ -155,8 +137,7 @@
                 </ul>
               </li>
               <li class="ng-scope ng-has-child2">
-                <a href="./Product.html">Quần áo <i class="fas fa-plus cong2" onclick="hienthi(2,`abc2`)"></i> <i
-                    class="fas fa-minus tru2 hidden" onclick="hienthi(2,`abc2`)"></i></a>
+                <a href="./Product.html">Quần áo <i class="fas fa-plus cong2" onclick="hienthi(2,`abc2`)"></i> <i class="fas fa-minus tru2 hidden" onclick="hienthi(2,`abc2`)"></i></a>
                 <ul class="ul-has-child2 hidden" id="abc2">
                   <li class="ng-scope">
                     <a href="./Product.html">Bóng đá</a>
@@ -182,8 +163,7 @@
                 </ul>
               </li>
               <li class="ng-scope ng-has-child2">
-                <a href="./Product.html">Già dép<i class="fas fa-plus cong3" onclick="hienthi(3,`abc3`)"></i> <i
-                    class="fas fa-minus tru3 hidden" onclick="hienthi(3,`abc3`)"></i></a>
+                <a href="./Product.html">Già dép<i class="fas fa-plus cong3" onclick="hienthi(3,`abc3`)"></i> <i class="fas fa-minus tru3 hidden" onclick="hienthi(3,`abc3`)"></i></a>
                 <ul class="ul-has-child2 hidden" id="abc3">
                   <li class="ng-scope">
                     <a href="./Product.html">Bóng đá</a>
@@ -209,8 +189,7 @@
                 </ul>
               </li>
               <li class="ng-scope ng-has-child2">
-                <a href="./Product.html">Phụ kiện <i class="fas fa-plus cong4" onclick="hienthi(4,`abc4`)"></i> <i
-                    class="fas fa-minus tru4 hidden " onclick="hienthi(4,`abc4`)"></i></a>
+                <a href="./Product.html">Phụ kiện <i class="fas fa-plus cong4" onclick="hienthi(4,`abc4`)"></i> <i class="fas fa-minus tru4 hidden " onclick="hienthi(4,`abc4`)"></i></a>
                 <ul class="ul-has-child2 hidden" id="abc4">
                   <li class="ng-scope">
                     <a href="./Product.html">Bóng đá</a>
@@ -261,7 +240,7 @@
     </ul>
   </div>
   <!-- end mobile menu -->
-  
+
   <!-- content -->
   <div class="container">
     <div class="wrapper">
@@ -290,7 +269,7 @@
                 <div class="my-order-name">Đơn hàng của tôi</div>
               </div>
             </div>
-           
+
           </div>
         </div>
         <div class="col-lg-8 col-12">
@@ -300,20 +279,17 @@
                 <h2>Hồ sơ của tôi</h2>
                 <div class="form-group">
                   <label for="fullname" class="form-label">Tên đầy đủ</label>
-                  <input id="fullname" name="fullname" type="text" placeholder="VD: Quốc Trung" class="form-control"
-                    value="Quốc Trung">
+                  <input id="fullname" name="fullname" type="text" placeholder="VD: Quốc Trung" class="form-control" value="Quốc Trung">
                   <span class="form-message"></span>
                 </div>
                 <div class="form-group">
                   <label for="email" class="form-label">Email</label>
-                  <input id="email" name="email" type="text" placeholder="VD: email@domain.com" class="form-control"
-                    value="abc@gmail.com">
+                  <input id="email" name="email" type="text" placeholder="VD: email@domain.com" class="form-control" value="abc@gmail.com">
                   <span class="form-message"></span>
                 </div>
                 <div class="form-group">
                   <label for="email" class="form-label">Địa chỉ</label>
-                  <input id="email" name="email" type="text" placeholder="VD: Nguyên Xá, Bắc Từ Liêm,Hà Nội" class="form-control"
-                    value="Nguyên Xá, Bắc Từ Liêm,Hà Nội">
+                  <input id="email" name="email" type="text" placeholder="VD: Nguyên Xá, Bắc Từ Liêm,Hà Nội" class="form-control" value="Nguyên Xá, Bắc Từ Liêm,Hà Nội">
                   <span class="form-message"></span>
                 </div>
                 <div class="form-group">
@@ -346,8 +322,7 @@
                   <label for="password-new" class="form-label">Mật khẩu mới</label>
                   <span class="show-hide-two"><i class="fas fa-eye fa-eye-2"></i></span>
                 </div>
-                <input id="password-new" name="password-new" type="password" placeholder="Nhập mật khẩu"
-                  class="form-control">
+                <input id="password-new" name="password-new" type="password" placeholder="Nhập mật khẩu" class="form-control">
                 <span class="form-message"></span>
               </div>
               <div class="form-group form-group-confirm-password">
@@ -355,8 +330,7 @@
                   <label for="password-confirm" class="form-label">Mật khẩu mới</label>
                   <span class="show-hide-three"><i class="fas fa-eye fa-eye-3"></i></span>
                 </div>
-                <input id="password-confirm" name="password-confirm" type="password" placeholder="Nhập mật khẩu"
-                  class="form-control">
+                <input id="password-confirm" name="password-confirm" type="password" placeholder="Nhập mật khẩu" class="form-control">
                 <span class="form-message"></span>
               </div>
               <button class="form-submit">Lưu</button>
@@ -413,7 +387,7 @@
       </div>
     </div>
   </div>
-  
+
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
@@ -489,7 +463,7 @@
 <script>
   const pass_field = document.querySelector('#password');
   const show_btn = document.querySelector('.fa-eye')
-  show_btn.addEventListener("click", function () {
+  show_btn.addEventListener("click", function() {
     if (pass_field.type === "password") {
       pass_field.type = "text";
       show_btn.classList.add("hide");
@@ -502,7 +476,7 @@
 <script>
   const pass_field2 = document.querySelector('#password-new');
   const show_btn2 = document.querySelector('.fa-eye-2')
-  show_btn2.addEventListener("click", function () {
+  show_btn2.addEventListener("click", function() {
     if (pass_field2.type === "password") {
       pass_field2.type = "text";
       show_btn2.classList.add("hide");
@@ -515,7 +489,7 @@
 <script>
   const pass_field3 = document.querySelector('#password-confirm');
   const show_btn3 = document.querySelector('.fa-eye-3')
-  show_btn3.addEventListener("click", function () {
+  show_btn3.addEventListener("click", function() {
     if (pass_field3.type === "password") {
       pass_field3.type = "text";
       show_btn3.classList.add("hide");

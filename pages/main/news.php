@@ -9,7 +9,7 @@ $query_show = mysqli_query($connect, $sql_news_list);
     <div class="">
         <div class="container">
             <div class="row mb-20" style="margin: 20px 0;" id="news">
-               
+
             </div>
         </div>
     </div>
@@ -29,38 +29,37 @@ $query_show = mysqli_query($connect, $sql_news_list);
     var page = 1;
     var apiNews = [
         <?php
-            $sizeOfPage = 6;
-            $currentPage = 1;
-            $cnt = 1;
-            while ($row = mysqli_fetch_array($query_show)) {
-        ?>
-        {
-            id: <?php echo $row['id'] ?>,
-            name: '<?php echo $row['title'] ?>',
-            description: ' <?php echo $row['short_description'] ?>',
-            img: 'admin/news_management/uploads/<?php echo $row['image'] ?>',
-            
-            page: <?php 
-                if($cnt <= $sizeOfPage) {
-                    echo $currentPage;
-                    $cnt++;
-                }
-                else{
-                    $cnt = 2;
-                    $currentPage++;
-                    echo $currentPage;
-                }
-                
-            ?>
-        },
+        $sizeOfPage = 6;
+        $currentPage = 1;
+        $cnt = 1;
+        while ($row = mysqli_fetch_array($query_show)) {
+        ?> {
+                id: <?php echo $row['id'] ?>,
+                name: '<?php echo $row['title'] ?>',
+                description: ' <?php echo $row['short_description'] ?>',
+                img: 'admin/news_management/uploads/<?php echo $row['image'] ?>',
+
+                page: <?php
+                        if ($cnt <= $sizeOfPage) {
+                            echo $currentPage;
+                            $cnt++;
+                        } else {
+                            $cnt = 2;
+                            $currentPage++;
+                            echo $currentPage;
+                        }
+
+                        ?>
+            },
         <?php
-            }
+        }
         ?>
     ]
     var listItem = document.querySelector('#news');
     console.log(listItem);
+
     function initRender() {
-        var listNews = apiNews.map(function (apiNew) {
+        var listNews = apiNews.map(function(apiNew) {
             if (apiNew.page == page) {
                 return `<div class="col-lg-4 col-md-6 col-sm-12 mb-20" style="margin-bottom: 20px">
                     <a href="index.php?quanly=news_detail&id=${apiNew.id}" class="product__new-item">
@@ -82,8 +81,9 @@ $query_show = mysqli_query($connect, $sql_news_list);
     }
     initRender();
     var btnLoadMore = document.querySelector('.loadmore-btn');
+
     function render() {
-        var listNews = apiNews.map(function (apiNew) {
+        var listNews = apiNews.map(function(apiNew) {
             if (apiNew.page == page) {
                 return `<div class="col-lg-4 col-md-6 col-sm-12 mb-20" style="margin-bottom: 20px">
                     <a href="index.php?quanly=news_detail&id=${apiNew.id}">
@@ -104,7 +104,7 @@ $query_show = mysqli_query($connect, $sql_news_list);
         $('#news').append(listNews);
     }
 
-    $(btnLoadMore).click(function () {
+    $(btnLoadMore).click(function() {
         page++;
         render();
         if (page > 3) {
@@ -114,4 +114,4 @@ $query_show = mysqli_query($connect, $sql_news_list);
     })
 </script>
 
-</html> 
+</html>

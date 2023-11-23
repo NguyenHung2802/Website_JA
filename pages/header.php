@@ -66,6 +66,18 @@ $query_nhomsp = mysqli_query($connect, $sql_nhomsp);
 if (isset($_POST['search-btn'])) {
     $search = $_POST['search'];
 }
+
+$sql_get_count = "SELECT COUNT(*) AS record_count FROM favorite_products";
+$query_get_count = mysqli_query($connect, $sql_get_count);
+
+// Số lượng bản ghi product 
+$count = mysqli_fetch_assoc($query_get_count);
+
+$sql_get_count_cart = "SELECT COUNT(*) AS record_count FROM cart_detail where idCart = 1";
+$query_get_count_cart = mysqli_query($connect, $sql_get_count_cart);
+
+// Số lượng bản ghi product 
+$count1 = mysqli_fetch_assoc($query_get_count_cart);
 ?>
 
 <header class="header">
@@ -82,10 +94,10 @@ if (isset($_POST['search-btn'])) {
                 <div class="col-6 login_link">
                     <ul class="header_link right m-auto">
                         <li>
-                            <a href="./Login.html"><i class="fas fa-sign-in-alt mr-3"></i>Đăng nhập</a>
+                            <a href="index.php?quanly=dangNhap"><i class="fas fa-sign-in-alt mr-3"></i>Đăng nhập</a>
                         </li>
                         <li>
-                            <a href="./registration.html"><i class="fas fa-user-plus mr-3" style="margin-left: 10px;"></i>Đăng kí</a>
+                            <a href="index.php?quanly=dangKy"><i class="fas fa-user-plus mr-3" style="margin-left: 10px;"></i>Đăng kí</a>
                         </li>
                     </ul>
                 </div>
@@ -100,14 +112,15 @@ if (isset($_POST['search-btn'])) {
                             <img width="150px" src="https://firebasestorage.googleapis.com/v0/b/n7-php.appspot.com/o/logo-shop-dien-thoai-7.png?alt=media&token=cfea5d67-44e4-42fe-b97b-bbea196a7c6e" alt="">
                         </a>
                     </div>
+
                     <div class="mobile_cart visible-sm visible-xs">
-                        <a href="./cart.html" class="header__second__cart--icon">
+                        <a href="index.php?quanly=cart" class="header__second__cart--icon">
                             <i class="fas fa-shopping-cart"></i>
-                            <span id="header__second__cart--notice" class="header__second__cart--notice">3</span>
+                            <span id="header__second__cart--notice" class="header__second__cart--notice"><?php echo $count1 ?></span>
                         </a>
-                        <a href="./listlike.html" class="header__second__like--icon">
+                        <a href="index.php?quanly=listlike" class="header__second__like--icon">
                             <i class="far fa-heart"></i>
-                            <span id="header__second__like--notice" class="header__second__like--notice">3</span>
+                            <span id="header__second__like-- notice" class="header__second__like--notice"><?php echo $count ?></span>
                         </a>
                     </div>
                 </div>
@@ -119,15 +132,15 @@ if (isset($_POST['search-btn'])) {
                 </div>
                 <div class="col-3 m-auto hidden-sm hidden-xs">
                     <div class="item-car clearfix">
-                        <a href="./cart.html" class="header__second__cart--icon">
+                        <a href="index.php?quanly=cart" class="header__second__cart--icon">
                             <i class="fas fa-shopping-cart"></i>
-                            <span id="header__second__cart--notice" class="header__second__cart--notice">3</span>
+                            <span id="header__second__cart--notice" class="header__second__cart--notice"><?php echo $count1['record_count'] ?></span>
                         </a>
                     </div>
                     <div class="item-like clearfix">
-                        <a href="./listlike.html" class="header__second__like--icon">
+                        <a href="index.php?quanly=listlike&page=1" class="header__second__like--icon">
                             <i class="far fa-heart"></i>
-                            <span id="header__second__like--notice" class="header__second__like--notice">3</span>
+                            <span id="header__second__like--notice" class="header__second__like--notice"><?php echo $count['record_count'] ?></span>
                         </a>
                     </div>
                 </div>
@@ -141,7 +154,7 @@ if (isset($_POST['search-btn'])) {
                     <a href="index.php" class="<?php echo isset($_GET['quanly'])  == null ? 'active' : '' ?>">Trang chủ</a>
                 </li>
 
-                <li class="header_nav-list-item"><a href="index.php?quanly=contact" class="<?php echo isset($_GET['quanly']) && $_GET['quanly'] == '' ? 'active' : '' ?>">Giới thiệu</a></li>
+                <li class="header_nav-list-item"><a href="index.php?quanly=gioithieu" class="<?php echo isset($_GET['quanly']) && $_GET['quanly'] == '' ? 'active' : '' ?>">Giới thiệu</a></li>
                 <li class="header_nav-list-item has-mega">
                     <a href="index.php?quanly=showAllProduct&page=1" class="<?php echo  isset($_GET['quanly']) && $_GET['quanly'] == 'showAllProduct' ? 'active' : '' ?>">Sản phẩm<i class="fas fa-angle-right" style="margin-left: 5px;"></i></a>
                     <div class="mega-content" style="overflow-x: hidden; width: 70%; top: 32px ">
