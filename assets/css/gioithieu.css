@@ -1,0 +1,58 @@
+.boss{
+    display: block;
+}
+.features-block{
+    border: unset;
+    background-color: unset;
+    padding: 16px 10px 0;
+    display:inline-block;
+}
+.features-block2{
+    display: flex;
+}
+.title{
+    font-size: 40px;
+    font-style: unset;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    height:80px;
+    padding: 20px;
+}
+.wrap-item{
+    display:flex;
+
+}
+.item .text-center{
+    width: 25%;
+}
+.fle-center{
+    text-align: center;
+}
+.content-mau{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+.content-mau1{
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: unset;
+}
+
+.detail{
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+}
+body{
+    line-height: 20px;
+    color: #444b52;
+}
+.flex-center, .flex-center-ver {
+    align-items: center;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
