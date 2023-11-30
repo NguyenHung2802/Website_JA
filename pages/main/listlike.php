@@ -16,27 +16,33 @@
         text-decoration: none;
         background-color: aquamarine;
     }
+
+    .active_pagination {
+        background-color: aquamarine !important;
+    }
 </style>
 <?php
+// Trang muốn lấy
 $currentPage = $_GET['page'];
 
 // Số lượng sản phẩm của 1 trang
 $quantityOfAPage = 4;
 
+// Limit và offset dùng phân trang
 $offset = ($currentPage - 1) * $quantityOfAPage;
+$limit = 4;
 
-if (isset($_GET['name'])) {
-    $groupName = $_GET['name'];
-    $titlePage = 'Danh mục sản phẩm: ' . $groupName;
-    $sql_dssp = "SELECT DISTINCT * FROM products WHERE byCompany = '$groupName' LIMIT $quantityOfAPage OFFSET $offset";
-    $url = 'nhomsp&name=' . $groupName . "&page=";
+if (isset($_GET['quanly']) && isset($_GET['page'])) {
+    $titlePage = 'Tất cả sản phẩm';
+    $sql_dssp = "SELECT DISTINCT * FROM favorite_products inner join products on favorite_products.idProduct = products.idProduct LIMIT $limit OFFSET $offset";
 }
 
+// Lấy  ra số trang tối đa cần dùng khi search hoặc xem tất cả sp
 $query_dssp = mysqli_query($connect, $sql_dssp);
-$sql_get_count = "SELECT COUNT(*) AS record_count FROM products where byCompany =  '$groupName'";
+$sql_get_count = "SELECT COUNT(*) AS record_count FROM favorite_products";
 $query_get_count = mysqli_query($connect, $sql_get_count);
 
-// Số lượng bản ghi product -> phục vụ phân trang
+// Số lượng bản ghi -> phục vụ phân trang
 $count = mysqli_fetch_assoc($query_get_count);
 
 // Số lượng trang cần có
@@ -81,7 +87,6 @@ $numberPage = round($count1 / $quantityOfAPage) < ($count1 / $quantityOfAPage) ?
                                         <i class="home-product-item__like-icon-empty far fa-heart"></i>
                                         <i class="home-product-item__like-icon-fill fas fa-heart"></i>
                                     </span>
-
                                     <?php
                                     $idProduct = $row_dssp['idProduct'];
                                     $sql_rate = "SELECT AVG(feedbacks.Rate) AS average_rate
@@ -105,7 +110,6 @@ $numberPage = round($count1 / $quantityOfAPage) < ($count1 / $quantityOfAPage) ?
                                         <?php
                                         }
                                         ?>
-
                                     </div>
                                     <span class="home-product-item__sold"><?php echo $row_dssp['sellNumber'] ?> đã bán</span>
                                 </div>
@@ -134,16 +138,16 @@ $numberPage = round($count1 / $quantityOfAPage) < ($count1 / $quantityOfAPage) ?
         $endPage = min($startPage + 2, $numberPage);
 
         if ($currentPage > 1) {
-            echo '<a class="link_pagination item_btn_pagination" href="index.php?quanly=' . $url . '1">&lt;&lt;</a>';
+            echo '<a class="link_pagination item_btn_pagination" href="index.php?quanly=listlike&page=1">&lt;&lt;</a>';
         }
 
         for ($i = $startPage; $i <= $endPage; $i++) {
             $activeClass = ($i == $currentPage) ? 'active_pagination' : '';
-            echo '<a class="link_pagination item_btn_pagination ' . $activeClass . '" href="index.php?quanly=' . $url . $i . '">' . $i . '</a>';
+            echo '<a class="link_pagination item_btn_pagination ' . $activeClass . '" href="index.php?quanly=listlike&page=' . $i . '">' . $i . '</a>';
         }
 
         if ($currentPage < $numberPage) {
-            echo '<a class="link_pagination item_btn_pagination" href="index.php?quanly=' . $url  . $numberPage . '">&gt;&gt;</a>';
+            echo '<a class="link_pagination item_btn_pagination" href="index.php?quanly=listlike&page=' . $numberPage . '">&gt;&gt;</a>';
         }
         ?>
     </div>

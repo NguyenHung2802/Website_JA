@@ -7,7 +7,7 @@ function khonghienthidanhmucluachon(){
     $(".header__category").addClass("undisplay");
 }
 // slide show
-
+console.log("Link success");
 // go to top
 var showGoToTop = 300;
 
