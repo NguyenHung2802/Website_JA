@@ -1,4 +1,46 @@
+<?php
+$message = "";
+$message_err = "";
+
+if (isset($_POST['dangky'])) {
+  $fullName = $_POST['fullname'];
+  $email = $_POST['email'];
+  $phone = $_POST['phone'];
+  $address =  $_POST['address'];
+  $password = md5($_POST['password']);
+  $password_confirmation = md5($_POST['password_confirmation']);
+  if (!$fullName || !$email || !$phone || !$address || !$password || !$password_confirmation) {
+    $message_err = "Vui lòng nhập đầy đủ thông tin.";
+  } elseif ($password != $password_confirmation) {
+    $message_err = "Mật khẩu nhập lại không đúng";
+  } else {
+
+    $sql_dangky = "INSERT INTO users(fullName,email,phone,address,password, isAdmin) VALUE('" . $fullName . "','" . $email . "','" . $phone . "','" . $address . "','" . $password . "', 0)";
+    $query_dangky = mysqli_query($connect, $sql_dangky);
+    if ($query_dangky) {
+      $message = "Đăng ký thành công. Tự động chuyển sang trang đăng nhập sau 3s...";
+      echo
+      "<script>
+      setTimeout(() => {
+        location.href = 'index.php?quanly=dangNhap'
+      }, 3000)
+      </script>";
+    }
+  }
+}
+?>
+
 <div class="container">
+  <div style="color: green;
+    font-size: 16px;
+    padding-top: 10px;">
+    <?php echo $message  ?>
+  </div>
+  <div style="color: red;
+    font-size: 16px;
+    padding-top: 10px;">
+    <?php echo $message_err  ?>
+  </div>
   <div class="registration__form">
     <div class="row">
       <div class="col-sm-12 col-lg-6">
@@ -11,24 +53,35 @@
           </div>
           <div class="form-group">
             <label for="email" class="form-label">Email</label>
-            <input id="email" name="email" type="text" placeholder="VD: email@domain.com" class="form-control">
+            <input id="email" name="email" type="email" placeholder="VD: email@domain.com" class="form-control">
+            <span class="form-message"></span>
+          </div>
+          <div class="form-group">
+            <label for="phone" class="form-label">Số điện thoại</label>
+            <input id="phone" name="phone" type="text" placeholder="VD: 0123456789" class="form-control">
+            <span class="form-message"></span>
+          </div>
+          <div class="form-group">
+            <label for="address" class="form-label">Địa chỉ</label>
+            <input id="address" name="address" type="text" placeholder="VD: 132 Nguyên Xá, Minh Khai, Bắc Từ Liêm, Hà Nội" class="form-control">
             <span class="form-message"></span>
           </div>
           <div class="form-group matkhau">
             <label for="password" class="form-label">Mật khẩu</label>
             <input id="password" name="password" type="password" placeholder="Nhập mật khẩu" class="form-control">
-            <span class="show-hide"><i class="fas fa-eye"></i></span>
             <span class="form-message"></span>
           </div>
 
           <div class="form-group matkhau">
             <label for="password_confirmation" class="form-label">Nhập lại mật khẩu</label>
             <input id="password_confirmation" name="password_confirmation" placeholder="Nhập lại mật khẩu" type="password" class="form-control">
-            <span class="show-hide-two"><i class="fas fa-eye fa-eye-2"></i></span>
             <span class="form-message"></span>
           </div>
 
-          <button class="form-submit btn-blocker" style="border-radius: unset;">Đăng ký <i class="fas fa-arrow-right" style="font-size: 16px;margin-left: 10px;"></i></button>
+          <button class="form-submit btn-blocker" style="border-radius: unset;" name="dangky">
+            Đăng ký
+            <i class="fas fa-arrow-right" style="font-size: 16px;margin-left: 10px;"></i>
+          </button>
           <p style="font-size: 16px;margin: 10px 0;">Bạn đã có tài khoản? <a href="index.php?quanly=dangNhap" style="color: black; font-weight: bold">Đăng nhập</a></p>
         </form>
       </div>

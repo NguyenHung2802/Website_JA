@@ -93,12 +93,28 @@ $count1 = mysqli_fetch_assoc($query_get_count_cart);
                 </div>
                 <div class="col-6 login_link">
                     <ul class="header_link right m-auto">
-                        <li>
-                            <a href="index.php?quanly=dangNhap"><i class="fas fa-sign-in-alt mr-3"></i>Đăng nhập</a>
-                        </li>
-                        <li>
-                            <a href="index.php?quanly=dangKy"><i class="fas fa-user-plus mr-3" style="margin-left: 10px;"></i>Đăng kí</a>
-                        </li>
+                        <?php
+                        if (isset($_SESSION['id_user'])) {
+                        ?>
+
+                            <li>
+                                <a href="index.php?quanly=thongtin"><i class="fa fa-user mr-3"></i>Thông tin</a>
+                            </li>
+                            <li>
+                                <a href="index.php?quanly=dangXuat"><i class="fa fa-sign-out-alt mr-3" style="margin-left: 10px;"></i>Đăng xuất</a>
+                            </li>
+                        <?php
+                        } else {
+                        ?>
+                            <li>
+                                <a href="index.php?quanly=dangNhap"><i class="fas fa-sign-in-alt mr-3"></i>Đăng nhập</a>
+                            </li>
+                            <li>
+                                <a href="index.php?quanly=dangKy"><i class="fas fa-user-plus mr-3" style="margin-left: 10px;"></i>Đăng kí</a>
+                            </li>
+                        <?php
+                        }
+                        ?>
                     </ul>
                 </div>
             </div>

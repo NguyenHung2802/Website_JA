@@ -47,6 +47,13 @@
         if ($bientam == 'productDetail') {
             include("main/ProductDetail.php");
         }
+        if ($bientam == 'thongtin') {
+            include("main/infor.php");
+        }
+        if ($bientam == 'dangXuat') {
+            unset($_SESSION['id_user']);
+            echo "<script>location.href = 'index.php'</script>";
+        }
         ?>
     </div>
 </div>
