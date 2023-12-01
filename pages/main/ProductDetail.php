@@ -282,7 +282,9 @@ $product = mysqli_fetch_array($query_get_product);
               <button class="shopnow">Mua ngay</button>
               <span class="home-product-item__like home-product-item__like--liked">
                 <i class="home-product-item__like-icon-empty far fa-heart" style="font-size: 24px;margin-top: 7px;"></i>
-                <i class="home-product-item__like-icon-fill fas fa-heart" style="font-size: 24px;margin-top: 7px;"></i>
+                <!-- <i class="home-product-item__like-icon-fill fas fa-heart" style="font-size: 24px;margin-top: 7px;"></i> -->
+                <a href="pages/main/sanphamyeuthich.php?id=<?php echo $product['idProduct'];?>"><i class="home-product-item__like-icon-fill fas fa-heart"></i></a>
+                
               </span>
             </div>
           </div>

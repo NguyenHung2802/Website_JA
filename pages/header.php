@@ -194,7 +194,15 @@ $count1 = mysqli_fetch_assoc($query_get_count_cart);
                         <a href="index.php?quanly=listlike&page=1" class="header__second__like--icon">
                             <i class="far fa-heart"></i>
                             <span id="header__second__like--notice" class="header__second__like--notice">
-                                <?php echo $count['record_count'] ?>
+                                <?php
+                                    if($count == null){
+                                        echo 0;
+                                    }
+                                    else{
+                                        echo $count['record_count'];
+                                    }
+                                ?>
+                               
                             </span>
                         </a>
                     </div>
