@@ -116,9 +116,17 @@
                                         $query = mysqli_query($connect, $sql_cart_detail);
                                         $tongTien = mysqli_fetch_array($query);
                                         ?>
+                                        <?php
+                                            $totalPay = 0;
+                                            if(isset($_SESSION['cart'])){
+                                                foreach($_SESSION['cart'] as $cart_item){
+                                                    $totalPay += $cart_item['soluong'] * $cart_item['sellingPrice'];
+                                                }
+                                            }
+                                        ?>
                                         <div class="row row-sliderbar-footer">
                                             <div class="col-6"><span>Tạm tính:</span></div>
-                                            <div class="col-6 text-right"><span>625,000₫</span></div>
+                                            <div class="col-6 text-right"><span><?php echo number_format($totalPay,0,',','.')?>₫</span></div>
                                         </div>
                                         <div class="row row-sliderbar-footer">
                                             <div class="col-6"><span>Phí vận chuyển</span></div>
@@ -128,7 +136,7 @@
                                     <div class="total">
                                         <div class="row row-sliderbar-footer">
                                             <div class="col-6"><span>Tổng cộng:</span></div>
-                                            <div class="col-6 text-right"><span>625,000₫</span></div>
+                                            <div class="col-6 text-right"><span><?php echo number_format($totalPay,0,',','.')?>₫</span></div>
                                         </div>
                                     </div>
                                 </div>
