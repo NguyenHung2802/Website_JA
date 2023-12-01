@@ -132,7 +132,10 @@ $count1 = mysqli_fetch_assoc($query_get_count_cart);
                     <div class="mobile_cart visible-sm visible-xs">
                         <a href="index.php?quanly=cart" class="header__second__cart--icon">
                             <i class="fas fa-shopping-cart"></i>
-                            <span id="header__second__cart--notice" class="header__second__cart--notice"><?php echo $count1 ?></span>
+                            <span id="header__second__cart--notice" class="header__second__cart--notice">
+                                 <?php echo $count1 ?>
+
+                            </span>
                         </a>
                         <a href="index.php?quanly=listlike" class="header__second__like--icon">
                             <i class="far fa-heart"></i>
@@ -150,7 +153,18 @@ $count1 = mysqli_fetch_assoc($query_get_count_cart);
                     <div class="item-car clearfix">
                         <a href="index.php?quanly=cart" class="header__second__cart--icon">
                             <i class="fas fa-shopping-cart"></i>
-                            <span id="header__second__cart--notice" class="header__second__cart--notice"><?php echo $count1['record_count'] ?></span>
+                            <span id="header__second__cart--notice" class="header__second__cart--notice">
+                                <!-- <?php echo $count1['record_count'] ?> -->
+                                <?php 
+                                    $cnt = 0;
+                                    if (isset($_SESSION['cart'])) {
+                                        foreach($_SESSION['cart'] as $cart_item){
+                                            $cnt += $cart_item['soluong'];
+                                        }
+                                    }
+                                    echo $cnt;
+                                ?>
+                            </span>
                         </a>
                     </div>
                     <div class="item-like clearfix">

@@ -1,3 +1,10 @@
+<?php
+        if(isset($_SESSION['cart'])){
+
+            
+        }
+
+?>
 <style>
   form.example input[type=text] {
     padding: 10px;
@@ -28,6 +35,23 @@
     content: "";
     clear: both;
     display: table;
+  }
+
+  .control-quantity{
+    text-decoration: none;
+    border: 1px solid #333;
+    height: 30px;
+    width: 35px;
+    cursor: pointer;
+    color: #333;
+    font-size: 82px;
+    display: block;
+    box-sizing: border-box;
+  }
+  .control-quantity:hover{
+    text-decoration: none;
+    background-color: #333;
+    color: #ffffff;
   }
 
   /* Mobile & tablet  */
@@ -90,16 +114,18 @@
 </style>
 
 <body>
-  <?php
-  $sql_cart_detail = "SELECT * FROM cart_detail inner join products on cart_detail.idProduct = products.idProduct where idCart = 1 ";
-  $query_cart_detail = mysqli_query($connect, $sql_cart_detail);
-  ?>
+  
   <!-- content -->
   <div class="cart">
     <div class="container">
       <div class="cart-wrap">
         <div class="cart-content">
           <form action="" class="form-cart">
+            <?php
+              if(isset($_SESSION['cart'])){
+
+              
+            ?>
             <div class="cart-body-left">
               <div class="cart-heding hidden-xs">
                 <div class="row cart-row">
@@ -116,60 +142,81 @@
               </div>
               <div class="cart-body">
                 <?php
-                while ($row_listcart = mysqli_fetch_array($query_cart_detail)) {
+                  
+                    $i = 0;
+                    $tongtien = 0;
+                    foreach($_SESSION['cart'] as $cart_item){
+                      $thanhtien = $cart_item['soluong'] * $cart_item['sellingPrice'];
+                      $tongtien+=$thanhtien;
+                      $i++;  
                 ?>
 
                   <div class="row cart-body-row cart-body-row-1" style="align-items: center;">
                     <div class="col-md-11 col-10" style="text-align: center;">
                       <div class="row card-info" style="align-items: center;">
                         <div class="col-md-2 col-12 card-info-img">
-                          <a href=""><img class="cart-img" src="<?php echo $row_listcart['image'] ?>" alt=""></a>
+                          <a href=""><img class="cart-img" src="<?php echo $cart_item['image'] ?>" alt=""></a>
                         </div>
                         <div class="col-md-3 col-12">
-                          <a href="" class="cart-name">
-                            <h5><?php echo $row_listcart['name'] ?></h5>
+                          <a href="index.php?quanly=productDetail&id=<?php echo $cart_item['id'] ?>" class="cart-name">
+                            <h5><?php echo $cart_item['name'] ?></h5>
                           </a>
                         </div>
                         <div class="col-md-2 col-12" style="font-size: 16px;">
-                          <span><?php echo $row_listcart['sellingPrice'] ?></span>
+                          <span><?php echo number_format($cart_item['sellingPrice'],0,',','.')  ?></span>
                         </div>
                         <div class="col-md-3 col-12">
                           <div class="cart-quantity">
-                            <input type="button" value="-" class="control" onclick="tru(<?php echo $row_listcart['idProduct'] ?>, <?php echo $row_listcart['sellingPrice'] ?>)">
-                            <input type="text" value="<?php echo $row_listcart['quantity'] ?>" class="text-input" id="text_so_luong-<?php echo $row_listcart['idProduct'] ?>">
-                            <input type="button" value="+" class="control" onclick="cong(<?php echo $row_listcart['idProduct'] ?>, <?php echo $row_listcart['sellingPrice'] ?>)">
+                            <!-- <input type="button" value="-" class="control"> -->
+                            <a class="control-quantity" href="pages/main/suagiohang.php?tru=<?php echo $cart_item['id']?>">-</a>
+                            <input type="text" value="<?php echo $cart_item['soluong'] ?>" class="text-input">
+                            <!-- <input type="button" value="+" class="control"> -->
+                            <a class="control-quantity" href="pages/main/suagiohang.php?cong=<?php echo $cart_item['id']?>">+</a>
                           </div>
                         </div>
                         <div class="col-md-2 col-12 hidden-xs" style="font-size: 16px;">
                           <?php
-                          $sellingPrice = $row_listcart['sellingPrice'];
-                          $quantity = $row_listcart['quantity'];
+                          $sellingPrice = $cart_item['sellingPrice'];
+                          $quantity = $cart_item['soluong'];
                           $total = $sellingPrice * $quantity;
                           ?>
-                          <span class="txt-price txt_price-<?php echo $row_listcart['idProduct'] ?>"><?php echo $total ?></span>
+                          <span class="txt-price txt_price-<?php echo $cart_item['id'] ?>"><?php echo number_format($total,0,',','.')  ?></span>
                         </div>
                       </div>
                     </div>
                     <div class="col-md-1 col-2 text-right">
-                      <a onclick="xoa(1)"><i class="fas fa-trash"></i></a>
+                      <!-- <a onclick="xoa(1)"><i class="fas fa-trash"></i></a> -->
+                      <a href="pages/main/xoagiohang.php?xoa=<?php echo $cart_item['id']?>"><i class="fas fa-trash"></i></a>
                     </div>
                   </div>
                 <?php
-                }
+                    }
                 ?>
-
+               
+                
               </div>
             </div>
             <div class="cart-body-right">
               <div class="cart-total">
                 <label for="">Thành tiền:</label>
-                <span class="total__price"></span>
+                <span class="total__price"><?php echo number_format($tongtien,0,',','.') ?></span>
               </div>
               <div class="cart-buttons">
                 <a style="display: block; text-align: center;" href="index.php?quanly=pay" class="chekout">THANH TOÁN</a>
               </div>
             </div>
+            <?php
+                  }else{
+
+                  
+                
+                ?>
+                <h3>Chưa có sản phẩm trong giỏ hàng</h3>
+                <?php
+                  }
+                ?>
             <div class="cart-footer">
+              
               <div class="row cart-footer-row">
                 <div class="col-1"></div>
                 <div class="col-11 continue">
@@ -187,16 +234,16 @@
   </div>
   </div>
   <script>
-    function tongTien() {
-      var priceProducts = document.querySelectorAll(".txt-price");
-      var totalPrice = document.querySelector(".total__price");
-      var tongTien = 0;
-      priceProducts.forEach(element => {
-        tongTien += parseInt(element.textContent);
-      });
-      totalPrice.innerHTML = tongTien + ' đ';
-    };
-    tongTien();
+    // function tongTien() {
+    //   var priceProducts = document.querySelectorAll(".txt-price");
+    //   var totalPrice = document.querySelector(".total__price");
+    //   var tongTien = 0;
+    //   priceProducts.forEach(element => {
+    //     tongTien += parseInt(element.textContent);
+    //   });
+    //   totalPrice.innerHTML = tongTien + ' đ';
+    // };
+    // tongTien();
 
     function tru(productId, sellingPrice) {
       var inputElement = document.getElementById("text_so_luong-" + productId);

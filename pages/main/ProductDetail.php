@@ -30,7 +30,9 @@
   <link rel="stylesheet" href="./assets/css/productdetail.css">
   <link rel="stylesheet" href="./assets/css/reponsive1.css">
   <link rel="icon" href="./assets/img/logo/main.png" type="image/x-icon" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous"></script>
 </head>
 <style>
   form.example input[type=text] {
@@ -207,70 +209,87 @@ $product = mysqli_fetch_array($query_get_product);
   <div class="overlay hidden"></div>
 
   <!-- product detail -->
-  <div class="container">
-    <div class="product__detail">
-      <div class="row product__detail-row">
-        <div class="col-lg-6 col-12 daonguoc">
-          <div class="img-product">
-          </div>
+  <form method="POST" action="pages/main/themgiohang.php?idsanpham=<?php echo $product['idProduct'] ?>">
+    <div class="container">
+      <div class="product__detail">
+        <div class="row product__detail-row">
+          <div class="col-lg-6 col-12 daonguoc">
+            <div class="img-product">
+            </div>
 
-          <div id="main-img" style="cursor: pointer;">
-            <img src="<?php echo $product['image'] ?>" class="big-img" alt="ảnh chính" id="img-main">
-            <div class="sale-off sale-off-2">
-              <span class="sale-off-percent"><?php echo round(100 - ($product['sellingPrice'] / $product['costPrice']) * 100) ?>
-                %</span>
-              <span class="sale-off-label">GIẢM</span>
+            <div id="main-img" style="cursor: pointer;">
+              <img src="<?php echo $product['image'] ?>" class="big-img" alt="ảnh chính" id="img-main">
+              <div class="sale-off sale-off-2">
+                <span class="sale-off-percent">
+                  <?php echo round(100 - ($product['sellingPrice'] / $product['costPrice']) * 100) ?>
+                  %
+                </span>
+                <span class="sale-off-label">GIẢM</span>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-lg-6 col-12" style="padding: 10px">
+          <div class="col-lg-6 col-12" style="padding: 10px">
 
-          <div class="product__name" style="padding: 10px; font-size: 40px">
-            <b><?php echo $product['name'] ?></b>
-          </div>
-
-
-          <div class="product__price" style="padding: 10px">
-
-            <h2 style="font-size: 30px"><?php echo $product['sellingPrice'] ?>đ</h2>
-          </div>
-
-
-          <div class="price-old" style="padding: 10px">
-            Giá gốc:
-            <del><?php echo $product['costPrice'] ?></del>
-            <span class="discount"><?php echo round(100 - ($product['sellingPrice'] / $product['costPrice']) * 100) ?>%</span>
-          </div>
-
-          <div class="product__RAM" style="padding: 10px">
-            <h2>RAM: <?php echo $product['RAM'] ?></h2>
-          </div>
-          <div class="product__ROM" style="padding: 10px">
-            <h2>Dung lượng lưu trữ: <?php echo $product['ROM'] ?></h2>
-          </div>
-
-
-
-          <div class="product__wrap">
-            <div class="product__amount">
-              <label for="">Số lượng: </label>
-              <input type="button" value="-" class="control" onclick="tru()" id="cong">
-              <input type="text" value="1" class="text-input" id="text_so_luong" onkeypress='validate(event)'>
-              <input type="button" value="+" class="control" onclick="cong()">
+            <div class="product__name" style="padding: 10px; font-size: 40px">
+              <b>
+                <?php echo $product['name'] ?>
+              </b>
             </div>
-            <button class="add-cart" onclick="fadeInModal()">Thêm vào giỏ</button>
-          </div>
-          <div class="product__shopnow">
-            <button class="shopnow">Mua ngay</button>
-            <span class="home-product-item__like home-product-item__like--liked">
-              <i class="home-product-item__like-icon-empty far fa-heart" style="font-size: 24px;margin-top: 7px;"></i>
-              <i class="home-product-item__like-icon-fill fas fa-heart" style="font-size: 24px;margin-top: 7px;"></i>
-            </span>
+
+
+            <div class="product__price" style="padding: 10px">
+
+              <h2 style="font-size: 30px">
+                <?php echo $product['sellingPrice'] ?>đ
+              </h2>
+            </div>
+
+
+            <div class="price-old" style="padding: 10px">
+              Giá gốc:
+              <del>
+                <?php echo $product['costPrice'] ?>
+              </del>
+              <span class="discount">
+                <?php echo round(100 - ($product['sellingPrice'] / $product['costPrice']) * 100) ?>%
+              </span>
+            </div>
+
+            <div class="product__RAM" style="padding: 10px">
+              <h2>RAM:
+                <?php echo $product['RAM'] ?>
+              </h2>
+            </div>
+            <div class="product__ROM" style="padding: 10px">
+              <h2>Dung lượng lưu trữ:
+                <?php echo $product['ROM'] ?>
+              </h2>
+            </div>
+
+            <div class="product__wrap">
+              <div class="product__amount">
+                <label for="">Số lượng: </label>
+
+                <input type="button" value="-" class="control" onclick="tru(1)">
+                <input type="text" value="1" class="text-input" name="soluong" id="text_so_luong-1"
+                  onkeypress='validate(event)'>
+                <input type="button" value="+" class="control" onclick="cong(1)">
+              </div>
+              <button type="submit" name="themgiohang" class="add-cart" onclick="fadeInModal()">Thêm vào giỏ</button>
+
+            </div>
+            <div class="product__shopnow">
+              <button class="shopnow">Mua ngay</button>
+              <span class="home-product-item__like home-product-item__like--liked">
+                <i class="home-product-item__like-icon-empty far fa-heart" style="font-size: 24px;margin-top: 7px;"></i>
+                <i class="home-product-item__like-icon-fill fas fa-heart" style="font-size: 24px;margin-top: 7px;"></i>
+              </span>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </form>
   <div class="product__describe">
 
     <div class="container">
@@ -282,22 +301,34 @@ $product = mysqli_fetch_array($query_get_product);
         <div class="product_specifications" style="font-size: 16px">
           <h3 class="name__product">Thông số kĩ thuật</h3>
           <div class="product__screen">
-            <p>Màn hình: <?php echo $product['screen'] ?></p>
+            <p>Màn hình:
+              <?php echo $product['screen'] ?>
+            </p>
           </div>
           <div class="product__camera">
-            <p>Camera: <?php echo $product['camera'] ?></p>
+            <p>Camera:
+              <?php echo $product['camera'] ?>
+            </p>
           </div>
           <div class="product__CPU">
-            <p>CPU: <?php echo $product['CPU'] ?></p>
+            <p>CPU:
+              <?php echo $product['CPU'] ?>
+            </p>
           </div>
           <div class="product__RAM">
-            <p>RAM: <?php echo $product['RAM'] ?></p>
+            <p>RAM:
+              <?php echo $product['RAM'] ?>
+            </p>
           </div>
           <div class="product__ROM">
-            <p>Dung lượng lưu trữ: <?php echo $product['ROM'] ?></p>
+            <p>Dung lượng lưu trữ:
+              <?php echo $product['ROM'] ?>
+            </p>
           </div>
           <div class="product__battery">
-            <p>Dung lượng pin: <?php echo $product['battery'] ?> mAh</p>
+            <p>Dung lượng pin:
+              <?php echo $product['battery'] ?> mAh
+            </p>
           </div>
 
         </div>
@@ -339,32 +370,41 @@ $product = mysqli_fetch_array($query_get_product);
               <?php
               while ($row_listrate = mysqli_fetch_array($query_rate)) {
                 $rate = $row_listrate['Rate'];
-              ?>
+                ?>
                 <div style="display: flex;margin-bottom: 15px">
-                  <img class=" comment-img" src="https://th.bing.com/th/id/R.3f0121e1219e92931a593d9de465b0d3?rik=BOH%2bpiXst89hLg&pid=ImgRaw&r=0" alt="">
+                  <img class=" comment-img"
+                    src="https://th.bing.com/th/id/R.3f0121e1219e92931a593d9de465b0d3?rik=BOH%2bpiXst89hLg&pid=ImgRaw&r=0"
+                    alt="">
                   <div class="comment__content">
                     <div class="comment__content-heding">
-                      <h4 class="comment__content-name"><?php echo $row_listrate['fullName'] ?></h4>
-                      <span class="comment__content-time" style="padding-top: 2px"><?php echo $row_listrate['createdAt'] ?></span>
+                      <h4 class="comment__content-name">
+                        <?php echo $row_listrate['fullName'] ?>
+                      </h4>
+                      <span class="comment__content-time" style="padding-top: 2px">
+                        <?php echo $row_listrate['createdAt'] ?>
+                      </span>
                     </div>
-                    <div class="home-product-item__rating" style="font-size: 14px;transform-origin: left;margin-bottom: 5px">
+                    <div class="home-product-item__rating"
+                      style="font-size: 14px;transform-origin: left;margin-bottom: 5px">
                       <!-- Đoạn này là để xem đáh giá bn sao và hiển thị số sao tương ứng -->
                       <?php
                       for ($i = 0; $i < 5; $i++) {
                         $starClass = ($i < $rate ? "home-product-item__star--gold" : "");
-                      ?>
+                        ?>
                         <i class="fas fa-star <?= $starClass ?>"></i>
-                      <?php
+                        <?php
                       }
                       ?>
                       <!-- end -->
                     </div>
                     <div class="comment__content-content">
-                      <span><?php echo $row_listrate['content'] ?></span>
+                      <span>
+                        <?php echo $row_listrate['content'] ?>
+                      </span>
                     </div>
                   </div>
                 </div>
-              <?php
+                <?php
               }
               ?>
             </div>
@@ -399,7 +439,7 @@ $product = mysqli_fetch_array($query_get_product);
   <script src="./assets/js/main.js"></script>
   <script src="./assets/js/zoomsl.js"></script>
   <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
       $(".big-img").imagezoomsl({
         zoomrange: [3, 3]
 

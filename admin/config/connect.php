@@ -1,5 +1,5 @@
 <?php
-$severname = "localhost";
+$severname = "localhost:3310";
 $username = "root";
 $password = "";
 $database = "n7_php_web_sell_phone";
