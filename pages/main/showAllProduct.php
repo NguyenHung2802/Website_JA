@@ -102,6 +102,7 @@ $numberPage = round($count1 / $quantityOfAPage) < ($count1 / $quantityOfAPage) ?
                                     <span class="home-product-item__like home-product-item__like--liked">
                                         <i class="home-product-item__like-icon-empty far fa-heart"></i>
                                         <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                                        <!-- <a href="pages/main/sanphamyeuthich.php?idSanPham=<?php echo $row_dssp['id']?>"><i class="home-product-item__like-icon-fill fas fa-heart"></i></a> -->
                                     </span>
                                     <?php
                                     // Xử lý việc tính sao trung bình của mỗi sp và hiển thị ra màn hình

@@ -32,9 +32,9 @@ $quantityOfAPage = 4;
 $offset = ($currentPage - 1) * $quantityOfAPage;
 $limit = 4;
 
-if (isset($_GET['quanly']) && isset($_GET['page'])) {
+if (isset($_GET['quanly']) && isset($_GET['page']) && isset($_SESSION['id_user'])) {
     $titlePage = 'Tất cả sản phẩm';
-    $sql_dssp = "SELECT DISTINCT * FROM favorite_products inner join products on favorite_products.idProduct = products.idProduct LIMIT $limit OFFSET $offset";
+    $sql_dssp = "SELECT DISTINCT * FROM favorite_products inner join products on favorite_products.idProduct = products.idProduct WHERE idUser=".$_SESSION['id_user']." LIMIT $limit OFFSET $offset";
 }
 
 // Lấy  ra số trang tối đa cần dùng khi search hoặc xem tất cả sp

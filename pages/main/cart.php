@@ -169,7 +169,7 @@
                           <div class="cart-quantity">
                             <!-- <input type="button" value="-" class="control"> -->
                             <a class="control-quantity" href="pages/main/suagiohang.php?tru=<?php echo $cart_item['id']?>">-</a>
-                            <input type="text" value="<?php echo $cart_item['soluong'] ?>" class="text-input">
+                            <input type="text" value="<?php echo $cart_item['soluong'] ?>" class="text-input"  onkeypress='validate(event)'>
                             <!-- <input type="button" value="+" class="control"> -->
                             <a class="control-quantity" href="pages/main/suagiohang.php?cong=<?php echo $cart_item['id']?>">+</a>
                           </div>

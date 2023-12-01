@@ -113,7 +113,9 @@ $query_dssphot = mysqli_query($connect, $sql_dssphot);
                     <div class="home-product-item__action">
                       <span class="home-product-item__like home-product-item__like--liked">
                         <i class="home-product-item__like-icon-empty far fa-heart"></i>
-                        <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                        <!-- <i class="home-product-item__like-icon-fill fas fa-heart"></i> -->
+                        <a href="pages/main/sanphamyeuthich.php?id=<?php echo $row_dsspnew['idProduct'];?>"><i class="home-product-item__like-icon-fill fas fa-heart"></i></a>
+
                       </span>
 
                       <?php
@@ -191,7 +193,9 @@ $query_dssphot = mysqli_query($connect, $sql_dssphot);
                     <div class="home-product-item__action">
                       <span class="home-product-item__like home-product-item__like--liked">
                         <i class="home-product-item__like-icon-empty far fa-heart"></i>
-                        <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                        <!-- <i class="home-product-item__like-icon-fill fas fa-heart"></i> -->
+                        <a href="pages/main/sanphamyeuthich.php?id=<?php echo $row_dssphot['idProduct'];?>"><i class="home-product-item__like-icon-fill fas fa-heart"></i></a>
+
                       </span>
 
                       <?php
@@ -326,7 +330,8 @@ $query_dssphot = mysqli_query($connect, $sql_dssphot);
                       <div class="home-product-item__action">
                         <span class="home-product-item__like home-product-item__like--liked">
                           <i class="home-product-item__like-icon-empty far fa-heart"></i>
-                          <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                          <!-- <i class="home-product-item__like-icon-fill fas fa-heart"></i> -->
+                          <a href="pages/main/sanphamyeuthich.php?id=<?php echo $row_dssp['idProduct'];?>"><i class="home-product-item__like-icon-fill fas fa-heart"></i></a>
                         </span>
 
                         <?php
