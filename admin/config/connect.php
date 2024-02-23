@@ -1,8 +1,8 @@
 <?php
-$severname = "localhost:3310";
+$severname = "localhost";
 $username = "root";
 $password = "";
-$database = "n7_php_web_sell_phone";
+$database = "website_ja";
 
 $connect = new mysqli($severname, $username, $password, $database);
 if (mysqli_connect_errno()) {

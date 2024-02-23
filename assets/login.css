@@ -3,6 +3,11 @@
 .registration__form {
     margin-top: 20px;
 }
+.login__form{
+    padding: 40px !important;
+
+}
+
 .heading {
     text-align: start;
     font-weight: 600;

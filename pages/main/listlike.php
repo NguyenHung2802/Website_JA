@@ -155,5 +155,9 @@ if($count != null){
 </div>
 </div>
 <?php
-    }
+} else {
+?>
+    <h2 style= "padding: 28px 0 0 20% ;margin-top: 170px !important" >Không có sản phẩm yêu thích!</h2>
+<?php
+}
 ?>

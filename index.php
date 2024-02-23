@@ -24,6 +24,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/gioithieu.css">
+    <link rel="stylesheet" href="assets/css/trilieu.css">
+    <link rel="stylesheet" href="assets/css/daotao.css">
+    <link rel="stylesheet" href="assets/css/sukien.css">
+    <link rel="stylesheet" href="assets/css/contact.css">
     <link rel="stylesheet" href="assets/css/login.css">
     <link rel="stylesheet" href="assets/css/productdetail.css">
     <link rel="stylesheet" href="assets/css/news.css">

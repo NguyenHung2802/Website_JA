@@ -3,10 +3,16 @@
         display: flex;
     }
 
+    .wrap_btn_pagination .link_pagination{
+        font-size: 17px !important;
+        border-radius: 50%;
+    }
+
     .item_btn_pagination {
         text-align: center;
         height: 40px;
         width: 40px;
+        padding: 6px;
         line-height: 40px;
         background-color: #ccc;
         margin: 0 4px;
@@ -14,11 +20,15 @@
 
     .link_pagination:hover {
         text-decoration: none;
-        background-color: aquamarine;
+        color: #FFFFFF !important;
+        background-color: #000;
+        opacity: 0.2;
     }
 
     .active_pagination {
-        background-color: aquamarine !important;
+        color: #FFFFFF !important;
+        background-color: #000 !important;
+
     }
 </style>
 <?php
@@ -69,8 +79,33 @@ $numberPage = round($count1 / $quantityOfAPage) < ($count1 / $quantityOfAPage) ?
 
 <div class="container">
 
+    <div class="topdistance"></div>
     <div class="product__yml">
-        <h3 class="product__yml title-product"><?php echo $titlePage ?></h3>
+        <div class="product__yml-ma" style="display: flex; align-items: center; justify-content: space-between; ">
+            <div class="col-3" style="font-size: 16px;">
+                <span>Sắp xếp theo:</span>
+                <select id="sapxepSelect" style="margin: 0 12px; padding: 8px">
+                    <option value="DEFAULT">---Mặc định---</option>
+                    <option value="ASC">Thấp đến cao</option>
+                    <option value="DESC">Cao đến thấp</option>
+                </select>
+            </div>
+
+            <div class="col-3 m-auto hidden-sm hidden-xs">
+                <div class="item-car clearfix">
+                    <a href="index.php?quanly=cart" class="header__second__cart--icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="header__second__cart--notice" class="header__second__cart--notice"><?php echo isset($count1['record_count']) ? $count1['record_count'] : 0 ?></span>
+                    </a>
+                </div>
+                <div class="item-like clearfix">
+                    <a href="index.php?quanly=listlike&page=1" class="header__second__like--icon">
+                        <i class="far fa-heart"></i>
+                        <span id="header__second__like--notice" class="header__second__like--notice"><?php echo isset($count['record_count']) ? $count['record_count'] : 0 ?></span>
+                    </a>
+                </div>
+            </div>
+        </div>
         <div class="row">
             <?php
             while ($row_dssp = mysqli_fetch_array($query_dssp)) {
