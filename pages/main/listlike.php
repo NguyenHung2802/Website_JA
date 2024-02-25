@@ -3,10 +3,16 @@
         display: flex;
     }
 
+    .wrap_btn_pagination .link_pagination{
+        font-size: 17px !important;
+        border-radius: 50%;
+    }
+
     .item_btn_pagination {
         text-align: center;
         height: 40px;
         width: 40px;
+        padding: 6px;
         line-height: 40px;
         background-color: #ccc;
         margin: 0 4px;
@@ -14,12 +20,11 @@
 
     .link_pagination:hover {
         text-decoration: none;
-        background-color: aquamarine;
+        color: #FFFFFF !important;
+        background-color: #000;
+        opacity: 0.2;
     }
 
-    .active_pagination {
-        background-color: aquamarine !important;
-    }
 </style>
 <?php
 // Trang muốn lấy
@@ -54,9 +59,9 @@ if($count != null){
 
 ?>
 <div class="container">
-
+<div class="topdistance"></div>
 <div class="product__yml">
-    <h3 class="product__yml title-product"><?php echo $titlePage ?></h3>
+    <h3 class="product__yml title-product">Sản phẩm yêu thích</h3>
     <div class="row">
         <?php
         while ($row_dssp = mysqli_fetch_array($query_dssp)) {
@@ -65,7 +70,7 @@ if($count != null){
                 <a href="index.php?quanly=productDetail&id=<?php echo $row_dssp['idProduct'] ?>" class="product__new-item">
                     <div class="card" style="width: 100%">
                         <div>
-                            <img class="card-img-top" src="<?php echo $row_dssp['image'] ?>" alt="Card image cap">
+                            <img class="card-img-top" src="./img/product/<?php echo $row_dssp['image'] ?>" alt="Card image cap">
                             <form action="" class="hover-icon hidden-sm hidden-xs">
                                 <input type="hidden">
                                 <a href="./pay.html" class="btn-add-to-cart" title="Mua ngay">
@@ -133,26 +138,26 @@ if($count != null){
 </div>
 </div>
 <div class="shoesnews__all">
-<div class="wrap_btn_pagination">
-    <?php
-    $currentPage = max(1, $currentPage);
-    $startPage = max(1, $currentPage - 1);
-    $endPage = min($startPage + 2, $numberPage);
+    <div class="wrap_btn_pagination">
+        <?php
+        $currentPage = max(1, $currentPage);
+        $startPage = max(1, $currentPage - 1);
+        $endPage = min($startPage + 2, $numberPage);
 
-    if ($currentPage > 1) {
-        echo '<a class="link_pagination item_btn_pagination" href="index.php?quanly=listlike&page=1">&lt;&lt;</a>';
-    }
+        if ($currentPage > 1) {
+            echo '<a class="link_pagination item_btn_pagination" href="index.php?quanly=listlike&page==1">&lt;&lt;</a>';
+        }
 
-    for ($i = $startPage; $i <= $endPage; $i++) {
-        $activeClass = ($i == $currentPage) ? 'active_pagination' : '';
-        echo '<a class="link_pagination item_btn_pagination ' . $activeClass . '" href="index.php?quanly=listlike&page=' . $i . '">' . $i . '</a>';
-    }
+        for ($i = $startPage; $i <= $endPage; $i++) {
+            $activeClass = ($i == $currentPage) ? 'active_pagination' : '';
+            echo '<a class="link_pagination item_btn_pagination ' . $activeClass . '" href="index.php?quanly=listlike&page=' . $i . '">' . $i . '</a>';
+        }
 
-    if ($currentPage < $numberPage) {
-        echo '<a class="link_pagination item_btn_pagination" href="index.php?quanly=listlike&page=' . $numberPage . '">&gt;&gt;</a>';
-    }
-    ?>
-</div>
+        if ($currentPage < $numberPage) {
+            echo '<a class="link_pagination item_btn_pagination" href="index.php?quanly=listlike&page='  . $numberPage . '">&gt;&gt;</a>';
+        }
+        ?>
+    </div>
 </div>
 <?php
 } else {

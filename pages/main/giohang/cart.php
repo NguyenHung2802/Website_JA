@@ -113,7 +113,6 @@
   <div class="cart">
     <div class="container">
     <div class="topdistance"></div>
-
       <div class="cart-wrap">
         <div class="cart-content">
           <form action="" class="form-cart" style="padding-left: 12px;">

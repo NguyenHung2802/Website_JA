@@ -11,8 +11,8 @@
             $bientam = "";
             include("./pages/home.php");
         }
-        if ($bientam == 'contact') {
-            include("main/contact.php");
+        if ($bientam == 'lienhe') {
+            include("./pages/main/lienhe.php");
         }
         if ($bientam == 'showAllProduct') {
             include('main/showAllProduct.php');
@@ -20,23 +20,23 @@
         if ($bientam == 'nhomsp') {
             include('main/groupProduct.php');
         }
-        if ($bientam == 'news') {
-            include("main/news.php");
-        }
-        if ($bientam == 'search') {
-            include("main/search.php");
+        // if ($bientam == 'news') {
+        //     include("main/news.php");
+        // }
+        if ($bientam == 'searching') {
+            include("main/searching.php");
         }
         if ($bientam == 'news_detail') {
             include("main/news_detail.php");
         }
-        if ($bientam == 'dangKy') {
-            include("main/Dangky.php");
-        }
+        // if ($bientam == 'dangKy') {
+        //     include("main/Dangky.php");
+        // }
         if ($bientam == 'dangNhap') {
             include("main/Dangnhap.php");
         }
         if ($bientam == 'cart') {
-            include("main/cart.php");
+            include("main/giohang/cart.php");
         }
         if ($bientam == 'listlike') {
             include("main/listlike.php");

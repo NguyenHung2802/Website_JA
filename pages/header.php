@@ -191,12 +191,12 @@ $count1 = mysqli_fetch_assoc($query_get_count_cart);
                 <li class="header_nav-list-item"><a href="index.php?quanly=daotao" class="<?php echo isset($_GET['quanly']) && $_GET['quanly'] == 'daotao' ? 'active' : '' ?>">Đào Tạo & Chuyển Giao</a></li>
                 <li class="header_nav-list-item"><a href="index.php?quanly=sukien" class="<?php echo isset($_GET['quanly']) && $_GET['quanly'] == 'sukien' ? 'active' : '' ?>">Kiến Thức Sự Kiện</a></li>
                 <li class="header_nav-list-item"><a href="index.php?quanly=gioithieu" class="<?php echo isset($_GET['quanly']) && $_GET['quanly'] == 'gioithieu' ? 'active' : '' ?>">Về JA</a></li>
-                <li class="header_nav-list-item"><a href="index.php?quanly=contact" class="<?php echo isset($_GET['quanly']) && $_GET['quanly'] == 'contact' ? 'active' : '' ?>">Liên hệ</a></li>
+                <li class="header_nav-list-item"><a href="index.php?quanly=lienhe" class="<?php echo isset($_GET['quanly']) && $_GET['quanly'] == 'lienhe' ? 'active' : '' ?>">Liên hệ</a></li>
                 <li class="header_nav-list-item has-mega" style="padding: 2px 0;">
                     <a href="index.php?quanly=showAllProduct&page=1" class="<?php echo  isset($_GET['quanly']) && $_GET['quanly'] == 'showAllProduct' ? 'active' : '' ?>">Shop<i class="fa-brands fa-shopify"></i></a>
                 </li>
                 <li class="header_nav-list-item">
-                    <a href="index.php?quanly=search" class="<?php echo isset($_GET['quanly']) && $_GET['quanly'] == 'search' ? 'active' : '' ?>">
+                    <a href="index.php?quanly=searching" class="<?php echo isset($_GET['quanly']) && $_GET['quanly'] == 'searching' ? 'active' : '' ?>">
                         <i class="fa-solid fa-magnifying-glass">
 
                         </i>

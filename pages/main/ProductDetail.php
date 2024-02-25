@@ -381,31 +381,6 @@ $product = mysqli_fetch_array($query_get_product);
             }
             ?>
           </div>
-          <div class="product__camera">
-            <p>Camera:
-              <?php echo $product['camera'] ?>
-            </p>
-          </div>
-          <div class="product__CPU">
-            <p>CPU:
-              <?php echo $product['CPU'] ?>
-            </p>
-          </div>
-          <div class="product__RAM">
-            <p>RAM:
-              <?php echo $product['RAM'] ?>
-            </p>
-          </div>
-          <div class="product__ROM">
-            <p>Dung lượng lưu trữ:
-              <?php echo $product['ROM'] ?>
-            </p>
-          </div>
-          <div class="product__battery">
-            <p>Dung lượng pin:
-              <?php echo $product['battery'] ?> mAh
-            </p>
-          </div>
 
         </div>
         <!-- <h3 class="name__product" style="margin: 12px 0">Bảo hành chính hãng</h3>
@@ -425,7 +400,7 @@ $product = mysqli_fetch_array($query_get_product);
     </div>
   </div>
   </div>
-  <div class="product__comment">
+  <!-- <div class="product__comment">
     <div class="container">
       <h2 class="product__describe-heading">Bình luận</h2>
       <div class="row">
@@ -488,7 +463,7 @@ $product = mysqli_fetch_array($query_get_product);
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   <!-- end product detail -->
 
   <div id="alert-cart" class="alert" style="display:none">

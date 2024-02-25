@@ -85,6 +85,7 @@
 
 .product__yml .fa-shopping-cart{
     font-size: 25px !important;
+    color: #000 !important;
 }
 .product__yml .product__yml-ma .fa-heart{
     font-size: 25px !important;
@@ -402,18 +403,21 @@
     display: inline-block;
     margin: 0 5px;
     float: none;
+    color: #000;
 }
 
 .header_nav-list-item a {
     padding: 8px 15px;
     text-transform: none;
-    font-weight: 400;
+    font-weight: normal;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 14px;
+    /* color: #000 !important; */
 }
 
 .header_nav-list-item>a:hover {
-    color: var(--black-color);
+    color: var(--black-color) !important;
+    font-weight: 600 !important;
 }
 
 /* .dropdown:hover {
@@ -734,6 +738,7 @@ ul .level1 li a:hover {
 .container{
     padding-left: 0px !important;
     padding-right: 0px !important;
+    max-width: 1300px;
 }
 
 .home_slide{
@@ -1442,7 +1447,7 @@ ul .level1 li a:hover {
 .btn-add-to-cart:hover,
 .quickview:hover {
     background-color: #000;
-    color: #fff;
+    color: #fff !important;
 }
 
 .quickview {

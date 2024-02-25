@@ -132,10 +132,11 @@
     font-size: 20px;
     font-weight: 500;
     position: relative;
+    color: #fff !important;
 }
 .chekout:hover{
+   opacity: 0.9;
    text-decoration: none;
-   color: #fff;
 }
 .fa-trash {
     font-size: 18px;
