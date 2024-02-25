@@ -1,0 +1,269 @@
+/* sukien */
+.sukien{
+    /* margin-top: 150px !important; */
+    /* margin-top: -34vh !important;
+    padding-top: 134px !important; */
+    /* background-color: #EEEEEE; */
+}
+
+.container{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.sukien_slide{
+    margin-top: 135px !important;
+    padding-top: 90px !important;
+    height: 700px;
+    background-image: url(https://juliettearmand.vn/wp-content/uploads/2021/03/Ameson-Model-Banner-3840x1400-1-1920x700-1.jpg?id=2656) !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+
+.sukien_slide .wpb_wrapper h2 b{
+    font-size: 48px;
+    font-weight: 600;
+    
+}
+.sukien_slide .wpb_wrapper h2{
+    margin-bottom: 30px;
+}
+
+.sukien_slide .wpb_wrapper{
+    width: 523px !important;
+    margin-top: 10px !important;
+    margin-left: 630px !important;
+}
+
+.sukien_slide .wpb_wrapper h2 b{
+    color: #fff;
+    font-size: 48px;
+    font-weight: 600;
+    box-sizing: inherit;
+}
+
+.sukien_slide .wpb_wrapper p{
+    text-align: center;
+    font-size: 21px;
+    /* font-family: Avertape; */
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    text-rendering: optimizeLegibility;
+    display: block;
+    color: #fff;
+}
+
+.sukien_slide .wpb_wrapper p strong{
+    opacity: 0.8;
+    font-weight: 600;
+}
+
+
+.sukien_slide2{
+    margin-top: 5px !important;
+    padding-top: 5px !important;
+    height: 800px !important;
+    background-image: url(https://juliettearmand.vn/wp-content/uploads/2021/07/Sach-giai-ma-ban-do-da.png?id=4288) !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+.sukien_slide2 .wpb_wrapper h2 b{
+    color: #fff;
+    font-size: 48px;
+    font-weight: 600;
+    box-sizing: inherit;
+}
+
+.sukien_slide2 .wpb_wrapper{
+    margin-top: 100px !important;
+    margin-left: 630px !important;
+}
+
+.sukien_slide2 .wpb_wrapper p{
+    text-align: center;
+    font-size: 21px;
+    /* font-family: Avertape; */
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    text-rendering: optimizeLegibility;
+    display: block;
+    color: #fff;
+}
+
+.sukien_slide2 .wpb_wrapper p strong{
+    opacity: 0.8;
+    font-weight: 600;
+}
+/* sukien slide 3 */
+.sukien_slide3{
+    margin-top: 5px !important;
+    padding-top: 5px !important;
+    height: 830px;
+    background-image: url(https://juliettearmand.vn/wp-content/uploads/2021/03/catalogue-scaled.jpg?id=1201) !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+.sukien_slide-intro3 {
+    margin-left: 180px !important;
+    margin-top: -90px !important;
+}
+
+.sukien_slide3 .wpb_wrapper {
+    width: 350px !important;
+    margin-top: 210px !important;
+    margin-left: 695px !important;
+}
+
+.sukien_slide-intro3 .wpb_wrapper h2 b{
+    font-size: 48px !important;
+    font-weight: 600;
+}
+
+.sukien_slide3 .wpb_wrapper h2 strong{
+    color: #151515;
+    font-size: 48px;
+    font-weight: 600;
+    box-sizing: inherit;
+}
+
+.sukien_slide3 .wpb_wrapper p{
+    text-align: center;
+    font-size: 21px;
+    /* font-family: Avertape; */
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    text-rendering: optimizeLegibility;
+    display: block;
+    color: #444;
+}
+
+.sukien_slide3 .wpb_wrapper p strong{
+    opacity: 0.8;
+    font-weight: 600;
+}
+.sukien_slide4{
+    margin-top: 5px !important;
+    padding-top: 5px !important;
+    height: 800px;
+    background-image: url(https://juliettearmand.vn/wp-content/uploads/2021/03/ol-01.jpg?id=2495) !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+
+.sukien_slide4 .wpb_wrapper {
+    width: 550px !important;
+    margin-top: 195px !important;
+    margin-left: 630px !important;
+}
+
+.sukien_slide-intro4 .wpb_wrapper h2 b{
+    font-size: 48px !important;
+    font-weight: 600;
+}
+
+.sukien_slide4 .wpb_wrapper h2 b{
+    color: #fff;
+    font-size: 48px;
+    font-weight: 600;
+    box-sizing: inherit;
+}
+
+.sukien_slide4 .wpb_wrapper p span{
+    text-align: center;
+    font-size: 21px;
+    /* font-family: Avertape; */
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    text-rendering: optimizeLegibility;
+    display: block;
+    color: #fff;
+}
+
+.sukien_slide4 .wpb_wrapper p strong{
+    opacity: 0.8;
+    font-weight: 600;
+}
+
+/* sukien 5 */
+.sukien_slide5{
+    height: 390px !important;
+    margin-top: 5px !important;
+    padding-top: 5px !important;
+    background-color: white;
+}
+
+.sukien_silde-intro5{
+    margin-left: 190px !important;
+    margin-top: -60px !important;
+}
+.sukien_slide5 img {
+    max-width: 100%;
+    height: auto;
+    -ms-interpolation-mode: bicubic;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.vc_custom_1616245027877 {
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+}
+
+.wpb_wrapper p a{
+    text-align: center;
+    color: #57c9e8 !important;
+    font-size: 22px !important;
+} 
+.wpb_wrapper p:hover span a{
+    color: black !important;
+    font-weight: 600;
+    text-decoration: none !important;
+}
+
+
+.wpb_wrapper{
+    width: 550px !important;
+    margin: 110px 80px !important;
+}
+
+.sukien_slide5 .wpb_wrapper h2 strong{
+    color: #151515;
+    font-size: 48px;
+    font-weight: 600;
+    box-sizing: inherit;
+}
+
+.sukien_slide5 .wpb_wrapper p{
+    text-align: center;
+    font-size: 21px;
+    /* font-family: Avertape; */
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    text-rendering: optimizeLegibility;
+    display: block;
+    color: #444;
+}
+
+.sukien_slide5.wpb_wrapper p strong{
+    opacity: 0.8;
+    font-weight: 600;
+}
+
+.wpb_wrapper .links{
+    transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    background-color: transparent;
+}
+.wpb_wrapper .links a{
+    color: #57c9e8 !important;
+    font-size: 21px !important;
+    margin-left: 200px !important;
+    padding-top: 10px;
+    text-decoration: none;
+    line-height: inherit;
+    cursor: pointer;
+}

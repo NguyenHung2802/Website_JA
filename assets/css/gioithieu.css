@@ -1,58 +1,260 @@
-.boss{
+/* veja */
+.veja{
+    /* margin-top: 150px !important; */
+    margin-top: 134px !important;
+    background-color: #EEEEEE;
+}
+
+.container{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.veja_slide{
+    height: 1000px !important;
+    background: #ffffff url(https://juliettearmand.vn/wp-content/uploads/2021/03/JA-Hy-lap-1.jpg?id=771) !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+
+.veja_slide .wpb_wrapper{
+    margin-top: -160px !important;
+    margin-left: 120px !important;
+}
+
+.veja_slide .wpb_wrapper h2{
+    width: 525px !important;
+}
+.veja_slide-intro{
+    padding: 300px 90px ;
+    width: 450px;
+}
+.veja_slide-intro p{
+    font-size: 57px;
+    font-weight: 500;
+    line-height: inherit ;
+    font-family: Varta, 'BlinkMacSystemFont', -apple-system, 'Roboto', 'Lucida Sans';
+    color: #000;
+}
+
+.veja_slide .wpb_wrapper p span{
+    text-align: center;
+    font-size: 21px;
+    /* font-family: Avertape; */
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    text-rendering: optimizeLegibility;
     display: block;
+    color: #fff;
 }
-.features-block{
-    border: unset;
-    background-color: unset;
-    padding: 16px 10px 0;
-    display:inline-block;
+
+.veja_slide .wpb_wrapper h2 b{
+    font-size: 48px;
+    font-weight: 600;
+    color: #fff;
 }
-.features-block2{
-    display: flex;
+
+.veja_slide2{
+    margin-top: 5px !important;
+    padding-top: 5px !  important;
+    height: 1120px !important;
+    
 }
-.title{
-    font-size: 40px;
-    font-style: unset;
-    font-family: 'Times New Roman', Times, serif;
+
+.veja_slide2 .wpb_wrapper{
+    /* width: 550px !important; */
+    margin: -18px 80px !important;
+}
+
+.wpb_wrapper h5{
+    color: #151515;
+    margin-top: 0;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-family: none;;
+}
+
+.wpb_column{
+    display: inline-block;
+}
+
+.veja_slide2 .wpb_column .wpb_wrapper{
+    width: 380px !important;
+    margin-top: 20px !important;
+}
+
+.wpb_column .wpb_wrapper{
+    width: 495px !important;
+    /* margin-top: -145px !important; */
+}
+/* veja slide 3 */
+.veja_slide3{
+    margin-top: 3px !important;
+    padding-top: 5px !important;
+    height: 770px;
+    background-image: url(https://juliettearmand.vn/wp-content/uploads/2021/03/Our-History-Model-3840x2160-2-scaled-1.jpg?id=2633) !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+
+.veja_slide3 .wpb_wrapper{
+    margin-top: 210px !important;
+    margin-left: 240px !important;
+}
+.veja_slide3 .wpb_wrapper p span{
     text-align: center;
-    height:80px;
-    padding: 20px;
+    font-size: 21px;
+    /* font-family: Avertape; */
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    text-rendering: optimizeLegibility;
+    display: block;
+    color: #000;
 }
-.wrap-item{
-    display:flex;
+.veja_slide-intro3 {
+    margin-left: 180px !important;
+    margin-top: -90px !important;
+}
 
+.veja_slide-intro3 .wpb_wrapper h2 b{
+    font-size: 48px !important;
+    font-weight: 600;
 }
-.item .text-center{
-    width: 25%;
+/* veja4 */
+.veja_slide4{
+    margin-top: 5px !important;
+    padding-top: 5px !important;
+    height: 970px;
+    background-color: #EEEEEE;
 }
-.fle-center{
+
+.veja_slide4 .wpb_wrapper p b{
+    text-align: left;
+}
+
+.veja_slide4 .wpb_wrapper{
+    /* width: 550px !important; */
+    margin: 0px 80px !important;
+}
+
+.veja_slide4 .wpb_wrapper p span{
+    text-align: left;
+}
+
+.vc_single_image-wrapper img{
+    border-radius: 50%;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    overflow: hidden;
+}
+
+.veja_slide4 .wpb_wrapper h2 b{
+    font-size: 48px;
+    font-weight: 600;
+    color: #fff;
+}
+.wpb_wrapper h2{
+    margin-bottom: 30px;
+}
+
+.veja_slide4 .wpb_wrapper{
+    width: 500px !important;
+    margin-left: 30px !important;
+}
+.veja_slide4 .wpb_column .wpb_wrapper{
+    margin-top: 50px !important;
+}
+
+.veja_slide4 .wpb_text_column .wpb_wrapper{
+    margin-top: -170px !important;
+    margin-left: 260px !important;
+    width: 800px !important;
+}
+.veja_slide4 .wpb_wrapper p span{
+    color: #000;
+}
+
+/* veja 5 */
+.veja_slide5{
+    height: 390px !important;
+    margin-top: 5px !important;
+    padding-top: 30px !important;
+    background-color: white;
+}
+
+.veja_silde-intro5{
+    margin-left: 190px !important;
+    margin-top: -60px !important;
+}
+.veja_slide5 img {
+    max-width: 100%;
+    height: auto;
+    -ms-interpolation-mode: bicubic;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.vc_custom_1616245027877 {
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+}
+
+.wpb_wrapper p a{
     text-align: center;
-}
-.content-mau{
-    font-size: 20px;
-    font-family: 'Times New Roman', Times, serif;
-
-}
-.content-mau1{
-    font-size: 30px;
-    font-family: 'Times New Roman', Times, serif;
-    font-style: unset;
+    color: #57c9e8 !important;
+    font-size: 22px !important;
+} 
+.wpb_wrapper p:hover span a{
+    color: black !important;
+    font-weight: 600;
+    text-decoration: none !important;
 }
 
-.detail{
-    font-size: 15px;
-    font-family: 'Times New Roman', Times, serif;
-}
-body{
-    line-height: 20px;
-    color: #444b52;
-}
-.flex-center, .flex-center-ver {
-    align-items: center;
+
+
+.veja .wpb_wrapper{
+    width: 550px !important;
+    /* margin: -18px 80px !important; */
 }
 
-.flex-center {
-    display: flex;
-    justify-content: center;
-    padding: 10px;
+.wpb_wrapper h2 strong{
+    color: #151515;
+    font-size: 48px;
+    font-weight: 600;
+    box-sizing: inherit;
+}
+
+.veja_slide5 .wpb_wrapper p{
+    text-align: center;
+    font-size: 21px;
+    /* font-family: Avertape; */
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    text-rendering: optimizeLegibility;
+    display: block;
+    color: #000;
+}
+
+.veja_slide5 .wpb_wrapper p strong{
+    opacity: 0.8;
+    font-weight: 600;
+}
+
+.wpb_wrapper .links{
+    transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    background-color: transparent;
+}
+.wpb_wrapper .links a{
+    color: #57c9e8 !important;
+    font-size: 21px !important;
+    margin-left: 200px !important;
+    padding-top: 10px;
+    text-decoration: none;
+    line-height: inherit;
+    cursor: pointer;
 }

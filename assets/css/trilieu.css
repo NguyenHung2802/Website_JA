@@ -1,0 +1,260 @@
+/* trilieu */
+.trilieu{
+    /* margin-top: 150px !important; */
+    margin-top: -34vh !important;
+    padding-top: 134px !important;
+    background-color: #EEEEEE;
+}
+
+.container{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.trilieu_slide{
+    height: 1000px !important;
+    background: #ffffff url() !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+
+.trilieu_slide-intro{
+    padding: 300px 90px ;
+    width: 450px;
+}
+.trilieu_slide-intro p{
+    font-size: 57px;
+    font-weight: 500;
+    line-height: inherit ;
+    font-family: Varta, 'BlinkMacSystemFont', -apple-system, 'Roboto', 'Lucida Sans';
+    color: #000;
+}
+
+.trilieu_slide-img {
+    padding-top: 13px;
+    width: 70px;
+    height: auto;    
+    fill: #fff;
+}
+
+.trilieu_slide2{
+    margin-top: 200px;
+    padding-top: 0px !important;
+    padding-bottom: 175px !important;
+    background-image: url(https://juliettearmand.vn/wp-content/uploads/2021/03/TLCN-1.jpg?id=1378) !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+
+.trilieu_slide2 .wpb_wrapper {
+    width: 550px !important;
+    margin: 10px 100px !important;
+}
+
+.trilieu_slide-intro2 .wpb_wrapper{
+    /* margin-top: 0px !important; */
+    padding-top: 100px !important;
+}
+
+.trilieu_slide2 h2 strong{
+    color: #fff !important;
+}
+
+.trilieu_slide2 p {
+    color: #fff !important;
+}
+
+.trilieu_slide2 .wpb_wrapper h2 strong{
+    color: #151515;
+    font-size: 48px;
+    font-weight: 600;
+    box-sizing: inherit;
+}
+
+.trilieu_slide2 .wpb_wrapper p{
+    text-align: center;
+    font-size: 21px;
+    /* font-family: Avertape; */
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    text-rendering: optimizeLegibility;
+    display: block;
+    color: #444;
+}
+
+.trilieu_slide2 .wpb_wrapper p strong{
+    opacity: 0.8;
+    font-weight: 600;
+}
+
+/* trilieu slide 3 */
+.trilieu_slide3{
+    margin: 5px 0px 0px 0px !important;
+    padding-top: 5px !important;
+    height: 725px !important;
+    background: #ffffff url(https://juliettearmand.vn/wp-content/uploads/2021/03/Elements-Creams-Banner-3840x1400-2-1920x700-1.jpg?id=1876) !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+.trilieu_slide-intro3 {
+    margin-left: 180px !important;
+    margin-top: -90px !important;
+}
+
+.trilieu_slide3 .wpb_wrapper h2 p{
+    color: #000 !important;
+}
+
+.trilieu_slide3 .wpb_wrapper p{
+    color: #000 !important;
+}
+
+.trilieu_slide-intro3 .wpb_wrapper h2 b{
+    font-size: 48px !important;
+    font-weight: 600;
+}
+
+.trilieu_slide3 .wpb_wrapper h2 strong{
+    color: #151515;
+    font-size: 48px;
+    font-weight: 600;
+    box-sizing: inherit;
+}
+
+.trilieu_slide3 .wpb_wrapper p{
+    text-align: center;
+    font-size: 21px;
+    /* font-family: Avertape; */
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    text-rendering: optimizeLegibility;
+    display: block;
+    color: #444;
+}
+
+.trilieu_slide3 .wpb_wrapper p strong{
+    opacity: 0.8;
+    font-weight: 600;
+}
+
+.trilieu_slide4{
+    border-top-width: 5px !important;
+    padding-top: 10px !important;
+    height: 680px;
+    padding-bottom: 400px !important;
+    background-image: url(https://juliettearmand.vn/wp-content/uploads/2021/03/Vi-tao-PP-1.jpg?id=1369) !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    border-top-color: #f6f6f6 !important;
+    border-top-style: solid !important;
+}
+
+.trilieu_slide4 .wpb_wrapper h3 strong{
+    font-size: 36px;
+    color: #000;
+    text-align: center;
+    font-family: Avertape;
+}
+
+.trilieu_slide4 .wpb_wrapper p{
+    font-size: 21px;
+}
+
+.wpb_wrapper h2 b{
+    font-size: 48px;
+    font-weight: 600;
+    
+}
+.wpb_wrapper h2{
+    margin-bottom: 30px;
+}
+
+.trilieu_slide4 .wpb_wrapper{
+    width: 550px !important;
+    margin-left: 183px !important;
+    margin-top: 75px !important;
+}
+/* trilieu 5 */
+.trilieu_slide5{
+    height: 390px !important;
+    margin-top: 5px !important;
+    padding-top: 5px !important;
+    background-color: white;
+}
+
+.trilieu_silde-intro5{
+    margin-left: 190px !important;
+    margin-top: -60px !important;
+}
+.trilieu_slide5 img {
+    max-width: 100%;
+    height: auto;
+    -ms-interpolation-mode: bicubic;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.vc_custom_1616245027877 {
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+}
+
+.wpb_wrapper p a{
+    text-align: center;
+    color: #57c9e8 !important;
+    font-size: 22px !important;
+} 
+.wpb_wrapper p:hover span a{
+    color: black !important;
+    font-weight: 600;
+    text-decoration: none !important;
+}
+
+
+.trilieu_slide5 .wpb_wrapper{
+    width: 550px !important;
+    margin: 110px 80px !important;
+}
+
+.wpb_wrapper h2 strong{
+    color: #151515;
+    font-size: 48px;
+    font-weight: 600;
+    box-sizing: inherit;
+}
+
+.trilieu_slide5  .wpb_wrapper p{
+    text-align: center;
+    font-size: 21px;
+    /* font-family: Avertape; */
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    text-rendering: optimizeLegibility;
+    display: block;
+    color: #444;
+}
+
+.wpb_wrapper p strong{
+    opacity: 0.8;
+    font-weight: 600;
+}
+
+.wpb_wrapper .links{
+    transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    background-color: transparent;
+}
+.wpb_wrapper .links a{
+    color: #57c9e8 !important;
+    font-size: 21px !important;
+    margin-left: 200px !important;
+    padding-top: 10px;
+    text-decoration: none;
+    line-height: inherit;
+    cursor: pointer;
+}
+

@@ -18,7 +18,11 @@
       }
     }
     ?>
-
+  <style>
+    .login__form{
+      padding: 40px;
+    }
+  </style>
    <!-- Modal -->
    <div class="modal" id="errorModal">
      <div class="modal-dialog">
@@ -40,6 +44,7 @@
      </div>
    </div>
    <div class="container">
+   <div class="topdistance"></div>
      <div class="login__form">
        <div class="row">
          <div class="col-sm-12 col-lg-6">
@@ -85,7 +90,7 @@
                <p class="text-login">Các sự kiện sắp tới</p>
              </li>
            </ul>
-           <a href="index.php?quanly=dangKy"><button class="form-submit btn-blocker custom-btn" style="border-radius: unset;margin:unset">ĐĂNG KÍ <i class="fas fa-arrow-right" style="font-size: 16px;margin-left: 10px;"></i></button></a>
+           <a href="index.php?quanly=contact"><button class="form-submit btn-blocker custom-btn" style="border-radius: unset;margin:unset">ĐĂNG KÍ <i class="fas fa-arrow-right" style="font-size: 16px;margin-left: 10px;"></i></button></a>
          </div>
        </div>
      </div>

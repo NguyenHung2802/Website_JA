@@ -131,7 +131,6 @@ const $$ = document.querySelectorAll.bind(document);
 
 const tabs = $$('.item-manager')
 const panes = $$('.item-detail')
-console.log(tabs)
 tabs.forEach(function(tab, index) {
     const pane = panes[index]
     tab.onclick = function() {

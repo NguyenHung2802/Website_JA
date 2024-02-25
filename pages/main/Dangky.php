@@ -90,8 +90,8 @@ if (isset($_POST['dangky'])) {
         <p class="text-login">Đăng nhập bằng tài khoản sẽ giúp bạn truy cập:</p>
         <ul>
           <li class="text-login-item"><i class="fas fa-check"></i>
-            <p class="text-login">Một lần đăng nhập chung duy nhất để tương tác với các sản phẩm và dịch vụ của P&T
-              shop
+            <p class="text-login">Một lần đăng nhập chung duy nhất để tương tác với các sản phẩm và dịch vụ của Smart Point
+              Shop
             </p>
           </li>
           <li class="text-login-item"><i class="fas fa-check"></i>

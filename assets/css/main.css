@@ -1,14 +1,20 @@
 /* header css */
+
+.topdistance{
+    margin-top: 135px !important;
+}
+
 .header {
     background-color: var(--white-color);
     /* height: var(--header-height); */
     border-bottom: 1px solid #eee;
-    /* position:fixed;
+    position:fixed;
     top: 0;
     left: 0;
-    right: 0;
-    z-index: 999; */
-    box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+    width: 100%;
+    z-index: 999;
+    box-shadow: 0 0 10px rgb(0 0 0 / 20%);
+    
 }
 
 .top-link {
@@ -29,7 +35,7 @@
     font-weight: 500;
 }
 
-.login_link {}
+
 
 .header_link {
     list-style: none;
@@ -65,6 +71,30 @@
     background-color: var(--black-color) !important;
     border-top-right-radius: 3px !important;
     border-bottom-right-radius: 3px !important;
+}
+
+/* product__yml */
+.product__yml{
+    margin: 0px 80px;
+}
+
+.product__yml-ma{
+    padding: 25px 0px;
+    margin:5px !important;
+}
+
+.product__yml .fa-shopping-cart{
+    font-size: 25px !important;
+    color: #000 !important;
+}
+.product__yml .product__yml-ma .fa-heart{
+    font-size: 25px !important;
+}
+
+.product__yml-ma .col-3{
+    max-width: none !important;
+    margin-left: 0px !important;
+    flex: inherit ;
 }
 
 .nav__first {
@@ -358,6 +388,11 @@
 
 .header_nav {
     padding: 8px 0;
+    margin-left: 50px ;
+}
+
+.header_nav .container{
+    padding-left: 150px !important;
 }
 
 .header_nav-list {
@@ -368,19 +403,21 @@
     display: inline-block;
     margin: 0 5px;
     float: none;
+    color: #000;
 }
 
-.header_nav-list-item>a {
+.header_nav-list-item a {
     padding: 8px 15px;
-    color: var(--black-color);
-    text-transform: uppercase;
-    font-weight: 500;
+    text-transform: none;
+    font-weight: normal;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 14px;
+    /* color: #000 !important; */
 }
 
 .header_nav-list-item>a:hover {
-    color: var(--hover-color);
+    color: var(--black-color) !important;
+    font-weight: 600 !important;
 }
 
 /* .dropdown:hover {
@@ -690,8 +727,252 @@ ul .level1 li a:hover {
     position: relative;
 }
 
+/* Home */
+.home{
+    /* margin-top: 150px !important; */
+    margin-top: -34vh !important;
+    padding-top: 134px !important;
+    background-color: #EEEEEE;
+}
+
+.container{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    max-width: 1300px;
+}
+
+.home_slide{
+    height: 1000px !important;
+    background: #ffffff url(https://juliettearmand.vn/wp-content/uploads/2021/03/Elements-Model-Banner-1536x1200-3.jpg?id=745) !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+
+.home_slide-intro{
+    padding: 300px 90px ;
+    width: 450px;
+}
+.home_slide-intro p{
+    font-size: 57px;
+    font-weight: 500;
+    line-height: inherit ;
+    font-family: Varta, 'BlinkMacSystemFont', -apple-system, 'Roboto', 'Lucida Sans';
+    color: #000;
+}
+
+.home_slide-img {
+    padding-top: 13px;
+    width: 70px;
+    height: auto;    
+    fill: #fff;
+}
+
+.home_slide2{
+    margin-top: 5px !important;
+    padding-top: 5px !  important;
+    height: 740px !important;
+    background: #ffffff url(https://juliettearmand.vn/wp-content/uploads/2021/03/z2396539646874_610ebdf9011cca6ec0e68b3b03aaa546.jpg?id=1864) !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+.home_slide2 .wpb_wrapper h2 strong{
+    color: #151515;
+    font-size: 48px;
+    font-weight: 600;
+    box-sizing: inherit;
+}
+
+.home_slide2 .wpb_wrapper p{
+    text-align: center;
+    font-size: 21px;
+    /* font-family: Avertape; */
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    text-rendering: optimizeLegibility;
+    display: block;
+    color: #444;
+}
+
+.home_slide2 .wpb_wrapper p strong{
+    opacity: 0.8;
+    font-weight: 600;
+}
+/* home slide 3 */
+.home_slide3{
+    margin: 5px 0px 0px 0px !important;
+    padding-top: 5px !important;
+    height: 725px !important;
+    background: #ffffff url(https://juliettearmand.vn/wp-content/uploads/2021/03/Elements-Creams-Banner-3840x1400-2-1920x700-1.jpg?id=1876) !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+.home_slide-intro3 {
+    margin-left: 180px !important;
+    margin-top: -90px !important;
+}
+
+.home_slide-intro3 .wpb_wrapper h2 b{
+    font-size: 48px !important;
+    font-weight: 600;
+}
+
+.home_slide3 .wpb_wrapper h2 strong{
+    color: #151515;
+    font-size: 48px;
+    font-weight: 600;
+    box-sizing: inherit;
+}
+
+.home_slide3 .wpb_wrapper p{
+    text-align: center;
+    font-size: 21px;
+    /* font-family: Avertape; */
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    text-rendering: optimizeLegibility;
+    display: block;
+    color: #444;
+}
+
+.home_slide3 .wpb_wrapper p strong{
+    opacity: 0.8;
+    font-weight: 600;
+}
+
+.home_slide4{
+    margin-top: 5px !important;
+    padding-top: 5px !important;
+    height: 760px;
+    background-image: url(https://juliettearmand.vn/wp-content/uploads/2021/04/Trang-chu-4-1-scaled.jpg?id=2957) !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+
+.wpb_wrapper h2 b{
+    font-size: 48px;
+    font-weight: 600;
+    
+}
+.wpb_wrapper h2{
+    margin-bottom: 30px;
+}
+
+.home_slide4 .wpb_wrapper{
+    width: 523px !important;
+    margin-left: 320px !important;
+}
+
+.home_slide4 .wpb_wrapper h2 strong{
+    color: #151515;
+    font-size: 48px;
+    font-weight: 600;
+    box-sizing: inherit;
+}
+
+.home_slide4 .wpb_wrapper p{
+    text-align: center;
+    font-size: 21px;
+    /* font-family: Avertape; */
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    text-rendering: optimizeLegibility;
+    display: block;
+    color: #444;
+}
+
+.home_slide4 .wpb_wrapper p strong{
+    opacity: 0.8;
+    font-weight: 600;
+}
+
+/* home 5 */
+.home_slide5{
+    height: 390px !important;
+    margin-top: 5px !important;
+    padding-top: 5px !important;
+    background-color: white;
+}
+
+.home_silde-intro5{
+    margin-left: 190px !important;
+    margin-top: -60px !important;
+}
+.home_slide5 img {
+    max-width: 100%;
+    height: auto;
+    -ms-interpolation-mode: bicubic;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.vc_custom_1616245027877 {
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+}
+
+.wpb_wrapper p a{
+    text-align: center;
+    color: #57c9e8 !important;
+    font-size: 22px !important;
+} 
+.wpb_wrapper p:hover span a{
+    color: black !important;
+    font-weight: 600;
+    text-decoration: none !important;
+}
+
+
+.wpb_wrapper{
+    width: 550px !important;
+    margin: 110px 80px !important;
+}
+
+.home_slide5 .wpb_wrapper h2 strong{
+    color: #151515;
+    font-size: 48px;
+    font-weight: 600;
+    box-sizing: inherit;
+}
+
+.home_slide5 .wpb_wrapper p{
+    text-align: center;
+    font-size: 21px;
+    /* font-family: Avertape; */
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    text-rendering: optimizeLegibility;
+    display: block;
+    color: #444;
+}
+
+.home_slide5.wpb_wrapper p strong{
+    opacity: 0.8;
+    font-weight: 600;
+}
+
+.wpb_wrapper .links{
+    transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    background-color: transparent;
+}
+.wpb_wrapper .links a{
+    color: #57c9e8 !important;
+    font-size: 21px !important;
+    margin-left: 200px !important;
+    padding-top: 10px;
+    text-decoration: none;
+    line-height: inherit;
+    cursor: pointer;
+}
+
+
+
 /* end sửa header */
-.header__third {}
+
 
 .nav__third {
     justify-content: center;
@@ -968,7 +1249,7 @@ ul .level1 li a:hover {
     text-decoration: line-through;
 }
 
-.product__price-new {}
+
 
 /* .shoesnews {
     background-color: #f5f5f7;
@@ -1015,14 +1296,14 @@ ul .level1 li a:hover {
 
 /* footer */
 .footer {
-    border-top: 4px solid var(--black-color);
+    /* border-top: 4px solid var(--black-color); */
     margin-top: 50px;
     padding-top: 12px;
 }
 
 .footer__heading {
     font-size: 1.4rem;
-    text-transform: uppercase;
+    text-transform: none !important;
     color: var(--black-color);
     margin-bottom: 10px;
 }
@@ -1036,6 +1317,11 @@ ul .level1 li a:hover {
     font-size: 18px;
     line-height: 1.5rem;
     vertical-align: middle;
+}
+.footer_selector{
+    border: 1px solid black;
+    margin-top: 30px;
+    margin-bottom: 25px;
 }
 
 .footer__item p {
@@ -1161,7 +1447,7 @@ ul .level1 li a:hover {
 .btn-add-to-cart:hover,
 .quickview:hover {
     background-color: #000;
-    color: #fff;
+    color: #fff !important;
 }
 
 .quickview {

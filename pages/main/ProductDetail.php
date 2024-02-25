@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>P&T Shop</title>
+  <title>Juliette Armand</title>
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
@@ -209,23 +209,17 @@ $product = mysqli_fetch_array($query_get_product);
   <div class="overlay hidden"></div>
 
   <!-- product detail -->
-  <form method="POST" action="pages/main/themgiohang.php?idsanpham=<?php echo $product['idProduct'] ?>">
-    <div class="container">
-      <div class="product__detail">
-        <div class="row product__detail-row">
-          <div class="col-lg-6 col-12 daonguoc">
-            <div class="img-product">
-            </div>
-
-            <div id="main-img" style="cursor: pointer;">
-              <img src="<?php echo $product['image'] ?>" class="big-img" alt="ảnh chính" id="img-main">
-              <div class="sale-off sale-off-2">
-                <span class="sale-off-percent">
-                  <?php echo round(100 - ($product['sellingPrice'] / $product['costPrice']) * 100) ?>
-                  %
-                </span>
-                <span class="sale-off-label">GIẢM</span>
-              </div>
+  <div class="container">
+    <div class="topdistance"></div>
+    <div class=" product__detail">
+      <div class="row product__detail-row">
+        <div class="col-lg-6 col-12 daonguoc" style="border: 1px solid #ccc; border-radius: 15px; position: relative">
+          <div id="main-img" style="cursor: pointer; position: static">
+            <img style="width: 80%; margin: 0; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 0" src="./img/product/<?php echo $product['image'] ?>" class="big-img" alt="ảnh chính" id="img-main">
+            <div class="sale-off sale-off-2">
+              <span class="sale-off-percent"><?php echo round(100 - ($product['sellingPrice'] / $product['costPrice']) * 100) ?>
+                %</span>
+              <span class="sale-off-label">GIẢM</span>
             </div>
           </div>
           <div class="col-lg-6 col-12" style="padding: 10px">
@@ -239,33 +233,48 @@ $product = mysqli_fetch_array($query_get_product);
 
             <div class="product__price" style="padding: 10px">
 
-              <h2 style="font-size: 30px">
-                <?php echo $product['sellingPrice'] ?>đ
-              </h2>
-            </div>
+          <?php
+          // Xử lý việc tính sao trung bình của mỗi sp và hiển thị ra màn hình
+          $idProduct = $product['idProduct'];
+          $sql_rate = "SELECT AVG(feedbacks.Rate) AS average_rate
+                      FROM feedbacks 
+                      WHERE feedbacks.idProduct = $idProduct
+                      GROUP BY feedbacks.idProduct";
+          $query_rate = mysqli_query($connect, $sql_rate);
+          $row_average_rate = mysqli_fetch_array($query_rate);
+          if ($row_average_rate)
+            $rate_avg = round($row_average_rate['average_rate']);
+          else $rate_avg = 0;
+          ?>
+          <div class="home-product-item__rating" style="font-size: 24px; margin-left: -140px; padding-bottom: 12px">
 
-
-            <div class="price-old" style="padding: 10px">
-              Giá gốc:
-              <del>
-                <?php echo $product['costPrice'] ?>
-              </del>
-              <span class="discount">
-                <?php echo round(100 - ($product['sellingPrice'] / $product['costPrice']) * 100) ?>%
-              </span>
-            </div>
-
-            <div class="product__RAM" style="padding: 10px">
-              <h2>RAM:
-                <?php echo $product['RAM'] ?>
-              </h2>
-            </div>
-            <div class="product__ROM" style="padding: 10px">
-              <h2>Dung lượng lưu trữ:
-                <?php echo $product['ROM'] ?>
-              </h2>
-            </div>
-
+            <?php
+            for ($i = 0; $i < 5; $i++) {
+              $starClass = ($i < $rate_avg) ? "home-product-item__star--gold" : "";
+            ?>
+              <i class="fas fa-star <?= $starClass ?>"></i>
+            <?php
+            }
+            ?>
+          </div>
+          <!-- Kết thúc mã xử lý -->
+          <div class="product__price-dis">
+            
+            <div class="product__price" style="padding: 10px">
+              
+            <h2 style="font-size: 25px"><?php echo number_format($product['sellingPrice']) ?> <span>đ</span></h2>
+          </div>
+          <div class="price-old" style="padding: 10px">
+            
+            <del><?php echo number_format($product['costPrice']) ?>  <span>đ</span></del>
+            <span class="discount"><?php echo round(100 - ($product['sellingPrice'] / $product['costPrice']) * 100) ?>%</span>
+          </div>
+          </div>   
+          
+          <div class="product__benifit">
+            <p><?php echo $product['benifit'] ?></p>
+          </div>
+          <form class="myForm" action="" method="POST">
             <div class="product__wrap">
               <div class="product__amount">
                 <label for="">Số lượng: </label>
@@ -278,59 +287,99 @@ $product = mysqli_fetch_array($query_get_product);
               <button type="submit" name="themgiohang" class="add-cart" onclick="fadeInModal()">Thêm vào giỏ</button>
 
             </div>
-            <div class="product__shopnow">
-              <button class="shopnow">Mua ngay</button>
-              <span class="home-product-item__like home-product-item__like--liked">
-                <i class="home-product-item__like-icon-empty far fa-heart" style="font-size: 24px;margin-top: 7px;"></i>
-                <!-- <i class="home-product-item__like-icon-fill fas fa-heart" style="font-size: 24px;margin-top: 7px;"></i> -->
-                <a href="pages/main/sanphamyeuthich.php?id=<?php echo $product['idProduct'];?>"><i class="home-product-item__like-icon-fill fas fa-heart"></i></a>
-                
-              </span>
-            </div>
+          </form>
+          <div style="font-size: 14px; opacity: 0.4;">Số lượng còn trong kho:
+            <span class="qttStock"><?php echo $product['qttStock'] ?></span>
           </div>
+          <hr>
+          <!-- <div class="product__describe">
+            <div class="container" style="padding: 0 !important">
+              <div class="col-11" style="padding: 0 !important">
+                <div class="product_specifications" style="font-size: 16px">
+                  <h3 style="padding: 8px 0;" class="name__product">Tìm hiểu sản phẩm</h3>        
+                  <div class="product__screen">
+                    <p>Mô tả <?php echo $product['descride'] ?></p>
+                  </div>
+                  <div class="product__camera">
+                    <p>Giới thiệu sản phẩm <?php echo $product['introduce'] ?></p>
+                  </div>
+                  <div class="product__CPU">
+                    <p>Đối tượng <?php echo $product['object'] ?></p>
+                  </div>
+                  <div class="product__RAM">
+                    <p>Lợi ích <?php echo $product['benifit'] ?></p>
+                  </div>
+                  <div class="product__ROM">
+                    <p>Hướng dẫn sử dụng <?php echo $product['instruct'] ?></p>
+                  </div>
+                  <div class="product__battery">
+                    <p>Thành phần và lưu ý <?php echo $product['note'] ?></p>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div> -->
         </div>
       </div>
     </div>
-  </form>
-  <div class="product__describe">
+    <div class="product__describe">
+            <div class="container" style="padding: 0 !important">
+              <div class="col-11" style="padding: 0 !important">
+                <div class="product_specifications" style="font-size: 16px">
+                  <h2 style="padding: 8px 0;" class="name__product">Tìm hiểu sản phẩm</h2>        
+                  <div class="product__descride product__cs">
+                    <p class="des">Mô tả </p> <p class="p"><?php echo $product['descride'] ?> </p>
+                  </div>
+                  <div class="product__introduce product__cs">
+                    <p class="des">Giới thiệu sản phẩm</p> <p class="p"><?php echo $product['introduce'] ?></p>
+                  </div> 
+                  <div class="product__object product__cs">
+                    <p class="des">Đối tượng </p><p  class="p"><?php echo $product['object'] ?></p>
+                  </div>
+                  <div class="product__benifit product__cs">
+                    <p class="des">Lợi ích </p> <p  class="p"><?php echo $product['benifit'] ?></p>
+                  </div>
+                  <div class="product__instruct product__cs">
+                    <p class="des">Hướng dẫn sử dụng </p> <p class="p"><?php echo $product['instruct'] ?></p>
+                  </div>
+                  <div class="product__note product__cs">
+                    <p class="des">Thành phần và lưu ý </p> <p  class="p"><?php echo $product['note'] ?></p>
+                  </div>
 
-    <div class="container">
-      <h2 class="product__describe-heading">Mô tả</h2>
-
-
-      <div class="col-1"></div>
-      <div class="col-11">
-        <div class="product_specifications" style="font-size: 16px">
-          <h3 class="name__product">Thông số kĩ thuật</h3>
-          <div class="product__screen">
-            <p>Màn hình:
-              <?php echo $product['screen'] ?>
-            </p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="product__camera">
-            <p>Camera:
-              <?php echo $product['camera'] ?>
-            </p>
-          </div>
-          <div class="product__CPU">
-            <p>CPU:
-              <?php echo $product['CPU'] ?>
-            </p>
-          </div>
-          <div class="product__RAM">
-            <p>RAM:
-              <?php echo $product['RAM'] ?>
-            </p>
-          </div>
-          <div class="product__ROM">
-            <p>Dung lượng lưu trữ:
-              <?php echo $product['ROM'] ?>
-            </p>
-          </div>
-          <div class="product__battery">
-            <p>Dung lượng pin:
-              <?php echo $product['battery'] ?> mAh
-            </p>
+    <div class="product__comment">
+      <h2 class="product__describe-heading mb-4">Bình luận</h2>
+      <div class="row" style="flex-wrap:nowrap">
+        <form action="" method="post">
+          <div class="col-12 mb-4">
+            <div class="d-flex mb-4">
+              <h4>Điểm đánh giá</h4>
+              <select name="rating" id="rate" style="height: 25px; font-size: 14px; width: 40px" class="ml-4 sbRate">
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+            <textarea style="font-size: 12px;" name="body_feedback" id="" cols="70" rows="10"></textarea>
+            <?php
+            if (isset($id_user)) {
+            ?>
+              <button type="submit" name="submitFormFB" class="btn btn-comment">Gửi</button>
+            <?php
+            } else {
+            ?>
+              <div class="btn btn-comment" style="width: 250px; line-height: 20px">
+                <a style="font-size: 10px !important; color: white !important; text-decoration: none; padding: 8px 19px" href="index.php?quanly=dangNhap">Vui lòng đăng nhập để gửi đánh giá !</a>
+              </div>
+            <?php
+            }
+            ?>
           </div>
 
         </div>
@@ -351,7 +400,7 @@ $product = mysqli_fetch_array($query_get_product);
     </div>
   </div>
   </div>
-  <div class="product__comment">
+  <!-- <div class="product__comment">
     <div class="container">
       <h2 class="product__describe-heading">Bình luận</h2>
       <div class="row">
@@ -414,7 +463,7 @@ $product = mysqli_fetch_array($query_get_product);
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   <!-- end product detail -->
 
   <div id="alert-cart" class="alert" style="display:none">
