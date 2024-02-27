@@ -72,7 +72,6 @@ $product = mysqli_query($connect, $sql_product);
                         <th>Tên sản phẩm</th>
                         <th>Giá gốc sản phẩm</th>
                         <th>Giá bán sản phẩm</th>
-                        <th>Công ty</th>
                         <th>Ảnh sản phẩm</th>
                         <th>Ngày tạo</th>
                         <th>Trạng thái</th>
@@ -88,7 +87,6 @@ $product = mysqli_query($connect, $sql_product);
                             <td><?php echo $value['name'] ?></td>
                             <td><?php echo number_format($value['costPrice']) ?> VNĐ</td>
                             <td><?php echo number_format($value['sellingPrice']) ?>VNĐ</td>
-                            <td><?php echo $value['byCompany'] ?></td>
                             <td>
                                 <img src="./../img/product/<?php echo $value['image'] ?>" alt="" width="50px">
                             </td>

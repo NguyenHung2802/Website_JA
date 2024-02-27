@@ -1,8 +1,23 @@
 <?php
-$sql = "SELECT * FROM users where email != 'admin@gmail.com'";
+$sql = "SELECT * FROM users where email != 'admin@gmail.com' ";
 $users = mysqli_query($connect, $sql);
 
+if (isset($_POST['xn'])) {
+    $isApproved = $_POST['isApproved'];
+
+    $sql = "UPDATE users 
+    SET 
+        isApproved = 1
+    WHERE idUser = $id";
+
+    $query = mysqli_query($connect, $sql);
+    if ($query) {
+        header('location: index.php?quanly=users');
+    }
+}
 ?>
+
+
 <section class="content-header" style="padding-bottom: 12px;">
     <h1>
         Quản lý người dùng
@@ -38,12 +53,13 @@ $users = mysqli_query($connect, $sql);
                         <th>Mã người dùng</th>
                         <th>Họ tên</th>
                         <th>Email</th>
-                        <th>Mật khẩu</th>
+                        <!-- <th>Mật khẩu</th> -->
                         <th>Tên Đại lý</th>
                         <th>Bậc Đại lý</th>
                         <th>Địa chỉ</th>
                         <th>Số điện thoại</th>
                         <th>Ngày tạo</th>
+                        <th>Xác nhận</th>
                         <th>Trạng thái</th>
                     </tr>
                 </thead>
@@ -53,17 +69,25 @@ $users = mysqli_query($connect, $sql);
                             <td><?php echo $value['idUser'] ?></td>
                             <td><?php echo $value['fullName'] ?></td>
                             <td><?php echo $value['email'] ?></td>
-                            <td><?php echo $value['password'] ?></td>
+                            <!-- <td><?php echo $value['password'] ?></td> -->
                             <td><?php echo $value['spaname'] ?></td>
                             <td><?php echo $value['bac'] ?></td>
                             <td><?php echo $value['address'] ?></td>
                             <td><?php echo $value['phone'] ?></td>
                             <td><?php echo $value['createdAt'] ?></td>
+
+                            <td>
+                                <a href="../admin/index.php?quanly=confirm-user&id=<?php echo $value['idUser'] ?>" title="Xác nhận" class="btn btn-success">
+                                    <?php echo $value['isApproved'] ?>
+                                    <span class="fa fa-check"></span>
+                                </a>
+                            </td>
                             <td>
                                 <a href="../admin/index.php?quanly=edit-user&id=<?php echo $value['idUser'] ?>" title="Sửa" class="btn btn-primary">
                                     <span class="fa fa-edit"></span>
                                 </a>
                             </td>
+                            
                         </tr>
                     <?php endforeach ?>
 

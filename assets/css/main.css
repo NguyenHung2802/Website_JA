@@ -1131,7 +1131,8 @@ ul .level1 li a:hover {
 }
 
 .active {
-    color: var(--hover-color) !important;
+    color: var(--black-color) !important;
+    font-weight: 600 !important;
 }
 
 /* sản phẩm phổ biến */
@@ -1241,6 +1242,15 @@ ul .level1 li a:hover {
 
 .product__price {
     display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-body .product__price{
+    display: flex !important;
+    flex-direction: row;
     justify-content: space-between;
 }
 
@@ -1318,6 +1328,11 @@ ul .level1 li a:hover {
     line-height: 1.5rem;
     vertical-align: middle;
 }
+
+.footer__item-mxh{
+    display: flex !important;
+}
+
 .footer_selector{
     border: 1px solid black;
     margin-top: 30px;

@@ -64,22 +64,22 @@
                     </div>
                     <ul class="footer__list collapse show" id="demo2">
                         <li class="footer__item">
-                            <a href="" class="footer__item--link">Vi tảo</a>
+                            <a href="index.php?quanly=trilieu" class="footer__item--link">Vi tảo</a>
                         </li>
                         <li class="footer__item">
-                            <a href="" class="footer__item--link">Skin boosters</a>
+                            <a href="index.php?quanly=trilieu" class="footer__item--link">Skin boosters</a>
                         </li>
                         <li class="footer__item">
-                            <a href="" class="footer__item--link">Mesotech</a>
+                            <a href="index.php?quanly=trilieu" class="footer__item--link">Mesotech</a>
                         </li>
                         <li class="footer__item">
-                            <a href="" class="footer__item--link">Retinoid</a>
+                            <a href="index.php?quanly=trilieu" class="footer__item--link">Retinoid</a>
                         </li>
                         <li class="footer__item">
-                            <a href="" class="footer__item--link">Elements</a>
+                            <a href="index.php?quanly=trilieu" class="footer__item--link">Elements</a>
                         </li>
                         <li class="footer__item">
-                            <a href="" class="footer__item--link">Body</a>
+                            <a href="index.php?quanly=trilieu" class="footer__item--link">Body</a>
                         </li>
                     </ul>
                 </div>
@@ -89,28 +89,28 @@
                     </div>
                     <ul class="footer__list collapse show" id="demo2">
                         <li class="footer__item">
-                            <a href="" class="footer__item--link">Làm sạch</a>
+                            <a href="index.php?quanly=trilieu" class="footer__item--link">Làm sạch</a>
                         </li>
                         <li class="footer__item">
-                            <a href="" class="footer__item--link">Mặt nạ</a>
+                            <a href="index.php?quanly=trilieu" class="footer__item--link">Mặt nạ</a>
                         </li>
                         <li class="footer__item">
-                            <a href="" class="footer__item--link">Serum</a>
+                            <a href="index.php?quanly=trilieu" class="footer__item--link">Serum</a>
                         </li>
                         <li class="footer__item">
-                            <a href="" class="footer__item--link">Kem & gel</a>
+                            <a href="index.php?quanly=trilieu" class="footer__item--link">Kem & gel</a>
                         </li>
                         <li class="footer__item">
-                            <a href="" class="footer__item--link">Da mụn</a>
+                            <a href="index.php?quanly=trilieu" class="footer__item--link">Da mụn</a>
                         </li>
                         <li class="footer__item">
-                            <a href="" class="footer__item--link">Vùng mắt</a>
+                            <a href="index.php?quanly=trilieu" class="footer__item--link">Vùng mắt</a>
                         </li>
                         <li class="footer__item">
-                            <a href="" class="footer__item--link">Bảo vệ</a>
+                            <a href="index.php?quanly=trilieu" class="footer__item--link">Bảo vệ</a>
                         </li>
                         <li class="footer__item">
-                            <a href="" class="footer__item--link">Body</a>
+                            <a href="index.php?quanly=trilieu" class="footer__item--link">Body</a>
                         </li>
                     </ul>
                 </div>
@@ -120,7 +120,7 @@
                     </div>
                     <ul class="footer__list collapse show" id="demo1">
                         <li class="footer__item">
-                            <a href="" class="footer__item--link">Về JA</a>
+                            <a href="index.php?quanly=gioithieu" class="footer__item--link">Về JA</a>
                         </li>
                         
                     </ul>
@@ -131,14 +131,14 @@
                     </div>
                     <ul class="footer__list collapse show" id="demo">
                         <li class="footer__item">
-                            <a href="index.php" class="footer__item--link">Chuyển giao phác đồ </a>
+                            <a href="index.php?quanly=daotao" class="footer__item--link">Chuyển giao phác đồ </a>
                         <li class="footer__item">
-                            <a href="index.php?quanly=gioithieu" class="footer__item--link">Giải mã bản đồ làn da</a>
+                            <a href="index.php?quanly=daotao" class="footer__item--link">Giải mã bản đồ làn da</a>
                         </li>
                         <li class="footer__item">
-                            <a href="index.php?quanly=gioithieu" class="footer__item--link">Catalogue & Cẩm năng trị liệu
+                            <a href="index.php?quanly=daotao" class="footer__item--link">Catalogue & Cẩm năng trị liệu
                         <li class="footer__item">
-                            <a href="index.php?quanly=gioithieu" class="footer__item--link">Đào tạo Online</a>
+                            <a href="index.php?quanly=daotao" class="footer__item--link">Đào tạo Online</a>
                         </li>
                     </ul>
                 </div>
@@ -148,33 +148,38 @@
                     </div>
                     <ul class="footer__list collapse show" id="demo">
                         <li class="footer__item">
-                            <a href="index.php" class="footer__item--link">Kiến thức vê da</a>
+                            <a href="index.php?quanly=sukien" class="footer__item--link">Kiến thức vê da</a>
                         </li>
                         <li class="footer__item">
-                            <a href="index.php" class="footer__item--link">Sự kiện nổi bật</a>
+                            <a href="index.php?quanly=sukien" class="footer__item--link">Sự kiện nổi bật</a>
                         </li>
                     </ul>
                 </div>
                 <div class="col-sm-12 col-md-6 col-lg-2">
                     <div style="display: flex;justify-content:space-between;cursor: text;margin-bottom: 8px;" data-toggle="collapse" data-target="#demo">
-                        <h3 class="footer__heading">Kiến Thức </h3><i class="fas fa-chevron-down checkdl1"></i>
+                        <h3 class="footer__heading"> Liên hệ </h3><i class="fas fa-chevron-down checkdl1"></i>
                     </div>
                     <ul class="footer__list collapse show" id="demo">
                         <li class="footer__item">
-                            <a href="index.php" class="footer__item--link">Shop Online</a>
+                            <a href="index.php?quanly=showAllProduct&page=1" class="footer__item--link">Shop Online</a>
                         </li>
                         <li class="footer__item">
-                            <a href="index.php?quanly=gioithieu" class="footer__item--link">Liên hệ JA</a>
+                            <a href="index.php?quanly=lienhe" class="footer__item--link">Liên hệ JA</a>
                         </li>
                         <li class="footer__item">
                             <a href="index.php?quanly=showAllProduct&page=1" class="footer__item--link">
                                 Mạng xã hội
                                 <ul class="footer__list collapse show mxh" id="demo">
-                                    <li class="footer__item">
-                                        <a href="index.php" class="footer__item--link">
+                                    <li class="footer__item footer__item-mxh">
+                                        <a href="https://www.facebook.com/juliettearmandvietnam" class="footer__item--link">
                                             <i class="fa-brands fa-facebook-f"></i>
+                                            
+                                        </a>
+                                        <a href="https://www.youtube.com/channel/UCKLIYf6Hpc4x4qht127qkSw" class="footer__item--link">
+                                           
                                             <i class="fa-brands fa-youtube"></i>
                                         </a>
+
                                     </li>
                                 </ul>
                             </a>

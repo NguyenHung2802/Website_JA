@@ -98,7 +98,7 @@ $numberPage = round($count1 / $quantityOfAPage) < ($count1 / $quantityOfAPage) ?
     <div class="topdistance"></div>
     <div class="product__yml">
         <div class="product__yml-ma" style="display: flex; align-items: center; justify-content: space-between; ">
-            <div class="col-3" style="font-size: 16px;">
+            <div class="col-4" style="font-size: 16px;">
                 <span>Sắp xếp theo:</span>
                 <select id="sapxepSelect" style="margin: 0 12px; padding: 8px">
                     <option value="DEFAULT">---Mặc định---</option>
@@ -106,8 +106,59 @@ $numberPage = round($count1 / $quantityOfAPage) < ($count1 / $quantityOfAPage) ?
                     <option value="DESC">Cao đến thấp</option>
                 </select>
             </div>
+            <div class="col-2 ">
 
+            </div>
+            <!-- <div class="col-3 login_link">
+                    <ul class="header_link right m-auto">
+                        <?php
+                        if (isset($_SESSION['id_user'])) {
+                        ?>
+                            <li>
+                                <a href="index.php?quanly=thongtin"><i class="fa fa-user mr-3"></i>Infor</a>
+                            </li>
+                            <li>
+                                <a href="index.php?quanly=dangXuat"><i class="fa fa-sign-out-alt mr-3" style="margin-left: 10px;"></i>Logout</a>
+                            </li>
+                        <?php
+                        } else {
+                        ?>
+                            <li>
+                                <a href="index.php?quanly=dangNhap"><i class="fas fa-sign-in-alt mr-3"></i>Login</a>
+                            </li>
+                            <li>
+                                <a href="index.php?quanly=lienhe"><i class="fas fa-user-plus mr-3" style="margin-left: 10px;"></i>Register</a>
+                            </li>
+                        <?php
+                        }
+                        ?>
+                    </ul>
+                </div> -->
             <div class="col-3 m-auto hidden-sm hidden-xs">
+                    <ul class="header_link right m-auto">
+                        <?php
+                        if (isset($_SESSION['id_user'])) {
+                        ?>
+                            <li>
+                                <a href="index.php?quanly=thongtin"><i class="fa fa-user mr-3"></i>Infor</a>
+                            </li>
+                            <li>
+                                <a href="index.php?quanly=dangXuat"><i class="fa fa-sign-out-alt mr-3" style="margin-left: 10px;"></i>Logout</a>
+                            </li>
+                        <?php
+                        } else {
+                        ?>
+                            <li>
+                                <a href="index.php?quanly=dangNhap"><i class="fas fa-sign-in-alt mr-3"></i>Login</a>
+                            </li>
+                            <li>
+                                <a href="index.php?quanly=lienhe"><i class="fas fa-user-plus mr-3" style="margin-left: 10px;"></i>Register</a>
+                            </li>
+                        <?php
+                        }
+                        ?>
+                    </ul>
+
                 <div class="item-car clearfix">
                     <a href="index.php?quanly=cart" class="header__second__cart--icon">
                         <i class="fas fa-shopping-cart"></i>

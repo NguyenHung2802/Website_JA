@@ -9,22 +9,15 @@ if (isset($_GET['id'])) {
 if (isset($_POST['sbUpdate'])) {
     $fullName = $_POST['fullName'];
     $email = $_POST['email'];
-    $password = $_POST['password'];
-    $address = $_POST['address'];
-    $phone = $_POST['phone'];
     $spaname = $_POST['spaname'];
-    $bac = $_POST['bac'];
-    $hassPass = md5($password);
+    $isApproved = $_POST['isApproved'];
 
     $sql = "UPDATE users 
     SET 
         fullName = '$fullName',
         email = '$email',
-        password = '$hassPass',
-        address = '$address',
-        phone = '$phone',
         spaname = '$spaname',
-        bac = '$bac'
+        isApproved = '$isApproved'
     WHERE idUser = $id";
 
     $query = mysqli_query($connect, $sql);
@@ -33,6 +26,7 @@ if (isset($_POST['sbUpdate'])) {
     }
 }
 ?>
+
 
 <!-- Content Header (Page header) -->
 <section class="content-header">
@@ -47,7 +41,7 @@ if (isset($_POST['sbUpdate'])) {
     <!-- Default box -->
     <div class="box">
         <div class="box-header with-border">
-            <h3 class="box-title">Sửa thông tin người dùng</h3>
+            <h3 class="box-title">Xác nhận người dùng</h3>
             <a style="padding-left: 24px;" href="../admin/index.php?quanly=users">Quay lại trang trước</a>
 
         </div>
@@ -65,29 +59,17 @@ if (isset($_POST['sbUpdate'])) {
                     <label for="">Email</label>
                     <input value="<?php echo $user['email'] ?>" type="text" class="form-control" id="" name="email">
                 </div>
-
-                <div class="form-group">
-                    <label for="">Mật khẩu</label>
-                    <input value="<?php echo $user['password'] ?>" type="text" class="form-control" id="" name="password">
-                </div>
-                <div class="form-group">
-                    <label for="">Số điện thoại</label>
-                    <input value="<?php echo $user['phone'] ?>" type="text" class="form-control" id="" name="phone">
-                </div>
                 <div class="form-group">
                     <label for="">Tên đại lý</label>
                     <input value="<?php echo $user['spaname'] ?>" type="text" class="form-control" id="" name="spaname">
                 </div>
                 <div class="form-group">
-                    <label for="">Bậc đại lý</label>
-                    <input value="<?php echo $user['bac'] ?>" type="text" class="form-control" id="" name="bac">
+                    <label for="">Cho phép người dùng đăng nhập để mua sắm</label>
+                    <input value="<?php echo $user['isApproved'] ?>" type="text" class="form-control" id="" name="isApproved">
                 </div>
-                <div class="form-group">
-                    <label for="">Địa chỉ</label>
-                    <input value="<?php echo $user['address'] ?>" type="text" class="form-control" id="" name="address">
-                </div>
+                
 
-                <button name="sbUpdate" type="submit" class="btn btn-primary">Cập nhật</button>
+                <button name="sbUpdate" type="submit" class="btn btn-primary">Xác nhận</button>
             </form>
         </div>
     </div>

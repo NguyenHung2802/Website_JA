@@ -31,6 +31,9 @@
             if ($bientam == 'edit-user') {
                 include("modules/user/edit-user.php");
             }
+            if ($bientam == 'confirm-user') {
+                include("modules/user/confirm-user.php");
+            }
             if ($bientam == 'warehouse') {
                 include("modules/khohang/khohang.php");
             }

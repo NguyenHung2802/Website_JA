@@ -29,6 +29,10 @@
     clear: both;
     display: table;
   }
+
+  .container{
+    padding: 0px 40px !important;
+  }
 </style>
 
 <?php
@@ -80,6 +84,7 @@ if (isset($_POST['sbChangePw'])) {
 ?>
 
 <div class="container">
+<div class="topdistance"></div>
   <div class="row">
     <div class="col-lg-4 col-12">
       <div class="heading">

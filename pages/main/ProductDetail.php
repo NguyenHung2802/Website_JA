@@ -222,15 +222,14 @@ $product = mysqli_fetch_array($query_get_product);
               <span class="sale-off-label">GIẢM</span>
             </div>
           </div>
-          <div class="col-lg-6 col-12" style="padding: 10px">
+        </div>
+        <div class="col-lg-6 col-12" style="padding: 10px">
 
             <div class="product__name" style="padding: 10px; font-size: 40px">
               <b>
                 <?php echo $product['name'] ?>
               </b>
             </div>
-
-
             <div class="product__price" style="padding: 10px">
 
           <?php
@@ -284,8 +283,13 @@ $product = mysqli_fetch_array($query_get_product);
                   onkeypress='validate(event)'>
                 <input type="button" value="+" class="control" onclick="cong(1)">
               </div>
-              <button type="submit" name="themgiohang" class="add-cart" onclick="fadeInModal()">Thêm vào giỏ</button>
-
+              <button type="submit" name="themgiohang.php" class="add-cart" onclick="fadeInModal()">
+                <!-- <a href="pages/main/giohang/themgiohang.php?idP=<?php echo $row_dssp['idProduct'] ?>&qtt=1" class="btn-add-to-cart" title="Thêm vào giỏ hàng">
+                  <i class="fas fa-cart-plus"></i>
+                </a> -->
+                Thêm vào giỏ hàng
+              </button>
+              
             </div>
           </form>
           <div style="font-size: 14px; opacity: 0.4;">Số lượng còn trong kho:

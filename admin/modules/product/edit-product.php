@@ -2,20 +2,19 @@
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
-    $query_pro = mysqli_query($connect, "SELECT * FROM products WHERE idProduct = $id");
+    $query_pro = mysqli_query($connect, "SELECT * Fobject products WHERE idProduct = $id");
     $pro = mysqli_fetch_assoc($query_pro);
 }
 
 if (isset($_POST['sbUpdate'])) {
-    $company = $_POST['byCompany'];
     $name = $_POST['name'];
     $costPrice = $_POST['costPrice'];
     $sellingPrice = $_POST['sellingPrice'];
-    $screen = $_POST['screen'];
-    $CPU = $_POST['CPU'];
-    $RAM = $_POST['RAM'];
-    $ROM = $_POST['ROM'];
-    $battery = $_POST['battery'];
+    $benifit = $_POST['benifit'];
+    $descride = $_POST['descride'];
+    $introduce = $_POST['introduce'];
+    $object = $_POST['object'];
+    $instruct = $_POST['instruct'];
     $tag = $_POST['tag'];
     $idProduct = $pro['idProduct'];
 
@@ -30,16 +29,15 @@ if (isset($_POST['sbUpdate'])) {
 
     $sql = "UPDATE products 
     SET 
-        byCompany = '$company',
         name = '$name',
         image = '$file_name',
         costPrice = '$costPrice',
         sellingPrice = '$sellingPrice',
-        screen = '$screen',
-        CPU = '$CPU',
-        RAM = '$RAM',
-        ROM = '$ROM',
-        battery = '$battery',
+        benifit = '$benifit',
+        descride = '$descride',
+        introduce = '$introduce',
+        object = '$object',
+        instruct = '$instruct',
         tag = '$tag'
     WHERE idProduct = $idProduct";
 
@@ -74,10 +72,6 @@ if (isset($_POST['sbUpdate'])) {
                     <input readonly type="text" class="form-control" id="" name="idProduct" value="<?php echo $pro['idProduct'] ?>">
                 </div>
                 <div class="form-group">
-                    <label for="">Công ty </label>
-                    <input type="text" class="form-control" id="" name="byCompany" value="<?php echo $pro['byCompany'] ?>">
-                </div>
-                <div class="form-group">
                     <label for="">Tên sản phẩm </label>
                     <input type="text" class="form-control" id="" name="name" value="<?php echo $pro['name'] ?>">
                 </div>
@@ -93,33 +87,33 @@ if (isset($_POST['sbUpdate'])) {
                 </div>
 
                 <div class="form-group">
-                    <label for="">Màn hình</label>
-                    <input type="text" class="form-control" id="" name="screen" value="<?php echo $pro['screen'] ?>">
+                    <label for="">Lợi ích</label>
+                    <input type="text" class="form-control" id="" name="benifit" value="<?php echo $pro['benifit'] ?>">
                 </div>
 
                 <div class="form-group">
-                    <label for="">Camera</label>
-                    <input type="text" class="form-control" id="" name="camera" value="<?php echo $pro['camera'] ?>">
+                    <label for="">Miêu tả</label>
+                    <input type="text" class="form-control" id="" name="descride" value="<?php echo $pro['descride'] ?>">
                 </div>
 
                 <div class="form-group">
-                    <label for="">CPU</label>
-                    <input type="text" class="form-control" id="" name="CPU" value="<?php echo $pro['CPU'] ?>">
+                    <label for="">Giới thiệu sản phẩm</label>
+                    <input type="text" class="form-control" id="" name="introduce" value="<?php echo $pro['introduce'] ?>">
+                </div>
+
+                <!-- <div class="form-group">
+                    <label for="">introduce</label>
+                    <input type="text" class="form-control" id="" name="introduce" value="<?php echo $pro['introduce'] ?>">
+                </div> -->
+
+                <div class="form-group">
+                    <label for="">Đối tượng</label>
+                    <input type="text" class="form-control" id="" name="object" value="<?php echo $pro['object'] ?>">
                 </div>
 
                 <div class="form-group">
-                    <label for="">RAM</label>
-                    <input type="text" class="form-control" id="" name="RAM" value="<?php echo $pro['RAM'] ?>">
-                </div>
-
-                <div class="form-group">
-                    <label for="">ROM</label>
-                    <input type="text" class="form-control" id="" name="ROM" value="<?php echo $pro['ROM'] ?>">
-                </div>
-
-                <div class="form-group">
-                    <label for="">Dung lượng bin</label>
-                    <input type="text" class="form-control" id="" name="battery" value="<?php echo $pro['battery'] ?>">
+                    <label for="">Hướng dẫn</label>
+                    <input type="text" class="form-control" id="" name="instruct" value="<?php echo $pro['instruct'] ?>">
                 </div>
 
                 <div class="form-group">

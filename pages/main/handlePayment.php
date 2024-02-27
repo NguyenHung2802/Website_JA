@@ -4,9 +4,9 @@ const urlParams = new URLSearchParams(window.location.search);
 const resultCode = urlParams.get('resultCode');
 
 if (resultCode && resultCode === '1006') {
-    window.location.href = 'http://localhost:88/N7_PHP_Website_BanDT/index.php'
+    window.location.href = 'http://localhost:8080/WebSite_JA/index.php?quanly=showAllProduct&page=1'
 } else {
-    window.location.href = 'http://localhost:88/N7_PHP_Website_BanDT/pages/main/paymentSuccess.php';
+    window.location.href = 'http://localhost:8080/WebSite_JA/pages/main/paymentSuccess.php';
 }
     </script>"
     ?>

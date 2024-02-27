@@ -46,6 +46,6 @@ while ($row_get_cart_detail = mysqli_fetch_array($query_get_cart_detail)) {
     <div class="wrap">
         <i class="fa-regular fa-circle-check" style="font-size: 60px; color: green;"></i>
         <h1>Thanh toán thành công</h1>
-        <a href="../../index.php">Quay trở về trang chủ ... </a>
+        <a href="../../index.php?quanly=showAllProduct&page=1">Quay trở về trang chủ ... </a>
     </div>
 </div>

@@ -84,7 +84,7 @@
 
         <!-- end content -->
         <div id="go-to-top">
-            <a class="btn-gototop"><i class="fas fa-arrow-up"></i></a>
+            <a style="color: #ffffff !important;" class="btn-gototop"><i class="fas fa-arrow-up"></i></a>
         </div>
 
         </body>

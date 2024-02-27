@@ -36,20 +36,47 @@ $quantityOfAPage = 4;
 // Limit và offset dùng phân trang
 $offset = ($currentPage - 1) * $quantityOfAPage;
 $limit = 4;
+$titlePage = 'Sản phẩm yêu thích';
 
 if (isset($_GET['quanly']) && isset($_GET['page']) && isset($_SESSION['id_user'])) {
-    $titlePage = 'Tất cả sản phẩm';
-    $sql_dssp = "SELECT DISTINCT * FROM favorite_products inner join products on favorite_products.idProduct = products.idProduct WHERE idUser=".$_SESSION['id_user']." LIMIT $limit OFFSET $offset";
+    $id_user = $_SESSION['id_user'];
+    $titlePage = 'Sản phẩm yêu thích';
+    $sql_dssp = "SELECT DISTINCT * FROM favorite_products 
+                INNER JOIN products ON favorite_products.idProduct = products.idProduct 
+                WHERE idUser=? LIMIT $limit OFFSET $offset";
+    
+    // Sử dụng tham số ràng buộc để tránh SQL injection
+    $stmt = mysqli_prepare($connect, $sql_dssp);
+    mysqli_stmt_bind_param($stmt, "i", $id_user);
+    mysqli_stmt_execute($stmt);
+    $query_dssp = mysqli_stmt_get_result($stmt);
+    
+    // Kiểm tra kết quả truy vấn
+    if (!$query_dssp) {
+        die("Query failed: " . mysqli_error($connect));
+    }
+    
+    // Lấy số lượng bản ghi
+    $sql_get_count = "SELECT COUNT(DISTINCT idProduct) AS record_count 
+                      FROM favorite_products 
+                      WHERE idUser=? 
+                      GROUP BY idUser";
+    
+    // Sử dụng tham số ràng buộc
+    $stmt_count = mysqli_prepare($connect, $sql_get_count);
+    mysqli_stmt_bind_param($stmt_count, "i", $id_user);
+    mysqli_stmt_execute($stmt_count);
+    $query_get_count = mysqli_stmt_get_result($stmt_count);
+    
+    // Kiểm tra kết quả truy vấn
+    if (!$query_get_count) {
+        die("Query failed: " . mysqli_error($connect));
+    }
+    
+    // Số lượng bản ghi -> phục vụ phân trang
+    $count = mysqli_fetch_assoc($query_get_count);
 }
 
-// Lấy  ra số trang tối đa cần dùng khi search hoặc xem tất cả sp
-$query_dssp = mysqli_query($connect, $sql_dssp);
-//$sql_get_count = "SELECT COUNT(*) AS record_count FROM favorite_products";
-$sql_get_count = "SELECT COUNT(DISTINCT idProduct) AS record_count FROM favorite_products WHERE idUser=".$_SESSION['id_user']." GROUP BY idUser";
-$query_get_count = mysqli_query($connect, $sql_get_count);
-
-// Số lượng bản ghi -> phục vụ phân trang
-$count = mysqli_fetch_assoc($query_get_count);
 
 // Số lượng trang cần có
 if($count != null){
@@ -73,7 +100,7 @@ if($count != null){
                             <img class="card-img-top" src="./img/product/<?php echo $row_dssp['image'] ?>" alt="Card image cap">
                             <form action="" class="hover-icon hidden-sm hidden-xs">
                                 <input type="hidden">
-                                <a href="./pay.html" class="btn-add-to-cart" title="Mua ngay">
+                                <a href="index.php?quanly=cart" class="btn-add-to-cart" title="Mua ngay">
                                     <i class="fas fa-cart-plus"></i>
                                 </a>
                                 <a href="index.php?quanly=productDetail&id=<?php echo $row_dssp['idProduct'] ?>" class="quickview" title="Xem nhanh">

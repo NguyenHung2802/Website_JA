@@ -2,7 +2,7 @@
    <div class="pull-right hidden-xs">
      <b>Version</b> 1.0
    </div>
-   <strong>Copyright &copy; 2023 <a href="">Smart Point Shop</a>.</strong>
+   <strong>Copyright &copy; 2024 <a href="https://juliettearmand.vn/">Juliette Armand</a>.</strong>
  </footer>
 
  </div>

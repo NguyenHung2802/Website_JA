@@ -237,7 +237,7 @@
               <div class="row cart-footer-row">
                 <div class="col-1"></div>
                 <div class="col-11 continue">
-                  <a href="index.php">
+                  <a href="index.php?quanly=showAllProduct&page=1">
                     <i class="fas fa-chevron-left"></i>
                     Tiếp tục mua sắm
                   </a>

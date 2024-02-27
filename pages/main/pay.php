@@ -1,4 +1,8 @@
 <style>
+    
+    .content .row{
+        padding: 20px;
+    }
     form.example input[type=text] {
         padding: 10px;
         font-size: 17px;
@@ -90,6 +94,7 @@ if (isset($_POST['thanhToan'])) {
     <div class="content">
         <div class="wrap">
             <div class="container">
+                <div class="topdistance"></div>
                 <div class="row">
                     <div class="col-lg-6 col-12">
                         <div class="main">

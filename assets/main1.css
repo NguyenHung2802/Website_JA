@@ -827,7 +827,10 @@ ul .level1 li a:hover {
 }
 .product__price {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    align-content: center;
+    flex-direction: column;
+    justify-content: center;
 }
 .product__price-old {
     color: var(--text-color);
