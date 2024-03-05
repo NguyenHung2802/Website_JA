@@ -1,3 +1,7 @@
+<?php
+session_start(); // Tạo mới phiên làm việc
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,7 +51,6 @@
 <body>
     <div class="wrapper">
         <?php
-        session_start(); // Tạo mới phiên làm việc
         include("./admin/config/connect.php");
         include("./pages/header.php");
         include("./pages/main.php");

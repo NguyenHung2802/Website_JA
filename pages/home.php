@@ -28,7 +28,7 @@
                     <p style="text-align: center;"><strong>ĐIỀU NÀY CÓ THỂ!</strong></p>
                     <p style="text-align: center;">Juliette Armand, mỹ phẩm trị liệu chuyên nghiệp hàng đầu Hy Lạp hoạt động hơn 30 năm trong giới chuyên nghiệp về thẩm mỹ, da liễu, phẫu thuật tạo hình &amp; có mặt tại 40 quốc gia trên thế giới tự tin trả lời “ĐƯỢC” cho câu hỏi trên với các dòng sản phẩm SKIN BOOSTERS, VI TẢO, MESOTECH, MESOPEEL, RETINOIDS, ELEMENTS, BODY.</p>
                     <p class="links d-flex" style="text-align: center;">
-                        <span><a class=" more" style="color: #57c9e8;" href="">
+                        <span><a class=" more" style="color: #57c9e8;" href="index.php?quanly=trilieu">
                             Tìm hiểu thêm 
                         </a></span>
                         
@@ -44,7 +44,7 @@
 		                <div class="wpb_wrapper">
 			                <h2 style="text-align: center;"><b>Trị liệu tại nhà</b></h2>
                             <p style="text-align: center;"><span style="font-weight: 400;">Các hoạt chất tiên tiến &amp; công nghệ đỉnh cao tương tự trị liệu chuyên nghiệp tại Spa, kết hợp sự tư vấn tối ưu của chuyên gia Juliette Armand giúp làn da liên tục được nuôi dưỡng &amp; thúc đẩy, trở nên đẹp hơn mỗi ngày.</span></p>
-                            <p class="links d-flex" style="text-align: center;"><span style="color: #57c9e8;"><a class=" more" style="color: #57c9e8;" href="">Tìm hiểu thêm</a> </span></p>
+                            <p class="links d-flex" style="text-align: center;"><span style="color: #57c9e8;"><a class=" more" style="color: #57c9e8;" href="index.php?quanly=trilieu">Tìm hiểu thêm</a> </span></p>
                         </div>
                     </div>
 		        </div>
@@ -60,7 +60,7 @@
 			                    <h2 style="text-align: center;"><b>Đào tạo &amp; Chuyển giao</b></h2>
                                 <p style="text-align: center;"><span style="font-weight: 400;">Khi Công nghệ và những Kỹ thuật mới liên tục phát triển đáp ứng tối ưu nhu cầu&nbsp; của&nbsp; khách hàng thì việc học hỏi, nâng cấp kiến thức, cập nhật xu hướng trị liệu liên tục trở thành trách nhiệm cấp thiết nhất của các Chủ Spa/TMV.</span></p>
                                 <p style="text-align: center;"><span style="font-weight: 400;">Tại Juliette Armand Việt Nam, chúng tôi liên tục tổ chức các chương trình workshop chuyển giao công nghệ mới, các khóa đào tạo chuyên sâu trực tiếp hoặc hình thức trực tuyến qua công cụ Zoom, Video, tài liệu dạng PDF.</span></p>
-                                <p class="links d-flex" style="text-align: center;"><span style="color: #57c9e8;"><a class=" more" style="color: #57c9e8;" href="/dao-tao-chuyen-giao/">Tìm hiểu thêm</a> </span></p>
+                                <p class="links d-flex" style="text-align: center;"><span style="color: #57c9e8;"><a class=" more" style="color: #57c9e8;" href="index.php?quanly=daotao">Tìm hiểu thêm</a> </span></p>
                     		</div>
 	                    </div>
                     </div>              

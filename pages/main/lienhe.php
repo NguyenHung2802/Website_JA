@@ -133,7 +133,7 @@ if (isset($_POST['dangky'])) {
 
     }
     else {
-      $sql_dangky = "INSERT INTO users(fullName,phone,email,spaname,bac,address,password, isAdmin) VALUE('" . $fullName . "','" . $phone . "','" . $email . "','" . $spaname . "','" . $bac . "','" . $address . "','" . $password . "', 0)";
+      $sql_dangky = "INSERT INTO users(fullName,phone,email,spaname,bac,address,password, isAdmin,isApproved) VALUE('" . $fullName . "','" . $phone . "','" . $email . "','" . $spaname . "','" . $bac . "','" . $address . "','" . $password . "', 0, 0)";
       $query_dangky = mysqli_query($connect, $sql_dangky);
       if ($query_dangky) {
         $message = "Đăng ký thành công. Tự động chuyển sang trang đăng nhập sau 3s...";

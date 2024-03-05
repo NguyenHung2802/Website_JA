@@ -63,7 +63,7 @@
 <?php
 $search = '';
 
-$sql_nhomsp = "SELECT DISTINCT byCompany FROM products";
+$sql_nhomsp = "SELECT DISTINCT benifit FROM products";
 $query_nhomsp = mysqli_query($connect, $sql_nhomsp);
 
 if (isset($_POST['search-btn'])) {

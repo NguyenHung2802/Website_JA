@@ -237,7 +237,7 @@
 			                    <p><img loading="lazy" class="aligncenter" src="https://www.juliettearmand.com/wp-content/uploads/2020/04/syringe.png" alt="Are you a professional?" width="50" height="356"></p>
                                 <p style="text-align: center;"><strong>Bạn có phải là Chủ Spa / </strong><strong>Thẩm Mỹ Viện?</strong></p>
                                 <p style="text-align: center;">Xin vui lòng Đăng ký và nhận thông tin Chính sách đại lý tại đây.</p>
-                                <p style="text-align: center;"><span style="color: #57c9e8;"><a class=" more" style="color: #57c9e8;" href="">Liên Hệ</a> </span></p>
+                                <p style="text-align: center;"><span style="color: #57c9e8;"><a class=" more" style="color: #57c9e8;" href="index.php?quanly=lienhe">Liên Hệ</a> </span></p>
 		                    </div>
 	                    </div>
                     </div>

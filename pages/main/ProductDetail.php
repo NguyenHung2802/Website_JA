@@ -43,7 +43,9 @@
     width: 80%;
     background: #f1f1f1;
   }
-
+  .product__comment .btn.btn-comment{
+    display: block;
+  }
   form.example button {
     float: left;
     width: 20%;
@@ -69,6 +71,10 @@
   .sale-off-2 {
     top: 14px;
     right: 14px;
+  }
+
+  .product__sale{
+    padding: 0px 20px;
   }
 
   /* Mobile & tablet  */
@@ -199,10 +205,27 @@
   }
 </style>
 <?php
+// $idProduct = $_GET['id'];
+// $sql_get_product = "SELECT * FROM products WHERE idProduct = $idProduct";
+// $query_get_product = mysqli_query($connect, $sql_get_product);
+// $product = mysqli_fetch_array($query_get_product);
+
 $idProduct = $_GET['id'];
+if (isset($_SESSION['id_user'])) {
+  $id_user = $_SESSION['id_user'];
+}
 $sql_get_product = "SELECT * FROM products WHERE idProduct = $idProduct";
 $query_get_product = mysqli_query($connect, $sql_get_product);
 $product = mysqli_fetch_array($query_get_product);
+
+if (isset($_POST['submitFormFB'])) {
+  $rating = $_POST['rating'];
+  $content = $_POST['body_feedback'];
+
+  $sql_createFb = "insert into feedbacks (Rate, content, idProduct, idUser) values ($rating, '$content', $idProduct, $id_user)";
+  $query_createFb = mysqli_query($connect, $sql_createFb);
+}
+$quantityProduct = 1;
 ?>
 
 <body>
@@ -278,52 +301,19 @@ $product = mysqli_fetch_array($query_get_product);
               <div class="product__amount">
                 <label for="">Số lượng: </label>
 
-                <input type="button" value="-" class="control" onclick="tru(1)">
-                <input type="text" value="1" class="text-input" name="soluong" id="text_so_luong-1"
-                  onkeypress='validate(event)'>
-                <input type="button" value="+" class="control" onclick="cong(1)">
+                <input type="button" value="-" class="control" onclick="tru()">
+                <input readonly type="text" class="qtt text-input" name="qtt" value="<?php echo $quantityProduct ?>">
+                <input type="button" value="+" class="control" onclick="cong()">
               </div>
-              <button type="submit" name="themgiohang.php" class="add-cart" onclick="fadeInModal()">
-                <!-- <a href="pages/main/giohang/themgiohang.php?idP=<?php echo $row_dssp['idProduct'] ?>&qtt=1" class="btn-add-to-cart" title="Thêm vào giỏ hàng">
-                  <i class="fas fa-cart-plus"></i>
-                </a> -->
-                Thêm vào giỏ hàng
-              </button>
-              
+              <br />
+              <button type="submit" class="add-cart" onclick="fadeInModal()">Thêm vào giỏ hàng</button>
             </div>
           </form>
           <div style="font-size: 14px; opacity: 0.4;">Số lượng còn trong kho:
             <span class="qttStock"><?php echo $product['qttStock'] ?></span>
           </div>
           <hr>
-          <!-- <div class="product__describe">
-            <div class="container" style="padding: 0 !important">
-              <div class="col-11" style="padding: 0 !important">
-                <div class="product_specifications" style="font-size: 16px">
-                  <h3 style="padding: 8px 0;" class="name__product">Tìm hiểu sản phẩm</h3>        
-                  <div class="product__screen">
-                    <p>Mô tả <?php echo $product['descride'] ?></p>
-                  </div>
-                  <div class="product__camera">
-                    <p>Giới thiệu sản phẩm <?php echo $product['introduce'] ?></p>
-                  </div>
-                  <div class="product__CPU">
-                    <p>Đối tượng <?php echo $product['object'] ?></p>
-                  </div>
-                  <div class="product__RAM">
-                    <p>Lợi ích <?php echo $product['benifit'] ?></p>
-                  </div>
-                  <div class="product__ROM">
-                    <p>Hướng dẫn sử dụng <?php echo $product['instruct'] ?></p>
-                  </div>
-                  <div class="product__battery">
-                    <p>Thành phần và lưu ý <?php echo $product['note'] ?></p>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </div> -->
+          
         </div>
       </div>
     </div>
@@ -372,8 +362,8 @@ $product = mysqli_fetch_array($query_get_product);
             </div>
             <textarea style="font-size: 12px;" name="body_feedback" id="" cols="70" rows="10"></textarea>
             <?php
-            if (isset($id_user)) {
-            ?>
+            if (isset($_SESSION['id_user'])) {
+              ?>
               <button type="submit" name="submitFormFB" class="btn btn-comment">Gửi</button>
             <?php
             } else {
@@ -385,41 +375,13 @@ $product = mysqli_fetch_array($query_get_product);
             }
             ?>
           </div>
-
-        </div>
-        <!-- <h3 class="name__product" style="margin: 12px 0">Bảo hành chính hãng</h3>
-        <h3 style="margin: 8px 0">Chính sách đổi trả: </h3>
-        <p>Bảo hành có cam kết trong 12 tháng (chỉ áp dụng cho sản phẩm chính, KHÔNG áp dụng cho phụ kiện
-          kèm theo)</p>
-
-        <p>Bảo hành trong vòng 15 ngày (từ lúc Khách hàng mang sản phẩm đến bảo hành đến lúc nhận lại sản
-          phẩm tối đa 15 ngày).</p>
-        <p>Sản phẩm không bảo hành lại lần 2 trong 30 ngày kể từ ngày máy được bảo hành xong.</p>
-        <p>Nếu TGDD/ĐMX vi phạm cam kết (bảo hành quá 15 ngày hoặc phải bảo hành lại sản phẩm lần nữa trong
-          30 ngày kể từ lần bảo hành trước), Khách hàng được áp dụng phương thức Hư gì đổi nấy ngay và
-          luôn hoặc Hoàn tiền với mức phí giảm 50%.</p>
-        <p>Từ tháng thứ 13 trở đi, không áp dụng bảo hành có cam kết, chỉ áp dụng bảo hành hãng nếu có.</p> -->
-
-      </div>
-    </div>
-  </div>
-  </div>
-  <!-- <div class="product__comment">
-    <div class="container">
-      <h2 class="product__describe-heading">Bình luận</h2>
-      <div class="row">
-        <div class="col-lg-4 col-12 mb-4">
-          <textarea name="" id="" cols="70" rows="10"></textarea>
-          <button type="submit" class="btn btn-comment">Gửi</button>
-        </div>
-
+        </form>
+        
         <?php
         $sql_rate = "SELECT * FROM feedbacks inner join users on users.idUser = feedbacks.idUser WHERE idProduct = $idProduct";
         $query_rate = mysqli_query($connect, $sql_rate);
         ?>
         <div class="col-lg-8 col-12">
-
-
           <div class="body__comment" style="align-items: center">
             <div class="comment" style="align-items: center; display: inline-block ">
               <?php
@@ -441,7 +403,7 @@ $product = mysqli_fetch_array($query_get_product);
                     </div>
                     <div class="home-product-item__rating"
                       style="font-size: 14px;transform-origin: left;margin-bottom: 5px">
-                      <!-- Đoạn này là để xem đáh giá bn sao và hiển thị số sao tương ứng -->
+                      Đánh giá sao
                       <?php
                       for ($i = 0; $i < 5; $i++) {
                         $starClass = ($i < $rate ? "home-product-item__star--gold" : "");
@@ -467,34 +429,118 @@ $product = mysqli_fetch_array($query_get_product);
         </div>
       </div>
     </div>
-  </div> -->
-  <!-- end product detail -->
-
-  <div id="alert-cart" class="alert" style="display:none">
-    <div class="alert__heading">
-      <h4>Thêm vào giỏ hàng</h4>
-    </div>
-    <div class="alert__body">
-      <img src="./assets/img/product/addidas1.jpg" alt="" class="alert__body-img">
-      <div>
-        <h5 class="alert__body-name"></h5>
-
-        <span class="alert__body-amount">Số lượng: 1</span>
-        <h6 class="alert__body-price">2.000.000 VNĐ</h6>
+  </div>
+  </div>
       </div>
     </div>
-    <div class="alert__footer">
-      <a class="click__cart" style="border-radius: 4px">Xem giỏ hàng</a>
+  </div> 
+  
+  <!-- List sản phẩm hot -->
+  <div class="product__sale">
+      <h3 class="product__sale title-product">Sản phẩm đề xuất</h3>
+      <div class="row">
+        <?php
+
+        $sql_dssphot = "SELECT DISTINCT * FROM products WHERE tag = 'HOT' ORDER BY RAND() LIMIT 4";
+        $query_dssphot = mysqli_query($connect, $sql_dssphot);
+        while ($row_dssphot = mysqli_fetch_array($query_dssphot)) {
+        ?>
+          <div class="col-lg-3 col-md-6 col-sm-12 mb-20">
+            <a href="index.php?quanly=productDetail&id=<?php echo $row_dssphot['idProduct'] ?>" class="product__new-item">
+              <div class="card" style="width: 100%">
+                <div>
+                  <img class="card-img-top" src="./img/product/<?php echo $row_dssphot['image'] ?>" alt="Card image cap">
+                  <form action="" class="hover-icon hidden-sm hidden-xs">
+                    <input type="hidden">
+                    <a href="pages/main/giohang/themgiohang.php?idP=<?php echo $row_dssphot['idProduct'] ?>&qtt=1" class="btn-add-to-cart" title="Thêm vào giỏ hàng">
+                      <i class="fas fa-cart-plus"></i>
+                    </a>
+                    <a href="index.php?quanly=productDetail&id=<?php echo $row_dssphot['idProduct'] ?>" class="quickview" title="Xem nhanh">
+                      <i class="fas fa-search"></i>
+                    </a>
+                  </form>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title custom__name-product">
+                    <?php echo $row_dssphot['name'] ?>
+                  </h5>
+                  <div class="product__price">
+                    <p class="card-text price-color product__price-old"><?php echo number_format($row_dssphot['costPrice']) ?> đ</p>
+                    <p class="card-text price-color product__price-new"><?php echo number_format($row_dssphot['sellingPrice']) ?> đ</p>
+                  </div>
+                  <div class="home-product-item__action">
+                    <span class="home-product-item__like home-product-item__like--liked">
+                      <?php
+                      $idProduct_spnew = $row_dssphot['idProduct'];
+                      $row_product_favourite_spnew['countSP'] = null;
+                      if (isset($_SESSION['id_user'])) {
+                        $sql_product_favourite_spnew = "SELECT COUNT(*) as countSP FROM favorite_products WHERE idProduct = $idProduct_spnew and idUser = $id_user";
+                        $query_product_favourite_spnew = mysqli_query($connect, $sql_product_favourite_spnew);
+                        $row_product_favourite_spnew = mysqli_fetch_array($query_product_favourite_spnew);
+                      }
+                      if ($row_product_favourite_spnew['countSP'] > 0 && $row_product_favourite_spnew['countSP'] != null) {
+                      ?>
+                        <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                        <a href="<?php echo isset($_SESSION['id_user']) ? 'pages/main/xoasanphamyeuthich.php?id=' . $row_dssphot['idProduct'] : 'javascript:alert(\'Bạn cần đăng nhập để sử dụng chức năng này!\');' ?>">
+                          <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                        </a>
+                      <?php
+                      } else {
+                      ?>
+                        <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                        <a href="<?php echo isset($_SESSION['id_user']) ? 'pages/main/sanphamyeuthich.php?id=' . $row_dssphot['idProduct'] : 'javascript:alert(\'Bạn cần đăng nhập để sử dụng chức năng này!\');' ?>">
+                          <i class="fa-regular fa-heart"></i>
+                        </a>
+                      <?php
+
+                      } ?>
+                    </span>
+
+                    <?php
+                    $idProduct = $row_dssphot['idProduct'];
+                    $sql_rate = "SELECT AVG(feedbacks.Rate) AS average_rate
+                      FROM feedbacks 
+                      WHERE feedbacks.idProduct = $idProduct
+                      GROUP BY feedbacks.idProduct";
+                    $query_rate = mysqli_query($connect, $sql_rate);
+                    $row_average_rate = mysqli_fetch_array($query_rate);
+                    if ($row_average_rate)
+                      $rate_avg = round($row_average_rate['average_rate']);
+                    else $rate_avg = 0;
+                    ?>
+                    <div class="home-product-item__rating">
+
+                      <?php
+                      for ($i = 0; $i < 5; $i++) {
+                        $starClass = ($i < $rate_avg) ? "home-product-item__star--gold" : "";
+                      ?>
+                        <i class="fas fa-star <?= $starClass ?>"></i>
+                      <?php
+                      }
+                      ?>
+
+                    </div>
+                    <span class="home-product-item__sold"><?php echo $row_dssphot['sellNumber'] ?> đã bán</span>
+                  </div>
+                  <div class="sale-off">
+                    <span class="sale-off-percent"><?php echo round(100 - ($row_dssphot['sellingPrice'] / $row_dssphot['costPrice']) * 100) ?> %</span>
+                    <span class="sale-off-label">GIẢM</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+        <?php
+        }
+        ?>
+      </div>
     </div>
   </div>
-  <div class="overlay1" style="display: none" onclick="fadeout()">
-
-  </div>
-
   <script src="./assets/js/main.js"></script>
   <script src="./assets/js/zoomsl.js"></script>
   <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
       $(".big-img").imagezoomsl({
         zoomrange: [3, 3]
 
@@ -502,6 +548,27 @@ $product = mysqli_fetch_array($query_get_product);
     });
   </script>
   <script>
+    const qttProduct = document.querySelector(".qtt");
+    const myForm = document.querySelector(".myForm");
+    const qttStock = document.querySelector(".qttStock");
+    myForm.action = "pages/main/giohang/themgiohang.php?idP=<?php echo $product['idProduct'] ?>&qtt=" + qttProduct.value;
+
+    function tru() {
+      if (qttProduct.value > 1) {
+        qttProduct.value = parseInt(qttProduct.value) - 1;
+        myForm.action = "pages/main/giohang/themgiohang.php?idP=<?php echo $product['idProduct'] ?>&qtt=" + qttProduct.value;
+      }
+    }
+
+    function cong() {
+      if (qttProduct.value < parseInt(qttStock.textContent)) {
+        qttProduct.value = parseInt(qttProduct.value) + 1;
+        myForm.action = "pages/main/giohang/themgiohang.php?idP=<?php echo $product['idProduct'] ?>&qtt=" + qttProduct.value;
+      } else {
+        alert("Vượt quá số lượng trong kho!")
+      }
+    }
+
     function fadeInModal() {
       $('.alert').fadeIn();
       $('.overlay1').fadeIn();
@@ -516,7 +583,22 @@ $product = mysqli_fetch_array($query_get_product);
       $('.overlay1').fadeOut();
       $('.alert').fadeOut();
     }
+
+    function handleSb() {
+      const selectBox = document.querySelector("#rate");
+      var selectedIndex = selectBox.selectedIndex;
+
+      console.log(selectBox.options[selectedIndex].value);
+
+    }
+
+    function handleSubmit() {
+
+    }
+
     setInterval(fadeOutModal, 7000);
   </script>
 
 </html>
+  
+

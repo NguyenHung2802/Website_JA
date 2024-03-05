@@ -19,6 +19,12 @@ if (!isset($_SESSION['id_user'])) {
     $query_get_idCart = mysqli_query($connect, $sql_get_idCart);
     $idCartResult = mysqli_fetch_array($query_get_idCart);
 
+    if (isset($_GET['qtt'])) {
+        $qtt = $_GET['qtt'];
+    } else {
+        $qtt = 1; // hoặc bất kỳ giá trị mặc định nào bạn muốn
+    }
+
     if ($idCartResult == null) {
         $sql_create_cart = "INSERT INTO cart (idUser, statusCart, payments) values ($id_user, 0, null)";
         $query_create_idCart = mysqli_query($connect, $sql_create_cart);
@@ -37,7 +43,7 @@ if (!isset($_SESSION['id_user'])) {
             $qtt = 1;
         $qtt = $_GET['qtt'];
 
-        $sql_get_count = "SELECT COUNT(*) AS count FROM cart inner join cart_detail on cart.idCart = cart_detail.idCart WHERE cart.idCart = $idCart and idProduct = $idProduct";
+        $sql_get_count = "SELECT COUNT(*) AS count FROM cart inner join cart_detail on cart.idCart = cart_detail.idCart WHERE cart.idCart = '$idCart' and idProduct = '$idProduct'";
         $countProduct = mysqli_query($connect, $sql_get_count);
         $countResult = mysqli_fetch_assoc($countProduct);
 

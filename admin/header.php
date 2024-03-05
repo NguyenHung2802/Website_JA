@@ -1,7 +1,8 @@
+
 <?php
-include 'config/connect.php';
 ob_start();
 session_start();
+include 'config/connect.php';
 
 $admin = isset($_SESSION['admin']) ? $_SESSION['admin'] : [];
 
