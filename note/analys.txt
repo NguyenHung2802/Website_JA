@@ -1,0 +1,25 @@
+I. Phân tích dự án
+1. Frontend:
+    - Trang chủ
+    - Trang trị liệu
+    - Trang đào tạo
+    - Trang kiến thức
+    - trang lịch sử
+    - Trang danh sách sản phẩm
+    - Trang chi tiết sản phẩm
+    - Trang giỏ hàng
+    - Trang checkout
+    - Trang thanh toán
+    - Trang liên hệ
+2. Backend:
+    - Tài khoản người dùng:
+        + Quản lý role(admin, user)
+        + Quản lý người dùng admin/user
+            ~ Hiển thị danh sách thêm/sửa/xóa
+        + Đăng ký / Đăng nhập
+    - Quản lý danh mục sản phẩm
+    - Quản lý sản phẩm
+    - Quản lý đơn hàng
+        + Hiển thị danh sách đơn hàng
+            ~ Quản lý trạng thái đơn hàng
+    - Quản lý phản hồi

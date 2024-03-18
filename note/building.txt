@@ -1,0 +1,71 @@
+Xây dựng: Web juliette Armand
+Mẫu thiết kế: juliettearmand.vn
+
+Phân tích thiết kế website
+
+1. Bảng role 
+    - id: int -> khóa chính
+    - name: string (varchar) - 20 ký tự
+2. Bảng User
+    - id: int -> Khóa chính tự tăng
+    - fullname -> string -> 150 ký tự
+    - email -> string - 150 ký tự -> unique
+    - phone -> string -> 20 ký tự
+    - address => string -> 200 ký tự
+    - password -> string -> md5 -> 32 ký tự
+    - role_id -> foreign key -> role(id)
+    - createAt: datetime -> tạo bản ghi
+    - updateAT: datetime -> sửa bản ghi
+3. Bảng danh mục -> Category
+    - id: int -> khóa tự tăng
+    - name:  string -> 100 ký tự
+4. Bảng sản phẩm
+    - id: int -> khóa tự tăng
+    - category_id : int -> foreign key -> category(id)
+    - title: string -> 350 ký tự
+    - sell : int
+    - price:  int
+    - thumbnail : string -> 500 ký tự
+    - description: int
+    - createAt: datetime -> tạo bản ghi
+    - updateAT: datetime -> sửa bản ghi
+5. Bảng quản lý galery
+    - id: int -> khóa tự tăng
+    - product_id: int -> foreign key -> product(id)
+    - thumbnail: string -> 500 ký tự
+6. Bảng quản lý phản hồi
+    - id: int -> khóa tự tăng
+    - firstname: string -> 30 ký tự
+    - lastname: string -> 30 ký tự
+    - email: string -> 50 ký tự
+    - phone: string -> 20 ký tự
+    - subject: string -> 200 ký tự
+    - note: string -> 500 ký tự
+7. Quản lý đơn hàng
+    - id: int -> tự tăng
+    - fullname
+    - email
+    - phone
+    - address
+    - note
+    - order_date: datetime
+    - danh sách sản phẩm:
+        + sản phẩm 1 x số lượng x giá thời điểm mua
+        + sản phẩm 2 x số lượng x giá thời điểm mua
+    7.1 Bảng order
+        - id: int -> tăng tự động
+        - fullname
+        - email
+        - phone
+        - address
+        - note
+        - order_date: datetime
+        - status: int
+        - total_money: int -> tổng tiền
+    7.2 Bảng chi tiết đơn hàng
+        - id: int 
+        - order_id: int -> foreign key
+        - product_id: int -> foreign key
+        - price: int
+        - num: int -> số lượng sản phẩm mua
+        - total_money: int -> tổng tiền
