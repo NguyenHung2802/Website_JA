@@ -90,10 +90,10 @@ if (isset($_POST['sbAdd'])) {
                     <input required type="text" class="form-control" id="" name="object">
                 </div>
 
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="">Dung lượng bin</label>
                     <input required type="text" class="form-control" id="" name="instruct">
-                </div>
+                </div> -->
 
                 <div class="form-group">
                     <label for="">TAG</label>

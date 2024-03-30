@@ -74,11 +74,11 @@ if (empty($admin)) {
                     <i class="fa-solid fa-envelopes-bulk"></i> <span>Quản lý bài viết</span>
                 </a>
             </li>
-            <li>
+            <!-- <li>
                 <a href="index.php?quanly=contacts">
                     <i class="fa-regular fa-envelope"></i> <span>Hỗ trợ khách hàng</span>
                 </a>
-            </li>
+            </li> -->
             <li>
                 <a href="index.php?quanly=main">
                     <i class="fa-solid fa-chart-simple"></i> <span>Thống kê</span>
