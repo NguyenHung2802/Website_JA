@@ -1,6 +1,7 @@
 # Julietee Armand Website Design
 
-In this project, I have created a website based on interviews about the process and operation of Julietee Armand cosmetic brand. This website helps the company to promote and sell products as well as approach more agents.
+In this project [Julietee Armand](https://juliettearmand.000webhostapp.com/WebSite_JA/index.php), I have created a website based on interviews about the process and operation of Julietee Armand cosmetic brand. This website helps the company to promote and sell products as well as approach more agents.
+
 
 ### Website designed:
 * **FontEnd**: HTML, CSS and Less
