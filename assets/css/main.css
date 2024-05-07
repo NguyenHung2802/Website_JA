@@ -728,21 +728,32 @@ ul .level1 li a:hover {
 }
 
 /* Home */
+
+main {
+    width: 100%; /* Đảm bảo main luôn chiếm toàn bộ chiều rộng của container */
+    max-width: 1200px; /* Giới hạn chiều rộng tối đa của main */
+    margin: 0 auto; /* Canh giữa main trong container */
+    /* padding: 20px; Thêm padding cho main */
+}
+
 .home{
     /* margin-top: 150px !important; */
     margin-top: -34vh !important;
     padding-top: 134px !important;
+    width: auto !important;
     background-color: #EEEEEE;
 }
 
 .container{
+    width: 100% !important;
+    margin: 0 auto !important;
     padding-left: 0px !important;
     padding-right: 0px !important;
     max-width: 1300px;
 }
 
 .home_slide{
-    height: 1000px !important;
+    height: 1000px ;
     background: #ffffff url(https://juliettearmand.vn/wp-content/uploads/2021/03/Elements-Model-Banner-1536x1200-3.jpg?id=745) !important;
     background-position: center !important;
     background-repeat: no-repeat !important;

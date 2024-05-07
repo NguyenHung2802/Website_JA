@@ -1,0 +1,35 @@
+/* Laptop & PC  */
+@media (min-width: 1200px) and (max-width: 1350px) {
+    main {
+        max-width: 1400px; /* Tăng chiều rộng tối đa của main */
+        padding: 30px; /* Thay đổi padding cho main */
+    }
+    .main .maincontent{
+        max-width: 1400px;
+        width: 1280px;
+    }
+    .home{
+        max-width: 1350px !important;
+        width: 1280px !important;
+    }
+    .container{
+        max-width: 1350px;
+    }
+    .home_slide{
+        /* height: 1200px !important; */
+        width: 100%;
+    }
+}
+
+/* Laptop & tablet  */
+@media (max-width: 1023px) {
+    
+}
+/* tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+    
+}
+/* mobile */
+@media (max-width: 739px) {
+    
+}
