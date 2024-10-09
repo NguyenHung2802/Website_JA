@@ -10,7 +10,10 @@
     position: relative;
     text-transform: uppercase;
   }
-
+  .body{
+    white-space: pre-wrap; 
+    word-wrap: break-word; 
+  }
   .contact-info {
     padding: 0;
   }
@@ -71,7 +74,9 @@
     font-size: 16px;
     padding: 5px 0;
     word-wrap: break-word;
-    text-align: center;
+    /* text-align: center; */
+    white-space: pre-wrap;
+    word-wrap: break-word;
   }
 
   .content-page p img {
@@ -82,6 +87,9 @@
     height: initial !important;
   }
 
+  .container{
+    padding: 0px 30px !important;
+  }
   /* Mobile & tablet  */
   @media (max-width: 1023px) {}
 
@@ -100,6 +108,7 @@
 
 <body>
   <div class="overlay hidden"></div>
+  <div class="topdistance"></div>
   <div class="content" style="margin-top: 30px">
     <div class="container">
       <?php
@@ -120,7 +129,7 @@
                 <?php echo $row_detail['short_description'] ?>
               </p>
               <p>
-                <img src="admin/news_management/uploads/<?php echo $row_detail['image'] ?>" alt="">
+                <img src="./img/news/<?php echo $row_detail['image'] ?>" alt="">
               </p>
 
               <p>
@@ -138,7 +147,7 @@
   </div>
 
   <div id="go-to-top">
-    <a class="btn-gototop"><i class="fas fa-arrow-up"></i></a>
+    <a style="color: #ffffff" class="btn-gototop"><i class="fas fa-arrow-up"></i></a>
   </div>
 
 </body>

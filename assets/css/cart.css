@@ -87,8 +87,8 @@
     border-radius: 1px solid #E1E3E8 !important;
 }
 .cart-wrap {
-    padding-top:50px;
-    padding-bottom: 46px;
+    padding-top:40px;
+    padding-bottom: 4px;
 }
 .text-right {
     text-align: right !important;
@@ -132,10 +132,11 @@
     font-size: 20px;
     font-weight: 500;
     position: relative;
+    color: #fff !important;
 }
 .chekout:hover{
+   opacity: 0.9;
    text-decoration: none;
-   color: #fff;
 }
 .fa-trash {
     font-size: 18px;

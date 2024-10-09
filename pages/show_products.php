@@ -23,7 +23,7 @@ $query_dssphot = mysqli_query($connect, $sql_dssphot);
 
 <div class="container">
   <!-- slide show -->
-  <div class="row" style="display: block">
+  <div class="row" style="display: block; padding: 18px 0">
     <section class="awe-section-1">
       <div class="mt-4 top-sliders col-md-12">
         <div class="slideshow">

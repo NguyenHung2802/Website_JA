@@ -89,4 +89,18 @@ function hienthi(id, name){
     $(`.cong${id}`).toggleClass('hidden');
     $(`.tru${id}`).toggleClass('hidden');
 }
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const navbarMobileMenu = document.getElementById('navbar-mobile-menu');
+    const menuClose = document.getElementById('menu-close');
+
+    mobileMenuToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        navbarMobileMenu.classList.add('active');
+    });
+
+    menuClose.addEventListener('click', function() {
+        navbarMobileMenu.classList.remove('active');
+    });
+});
 

@@ -3,22 +3,30 @@
       ob_start();
       $email = $_POST['email'];
       $password = md5($_POST['password']);
-      $sql = "SELECT * FROM users WHERE users.email='" . $email . "' AND users.password='" . $password . "'  LIMIT 1";
+      $sql = "SELECT * FROM users WHERE users.email='" . $email . "' AND users.password='" . $password . "' AND users.isApproved = 1 LIMIT 1";
       $row = mysqli_query($connect, $sql);
       $count = mysqli_num_rows($row);
       if ($count > 0) {
         $row_data = mysqli_fetch_array($row);
         $_SESSION['email'] = $row_data['email'];
         $_SESSION['id_user'] = $row_data['idUser'];
-        echo "<script>location.href = 'index.php'</script>";
+        echo "<script>location.href = 'index.php?quanly=showAllProduct&page=1'</script>";
         exit;
       } else {
         $message = "Tài khoản mật khẩu không đúng";
         echo "<script type='text/javascript'>alert('$message');</script>";
       }
     }
+    else {
+      // Hiển thị thông báo rằng người dùng chưa được xác nhận
+      echo 'Tài khoản của bạn chưa được xác nhận bởi admin.';
+    }
     ?>
-
+  <style>
+    .login__form{
+      padding: 40px;
+    }
+  </style>
    <!-- Modal -->
    <div class="modal" id="errorModal">
      <div class="modal-dialog">
@@ -40,6 +48,7 @@
      </div>
    </div>
    <div class="container">
+   <div class="topdistance"></div>
      <div class="login__form">
        <div class="row">
          <div class="col-sm-12 col-lg-6">
@@ -85,7 +94,7 @@
                <p class="text-login">Các sự kiện sắp tới</p>
              </li>
            </ul>
-           <a href="index.php?quanly=dangKy"><button class="form-submit btn-blocker custom-btn" style="border-radius: unset;margin:unset">ĐĂNG KÍ <i class="fas fa-arrow-right" style="font-size: 16px;margin-left: 10px;"></i></button></a>
+           <a href="index.php?quanly=lienhe"><button class="form-submit btn-blocker custom-btn" style="border-radius: unset;margin:unset">ĐĂNG KÍ <i class="fas fa-arrow-right" style="font-size: 16px;margin-left: 10px;"></i></button></a>
          </div>
        </div>
      </div>

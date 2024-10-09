@@ -29,30 +29,28 @@ $query_show = mysqli_query($connect, $sql_news_list);
     var page = 1;
     var apiNews = [
         <?php
-            $sizeOfPage = 6;
-            $currentPage = 1;
-            $cnt = 1;
-            while ($row = mysqli_fetch_array($query_show)) {
-        ?>
-        {
-            id: <?php echo $row['id'] ?>,
-            name: '<?php echo $row['title'] ?>',
-            description: ' <?php echo $row['short_description'] ?>',
-            img: 'admin/news_management/uploads/<?php echo $row['image'] ?>',
-            
-            page: <?php 
-                if($cnt <= $sizeOfPage) {
-                    echo $currentPage;
-                    $cnt++;
-                }
-                else{
-                    $cnt = 2;
-                    $currentPage++;
-                    echo $currentPage;
-                }
-                
-            ?>
-        },
+        $sizeOfPage = 6;
+        $currentPage = 1;
+        $cnt = 1;
+        while ($row = mysqli_fetch_array($query_show)) {
+        ?> {
+                id: <?php echo $row['id'] ?>,
+                name: '<?php echo $row['title'] ?>',
+                description: ' <?php echo $row['short_description'] ?>',
+                img: './img/news/<?php echo $row['image'] ?>',
+
+                page: <?php
+                        if ($cnt <= $sizeOfPage) {
+                            echo $currentPage;
+                            $cnt++;
+                        } else {
+                            $cnt = 2;
+                            $currentPage++;
+                            echo $currentPage;
+                        }
+
+                        ?>
+            },
         <?php
         }
         ?>

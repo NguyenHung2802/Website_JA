@@ -328,6 +328,12 @@
 .header_nav-list-item > a:hover {
     color: var(--hover-color);
 }
+
+.wpb_wrapper .links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 /* .dropdown:hover {
     background-color: red;
 } */
@@ -827,7 +833,10 @@ ul .level1 li a:hover {
 }
 .product__price {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    align-content: center;
+    flex-direction: column;
+    justify-content: center;
 }
 .product__price-old {
     color: var(--text-color);
