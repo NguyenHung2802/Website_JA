@@ -60,7 +60,7 @@
     vertical-align: middle;
     margin: 0 auto;
     text-align: left;
-    z-index: 1045;
+    /* z-index: 1045; */
 }
 
 .search_main .mfp-content #searchpopup {

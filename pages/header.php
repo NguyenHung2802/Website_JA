@@ -20,7 +20,8 @@
         cursor: pointer;
     }
     .header_nav .container{
-        padding-left: 130px !important;
+        display: flex;
+        justify-content: center;
     }
 
     form.example button:hover {
@@ -171,41 +172,78 @@ $count1 = mysqli_fetch_assoc($query_get_count_cart);
             </div>
         </div>
     </div>
+    <div class="header-desktop">
+        <div class="header_logo">
+            <div class="header_logo-img">
+                <img src="./img/trademark/main-logo.png" alt="logo-top">
+            </div>
+        </div>
 
-    <div class="header_logo">
+        <nav class="header_nav hidden-xs">
+            <div class="container">
+                <ul class="header_nav-list nav">
+                    <li class="header_nav-list-item">
+                        <a href="index.php" class="<?php echo isset($_GET['quanly'])  == null ? 'active' : '' ?>">
+                            <img src="./img/trademark/logo-JA.png" alt="">
+                        </a>
+                    </li>
+                    <li class="header_nav-list-item"><a href="index.php?quanly=trilieu" class="<?php echo isset($_GET['quanly']) && $_GET['quanly'] == 'trilieu' ? 'active' : '' ?>">Phương Pháp Trị Liệu</a></li>
+                    <li class="header_nav-list-item"><a href="index.php?quanly=daotao" class="<?php echo isset($_GET['quanly']) && $_GET['quanly'] == 'daotao' ? 'active' : '' ?>">Đào Tạo & Chuyển Giao</a></li>
+                    <li class="header_nav-list-item"><a href="index.php?quanly=sukien" class="<?php echo isset($_GET['quanly']) && $_GET['quanly'] == 'sukien' ? 'active' : '' ?>">Kiến Thức Sự Kiện</a></li>
+                    <li class="header_nav-list-item"><a href="index.php?quanly=gioithieu" class="<?php echo isset($_GET['quanly']) && $_GET['quanly'] == 'gioithieu' ? 'active' : '' ?>">Về JA</a></li>
+                    <li class="header_nav-list-item"><a href="index.php?quanly=lienhe" class="<?php echo isset($_GET['quanly']) && $_GET['quanly'] == 'lienhe' ? 'active' : '' ?>">Liên hệ</a></li>
+                    <li class="header_nav-list-item has-mega" style="padding: 2px 0;">
+                        <a href="index.php?quanly=showAllProduct&page=1" class="<?php echo  isset($_GET['quanly']) && $_GET['quanly'] == 'showAllProduct' ? 'active' : '' ?>">Shop<i class="fa-brands fa-shopify"></i></a>
+                    </li>
+                    <li class="header_nav-list-item">
+                        <a href="index.php?quanly=searching" class="<?php echo isset($_GET['quanly']) && $_GET['quanly'] == 'searching' ? 'active' : '' ?>">
+                            <i class="fa-solid fa-magnifying-glass">
+
+                            </i>
+                        </a>
+                        
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="header-mobile">
+        <nav class="header_nav-mobile">
+            <a href="#" id="mobile-menu-toggle"><i class="fa-solid fa-bars"></i></a>
+            <div id="navbar-mobile-menu">
+                <i id="menu-close" class="fa-solid fa-x"></i>
+                <ul class="header_nav-list nav-mobile">
+                    <li class="header_nav-list-item">
+                        <a href="index.php" class="<?php echo isset($_GET['quanly'])  == null ? 'active' : '' ?>">
+                            <img src="./img/trademark/logo-JA.png" alt="">
+                        </a>
+                    </li>
+                    <li class="header_nav-list-item"><a href="index.php?quanly=trilieu" class="<?php echo isset($_GET['quanly']) && $_GET['quanly'] == 'trilieu' ? 'active' : '' ?>">Phương Pháp Trị Liệu</a></li>
+                    <li class="header_nav-list-item"><a href="index.php?quanly=daotao" class="<?php echo isset($_GET['quanly']) && $_GET['quanly'] == 'daotao' ? 'active' : '' ?>">Đào Tạo & Chuyển Giao</a></li>
+                    <li class="header_nav-list-item"><a href="index.php?quanly=sukien" class="<?php echo isset($_GET['quanly']) && $_GET['quanly'] == 'sukien' ? 'active' : '' ?>">Kiến Thức Sự Kiện</a></li>
+                    <li class="header_nav-list-item"><a href="index.php?quanly=gioithieu" class="<?php echo isset($_GET['quanly']) && $_GET['quanly'] == 'gioithieu' ? 'active' : '' ?>">Về JA</a></li>
+                    <li class="header_nav-list-item"><a href="index.php?quanly=lienhe" class="<?php echo isset($_GET['quanly']) && $_GET['quanly'] == 'lienhe' ? 'active' : '' ?>">Liên hệ</a></li>
+                    <li class="header_nav-list-item has-mega">
+                        <a href="index.php?quanly=showAllProduct&page=1" class="<?php echo  isset($_GET['quanly']) && $_GET['quanly'] == 'showAllProduct' ? 'active' : '' ?>">Shop<i class="fa-brands fa-shopify"></i></a>
+                    </li>
+                    <li class="header_nav-list-item">
+                        <a href="index.php?quanly=searching" class="<?php echo isset($_GET['quanly']) && $_GET['quanly'] == 'searching' ? 'active' : '' ?>">
+                            <i class="fa-solid fa-magnifying-glass">
+
+                            </i>
+                        </a>
+                        
+                    </li>
+                </ul>
+            </div>
+        </nav>
         <div class="header_logo-img">
             <img src="./img/trademark/main-logo.png" alt="logo-top">
         </div>
-    </div>
-
-
-    <nav class="header_nav hidden-sm hidden-xs">
-        <div class="container">
-            <ul class="header_nav-list nav">
-                <li class="header_nav-list-item">
-                    <a href="index.php" class="<?php echo isset($_GET['quanly'])  == null ? 'active' : '' ?>">
-                        <img src="./img/trademark/logo-JA.png" alt="">
-                    </a>
-                </li>
-                <li class="header_nav-list-item"><a href="index.php?quanly=trilieu" class="<?php echo isset($_GET['quanly']) && $_GET['quanly'] == 'trilieu' ? 'active' : '' ?>">Phương Pháp Trị Liệu</a></li>
-                <li class="header_nav-list-item"><a href="index.php?quanly=daotao" class="<?php echo isset($_GET['quanly']) && $_GET['quanly'] == 'daotao' ? 'active' : '' ?>">Đào Tạo & Chuyển Giao</a></li>
-                <li class="header_nav-list-item"><a href="index.php?quanly=sukien" class="<?php echo isset($_GET['quanly']) && $_GET['quanly'] == 'sukien' ? 'active' : '' ?>">Kiến Thức Sự Kiện</a></li>
-                <li class="header_nav-list-item"><a href="index.php?quanly=gioithieu" class="<?php echo isset($_GET['quanly']) && $_GET['quanly'] == 'gioithieu' ? 'active' : '' ?>">Về JA</a></li>
-                <li class="header_nav-list-item"><a href="index.php?quanly=lienhe" class="<?php echo isset($_GET['quanly']) && $_GET['quanly'] == 'lienhe' ? 'active' : '' ?>">Liên hệ</a></li>
-                <li class="header_nav-list-item has-mega" style="padding: 2px 0;">
-                    <a href="index.php?quanly=showAllProduct&page=1" class="<?php echo  isset($_GET['quanly']) && $_GET['quanly'] == 'showAllProduct' ? 'active' : '' ?>">Shop<i class="fa-brands fa-shopify"></i></a>
-                </li>
-                <li class="header_nav-list-item">
-                    <a href="index.php?quanly=searching" class="<?php echo isset($_GET['quanly']) && $_GET['quanly'] == 'searching' ? 'active' : '' ?>">
-                        <i class="fa-solid fa-magnifying-glass">
-
-                        </i>
-                    </a>
-                    
-                </li>
-            </ul>
+        <div class="header_nav-mobile">
+            <a href="index.php?quanly=showAllProduct&page=1" class="<?php echo  isset($_GET['quanly']) && $_GET['quanly'] == 'showAllProduct' ? 'active' : '' ?>"><i class="fa-brands fa-shopify"></i></a>
         </div>
-    </nav>
+    </div>
 </header>
 <script>
     // Lấy đối tượng form và ô tìm kiếm

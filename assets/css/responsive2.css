@@ -15,21 +15,301 @@
     .container{
         max-width: 1350px;
     }
-    .home_slide{
-        /* height: 1200px !important; */
-        width: 100%;
+    .home_slide,
+    .home_slide2,
+    .home_slide3,
+    .home_slide4 {
+        background-size: 100% auto;
+    }
+
+    .wpb_wrapper {
+        width: 600px !important;
+        margin: 140px 100px !important;
+    }
+
+    .home_slide-intro {
+        padding: 400px 120px;
+        width: 550px;
+    }
+
+    .home_slide-intro p {
+        font-size: 64px;
+    }
+    .header_nav-mobile {
+        display: none;
     }
 }
 
 /* Laptop & tablet  */
-@media (max-width: 1023px) {
-    
+@media (min-width: 992px) and (max-width: 1023px) {
+    .container {
+        max-width: 1023px;
+    }
+
+    .home_slide,
+    .home_slide2,
+    .home_slide3,
+    .home_slide4 {
+        height: 800px !important;
+    }
+
+    .home_slide-intro {
+        padding: 250px 70px;
+        width: 400px;
+    }
+
+    .home_slide-intro p {
+        font-size: 48px;
+    }
+    .wpb_wrapper {
+        width: 450px !important;
+        margin: 90px 60px !important;
+    }
+
+    .home_slide-intro3 {
+        margin-left: 120px !important;
+    }
+
+    .home_slide4 .wpb_wrapper {
+        margin-left: 240px !important;
+    }
 }
 /* tablet */
-@media (min-width: 740px) and (max-width: 1023px) {
+@media (min-width: 768px) and (max-width: 991px) {
+    .container {
+        max-width: 991px;
+    }
+
+    .home_slide,
+    .home_slide2,
+    .home_slide3,
+    .home_slide4 {
+        height: 600px !important;
+    }
+
+    .home_slide-intro {
+        padding: 200px 50px;
+        width: 350px;
+    }
+
+    .home_slide-intro p {
+        font-size: 40px;
+    }
     
+    .wpb_wrapper {
+        width: 400px !important;
+        margin: 70px 40px !important;
+    }
+    
+    .home_slide-intro3 {
+        margin-left: 80px !important;
+    }
+    
+    .home_slide4 .wpb_wrapper {
+        margin-left: 160px !important;
+    }
+
+    .home_slide5 {
+        height: 300px !important;
+    }
+}
+/* Mobile */
+@media (min-width: 430px) and (max-width: 767px) {
+    .container {
+        max-width: 100%;
+        padding-left: 3px !important;
+        padding-right: 3px !important;
+    }
+
+    .home_slide,
+    .home_slide2,
+    .home_slide3,
+    .home_slide4 {
+        height: 400px !important;
+        background-position: center center !important;
+    }
+
+    .home_slide-intro {
+        padding: 100px 30px;
+        width: 100%;
+    }
+
+    .home_slide-intro p {
+        font-size: 32px;
+    }
+
+    .home_slide-img {
+        width: 50px;
+    }
+
+    .wpb_wrapper {
+        width: 90% !important;
+        margin: 50px 20px !important;
+    }
+
+    .wpb_wrapper h2 strong {
+        font-size: 28px;
+    }
+
+    .wpb_wrapper p {
+        font-size: 16px;
+    }
+
+    .wpb_wrapper .links span {
+        text-align: center;
+    }
+
+    .home_slide-intro3 {
+        margin-left: 0 !important;
+        margin-top: 0 !important;
+    }
+
+    .home_slide4 .wpb_wrapper {
+        margin-left: 20px !important;
+    }
+
+    .home_slide5 {
+        height: 300px !important;
+    }
+
+    .wpb_wrapper h2 b,
+    .wpb_wrapper h2 strong {
+        font-size: 32px;
+    }
+
+    .wpb_wrapper p {
+        font-size: 16px;
+    }
+
+    .wpb_wrapper .links a {
+        margin-left: 0 !important;
+        font-size: 16px !important;
+    }
+
+
 }
 /* mobile */
-@media (max-width: 739px) {
+@media (max-width: 430px) {
+    /* Hompage */
+    .container {
+        max-width: 100%;
+    }
     
+    .home_slide,
+    .home_slide2,
+    .home_slide3,
+    .home_slide4 {
+        height: 600px  !important;
+        background-position: center center !important;
+    }
+    
+    .home_slide-intro {
+        /* padding: 190px 80px; */
+        margin-left: -40px;
+        width: 65%;
+    }
+    .home_slide-intro p {
+        font-size: 20px;
+    }
+
+    .home_slide-img {
+        width: 35px;
+    }
+    
+    .wpb_wrapper {
+        width: 90% !important;
+        margin: 50px 20px !important;
+    }
+
+    .wpb_wrapper h2 b, .wpb_wrapper h2 strong{
+        font-size: 28px !important;
+    }
+
+    .wpb_wrapper p{
+        font-size: 16px !important;
+    }
+
+    .wpb_wrapper .links span{
+        text-align: center;
+    }
+    
+    .home_slide-intro3 {
+        margin-left: 0 !important;
+        margin-top: 0 !important;
+    }
+    
+    .home_slide4 .wpb_wrapper {
+        max-width: 90%;
+        margin-left: 20px !important;
+    }
+    
+    .wpb_wrapper .links a {
+        margin-left: 0 !important;
+        font-size: 18px !important;
+    }
+
+    footer {
+        padding: 40px 10px;
+    }
+
+    /* Tri Liệu */
+    .trilieu {
+        margin-top: -20vh !important;
+        padding-top: 100px !important;
+    }
+
+    .trilieu_slide {
+        height: 600px !important;
+    }
+
+    .trilieu_slide-intro {
+        padding: 150px 20px;
+        width: 100%;
+    }
+
+    .trilieu_slide-intro p {
+        font-size: 30px;
+    }
+
+    .trilieu_slide-img {
+        width: 50px;
+    }
+
+    .trilieu_slide2 {
+        margin-top: 100px;
+        padding-bottom: 100px !important;
+    }
+
+    .trilieu_slide2 .wpb_wrapper {
+        width: 90% !important;
+        margin: 10px 20px !important;
+    }
+
+    .trilieu_slide3 {
+        height: 500px !important;
+    }
+
+    .trilieu_slide-intro3 {
+        margin-left: 20px !important;
+        margin-top: -50px !important;
+    }
+
+    .trilieu_slide4 {
+        height: 500px;
+        padding-bottom: 200px !important;
+    }
+
+    .trilieu_slide4 .wpb_wrapper {
+        width: 90% !important;
+        margin: 50px 20px !important;
+    }
+
+    .wpb_wrapper h3 strong{
+        font-size: 28px;
+    }
+
+    .wpb_wrapper p strong{
+        font-size: 24px !important;
+    }
+
 }

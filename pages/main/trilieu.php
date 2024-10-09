@@ -63,8 +63,8 @@
             </div>
         </div>
 
-        <div class="trilieu_slide5">
-            <div class="trilieu_silde-intro5">
+        <div class="home_slide5">
+            <div class="home_silde-intro5">
                 <div class="vc_column-inner vc_custom_1616245027877">
                     <div class="wpb_wrapper">
 	                    <div class="wpb_text_column wpb_content_element  ">

@@ -136,7 +136,10 @@ if (isset($_POST['thanhToan'])) {
                                             <button name="thanhToan" onclick="handlePayOff()" type="submit" value="Thanh toán" class="btn-pay form-submit">Thanh toán</button>
                                         </div>
                                         <div class="pay ml-4">
-                                            <button name="thanhToanMomo" onclick="handleSubmit()" type="submit" value="Thanh toán" class="btn-pay form-submit">Thanh toán MOMO</button>
+                                            <button name="thanhToanMomo" onclick="handleSubmit('momo')" type="submit" value="Thanh toán" class="btn-pay form-submit">Thanh toán MOMO</button>
+                                        </div>
+                                        <div class="pay ml-4">
+                                            <button name="redirect" onclick="handleSubmit('vnpay')" type="submit" value="Thanh toán" class="btn-pay form-submit">Thanh toán VNPay</button>
                                         </div>
                                     </div>
                                     <div class="continue mt-4">
@@ -192,7 +195,15 @@ if (isset($_POST['thanhToan'])) {
         myForm.action = "";
     }
 
-    function handleSubmit() {
-        myForm.action = "pages/main/momoPayment.php"
+    function handleSubmit(paymentMethod) {
+        if (paymentMethod === 'momo') {
+            myForm.action = "pages/main/momoPayment.php";
+        } else if (paymentMethod === 'vnpay') {
+            myForm.action = "pages/main/vnpayPayment.php";
+        }
+        // Submit the form manually
+        myForm.submit();
+        // Prevent the default form submission
+        return false;
     }
 </script>

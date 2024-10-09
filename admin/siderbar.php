@@ -51,7 +51,7 @@ if (empty($admin)) {
                 </a>
             </li>
             <li class="treeview" onclick="handleOpenMenu()">
-                <a href="#">
+                <a href="index.php?quanly=showAllProduct">
                     <i class="fa-brands fa-product-hunt"></i> <span>Quản lý sản phẩm</span>
                 </a>
                 <ul class="treeview-menu">

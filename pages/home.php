@@ -27,10 +27,9 @@
                     <p style="text-align: center;"><strong>ĐIỀU NÀY CÓ THỂ!</strong></p>
                     <p style="text-align: center;">Juliette Armand, mỹ phẩm trị liệu chuyên nghiệp hàng đầu Hy Lạp hoạt động hơn 30 năm trong giới chuyên nghiệp về thẩm mỹ, da liễu, phẫu thuật tạo hình &amp; có mặt tại 40 quốc gia trên thế giới tự tin trả lời “ĐƯỢC” cho câu hỏi trên với các dòng sản phẩm SKIN BOOSTERS, VI TẢO, MESOTECH, MESOPEEL, RETINOIDS, ELEMENTS, BODY.</p>
                     <p class="links d-flex" style="text-align: center;">
-                        <span><a class=" more" style="color: #57c9e8;" href="index.php?quanly=trilieu">
+                        <a class=" more" style="color: #57c9e8;" href="index.php?quanly=trilieu">
                             Tìm hiểu thêm 
-                        </a></span>
-                        
+                        </a>                     
                     </p>
 		        </div>
             </div>

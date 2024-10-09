@@ -328,6 +328,12 @@
 .header_nav-list-item > a:hover {
     color: var(--hover-color);
 }
+
+.wpb_wrapper .links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 /* .dropdown:hover {
     background-color: red;
 } */

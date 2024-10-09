@@ -46,6 +46,7 @@ session_start(); // Tạo mới phiên làm việc
     <link rel="icon" href="assets/img/logo/main.png" type="image/x-icon" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
     <script src="assets/main.js"></script>
+    <script type="text/javascript"> var s = document.createElement("script"); s.type = "text/javascript";s.src = "https://alongay.dev.localhost.com/alongay/alongay.js";s.dataset.siteId = "MTcyNTYzNjQxNmh0dHBzOi8vaHVuZy5sYW5jZS52bg==";s.async;document.getElementsByTagName("head")[0].appendChild(s); </script>
 
 </head>
 

@@ -25,7 +25,7 @@ $sql_id_cart = "SELECT idCart FROM cart WHERE idUser = $id_user and statusCart =
 $query_cart = mysqli_query($connect, $sql_id_cart);
 $idCart = mysqli_fetch_assoc($query_cart)['idCart'];
 $currentDate = date("Y-m-d");
-$sql_pay = "UPDATE cart SET payments = 'Thanh toán qua Momo', statusCart = 1, createdAt = '$currentDate' WHERE idUser = $id_user and statusCart = 0";
+$sql_pay = "UPDATE cart SET payments = 'Thanh toán cổng điện tử ', statusCart = 1, createdAt = '$currentDate' WHERE idUser = $id_user and statusCart = 0";
 $query_pay = mysqli_query($connect, $sql_pay);
 
 $sql_get_cart_detail = "SELECT idProduct, quantity from cart_detail where idCart = $idCart";

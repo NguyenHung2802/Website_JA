@@ -388,11 +388,6 @@
 
 .header_nav {
     padding: 8px 0;
-    margin-left: 50px ;
-}
-
-.header_nav .container{
-    padding-left: 150px !important;
 }
 
 .header_nav-list {
@@ -418,6 +413,97 @@
 .header_nav-list-item>a:hover {
     color: var(--black-color) !important;
     font-weight: 600 !important;
+}
+
+/* Nav-bar mobile */
+.header-mobile{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
+}
+
+.header_nav-mobile {
+    display: block;
+    padding: 10px;
+    text-align: left;
+}
+
+.header_nav-mobile i {
+    font-size: 24px;
+    padding: 17px 14px;
+    cursor: pointer;
+}
+
+.header-mobile {
+    position: relative;
+}
+
+/* Styles cho mobile menu */
+#navbar-mobile-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: #fff;
+    transition: left 0.3s ease-in-out;
+    z-index: 1000;
+    overflow-y: auto;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+#navbar-mobile-menu.active {
+    display: grid;
+    grid-template-columns: 8fr 2fr;
+    left: 0;
+}
+
+#menu-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.nav-mobile {
+    padding: 20px;
+    list-style-type: none;
+}
+
+.nav-mobile li {
+    margin-bottom: 15px;
+}
+
+.nav-mobile a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+/* Điều chỉnh style cho nút toggle menu */
+#mobile-menu-toggle {
+    display: block;
+    font-size: 24px;
+    color: #333;
+    text-decoration: none;
+}
+
+/* Overlay khi menu active */
+.menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 99999;
+}
+
+.nav-mobile .header_nav-list-item{
+    display: block;
 }
 
 /* .dropdown:hover {
@@ -731,7 +817,7 @@ ul .level1 li a:hover {
 
 main {
     width: 100%; /* Đảm bảo main luôn chiếm toàn bộ chiều rộng của container */
-    max-width: 1200px; /* Giới hạn chiều rộng tối đa của main */
+    max-width: 1350px; /* Giới hạn chiều rộng tối đa của main */
     margin: 0 auto; /* Canh giữa main trong container */
     /* padding: 20px; Thêm padding cho main */
 }
@@ -788,14 +874,14 @@ main {
     background-repeat: no-repeat !important;
     background-size: cover !important;
 }
-.home_slide2 .wpb_wrapper h2 strong{
+.wpb_wrapper h2 strong{
     color: #151515;
     font-size: 48px;
     font-weight: 600;
     box-sizing: inherit;
 }
 
-.home_slide2 .wpb_wrapper p{
+.wpb_wrapper p{
     text-align: center;
     font-size: 21px;
     /* font-family: Avertape; */
@@ -825,11 +911,6 @@ main {
     margin-top: -90px !important;
 }
 
-.home_slide-intro3 .wpb_wrapper h2 b{
-    font-size: 48px !important;
-    font-weight: 600;
-}
-
 .home_slide3 .wpb_wrapper h2 strong{
     color: #151515;
     font-size: 48px;
@@ -837,7 +918,7 @@ main {
     box-sizing: inherit;
 }
 
-.home_slide3 .wpb_wrapper p{
+.wpb_wrapper p{
     text-align: center;
     font-size: 21px;
     /* font-family: Avertape; */
@@ -848,7 +929,7 @@ main {
     color: #444;
 }
 
-.home_slide3 .wpb_wrapper p strong{
+.wpb_wrapper p strong{
     opacity: 0.8;
     font-weight: 600;
 }
@@ -884,34 +965,16 @@ main {
     box-sizing: inherit;
 }
 
-.home_slide4 .wpb_wrapper p{
-    text-align: center;
-    font-size: 21px;
-    /* font-family: Avertape; */
-    line-height: 1.6;
-    margin-bottom: 1rem;
-    text-rendering: optimizeLegibility;
-    display: block;
-    color: #444;
-}
-
-.home_slide4 .wpb_wrapper p strong{
-    opacity: 0.8;
-    font-weight: 600;
-}
-
 /* home 5 */
 .home_slide5{
+    display: flex;
+    justify-content: center;
     height: 390px !important;
     margin-top: 5px !important;
     padding-top: 5px !important;
     background-color: white;
 }
 
-.home_silde-intro5{
-    margin-left: 190px !important;
-    margin-top: -60px !important;
-}
 .home_slide5 img {
     max-width: 100%;
     height: auto;
@@ -950,23 +1013,13 @@ main {
     box-sizing: inherit;
 }
 
-.home_slide5 .wpb_wrapper p{
-    text-align: center;
-    font-size: 21px;
-    /* font-family: Avertape; */
-    line-height: 1.6;
-    margin-bottom: 1rem;
-    text-rendering: optimizeLegibility;
-    display: block;
-    color: #444;
-}
-
 .home_slide5.wpb_wrapper p strong{
     opacity: 0.8;
     font-weight: 600;
 }
 
 .wpb_wrapper .links{
+    justify-content: center;
     transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     background-color: transparent;
 }
@@ -980,7 +1033,9 @@ main {
     cursor: pointer;
 }
 
-
+footer {
+    padding: 100px;
+}
 
 /* end sửa header */
 

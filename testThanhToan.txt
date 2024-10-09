@@ -1,0 +1,14 @@
+Tài khoản test momo:
+    Số thẻ: 9704 0000 0000 0018
+    Tên:  NGUYEN VAN A
+    Hạn ghi trên thẻ: 03/07
+    SĐT: Số ngẫu nhiên 10 chữ số
+
+    OTP: OTP
+
+Tài khoản test vnpay:
+    Ngân hàng	NCB
+    Số thẻ	9704198526191432198
+    Tên chủ thẻ	NGUYEN VAN A
+    Ngày phát hành	07/15
+    Mật khẩu OTP	123456

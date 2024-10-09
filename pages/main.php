@@ -68,18 +68,22 @@
         }
         ?>
 
+        <?php /*
         <div style="position: fixed; right: 20px; bottom: 40px;">
             <a href="javascript:void(0);" onclick="redirectToHiddenURL();">
                 <img src="./img/Logo-Zalo-300823.png" style="width: 50px" alt="">
             </a>
         </div>
+        
 
+        
         <a href="">
             <div style="padding: 4px 8px 16px 8px; border-radius: 8px; position: fixed; z-index:1000; text-align: center; right: 140px; bottom: -6px; background-color: #e40d0f; width: 250px; height: 40px; ;line-height: 30px">
                 <i style="color: white; font-size: 18px" class="fa-solid fa-phone"></i>
                 <span style="color: white; font-size: 14px;">Tư vấn bán hàng <span style="font-weight: 700;"> 1900 1008 </span></span>
             </div>
         </a>
+        */ ?>
 
     </div>
 </div>

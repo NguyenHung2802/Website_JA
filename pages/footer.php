@@ -13,11 +13,6 @@
     .footer{
         background-color: #f5f5f5;
     }
-    .footer_main{
-        margin-left: 240px;
-        margin-right: 240px;
-        margin-top: 46px;
-    }
     .mxh{
         display: flex !important;
         
@@ -55,8 +50,7 @@
 
 <body>
     <footer class="footer">
-        <div class="footer_main">
-            <div class="container">
+        <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-6 col-lg-2">
                     <div style="display: flex;justify-content:space-between;cursor: text;margin-bottom: 8px;" data-toggle="collapse" data-target="#demo2">
@@ -201,8 +195,6 @@
                 </div>   
             </div>
         </div>
-    </div>
-        
     </footer>
     <!-- <div id="go-to-top">
         <a class="btn-gototop"><i class="fas fa-arrow-up"></i></a>
